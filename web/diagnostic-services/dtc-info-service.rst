@@ -1,17 +1,23 @@
 DTC Info Service
-----------------
+~~~~~~~~~~~~~~~~
 
-### Get Information About a DTC Code
+Get Information About a DTC Code
+````````````````````````````````
 
 There's a lot of information encoded in the DTC codes reported by a Vehicle.  This method is meant to provide this information for a given DTC code so that your Application can present useful information to the end-user.
 
-#### Request
+Request
++++++++
+
+.. code-block:: json
 
       GET https://diagnostics.vin.li/api/v1/dtc_codes/P0171
       Accept: application/json
 
-#### Response
+Response
+++++++++
 
+.. code-block:: json
 
       HTTP/1.1 200 OK
       Content-Type: application/json

@@ -1,13 +1,15 @@
 DTC Notification Service
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 When a Device detects a new DTC code within the Vehicle it is attached to, it sends a message to the Vinli Platform informing it as such.  Your Application can subscribe to receive notifications when these events occur using the DTC Notification Service.
 
+Create a new DTC Notification
+`````````````````````````````
 
-### Create a new DTC Notification
+Request
++++++++
 
-#### Request
-
+.. code-block:: json
 
       POST https://diagnostics.vin.li/api/v1/devices/602c6490-d7a3-11e3-9c1a-0800200c9a66/dtc_notifications
       Accept: application/json
@@ -24,7 +26,10 @@ When a Device detects a new DTC code within the Vehicle it is attached to, it se
         }
       }
 
-#### Response
+Response
+++++++++
+
+.. code-block:: json
 
       HTTP/1.1 201 CREATED
       Content-Type: application/json
