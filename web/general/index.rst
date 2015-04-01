@@ -16,7 +16,7 @@ Tier 2 services provide a bit more analysis and "expertise" on top of the data p
 All of the services above is accessed in a similar manner with respect to authentication, pagination, etc.  More detail about these standards is included in the following sections.
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    authentication
    pagination
