@@ -134,11 +134,7 @@ if not on_rtd:
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
-<<<<<<< HEAD
 html_style = 'css/sphinx_rtd_theme.css'
-=======
-html_style = 'css/vinli.css' 
->>>>>>> 2a305a593c820399e1e0a45063d75bf8c013e8b8
 
 # Add any extra paths that contain custom files (such as robots.txt or
 # .htaccess) here, relative to this directory. These files are copied
