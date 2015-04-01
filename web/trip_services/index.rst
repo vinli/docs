@@ -1,18 +1,30 @@
-Trip Service
-------------
+Trip Services
+=============
 
-### List All of a Device's Trips
+The Vinli device detects vehicle ignition and shutdown and sends those events to the platform.  From these events, it is possible to organize the telemetry data into logical "Trips" for organizing users' activities in your application.  The Trip Service provides access to a catalog of these Trips by Device or by Vehicle and provides mirrors of the Telemetry Services methods centered around these Trips.
+
+It's important to note that trips are sometimes created asyncrhonously--either because they have to be constructed by post-processing or after bulk data upload for a given device.
+
+
+List All of a Device's Trips
+````````````````````````````
 
 This method returns a list of all trips that a given device has taken.  This will include trips that have not yet been completed.
 
 
-#### Request
+Request
++++++++
+
+.. code-block:: json
 
       GET https://trips.vin.li/api/v1/devices/821374c0-d6d8-11e3-9c1a-0800200c9a66/trips
       Accept: application/json
 
 
-#### Response
+Response
+++++++++
+
+.. code-block:: json
 
       HTTP/1.1 200 OK
       Content-Type: application/json
@@ -49,20 +61,27 @@ This method returns a list of all trips that a given device has taken.  This wil
       }
 
 
-### List All of a Vehicle's Trips
+List All of a Vehicle's Trips
+`````````````````````````````
 
 This method returns a list of all trips that a given vehicle has taken.  This will include trips that have not yet been completed.  This list will include only trips for the vehicle for which the current application has access to the associated device.
 
 Please note, that trips are sometimes created asynchronously--either because they have to be constructed by post-processing or after bulk data upload for a given device.
 
 
-#### Request
+Request
++++++++
+
+.. code-block:: json
 
       GET https://trips.vin.li/api/v1/vehicle/27b8db50-1274-11e4-9191-0800200c9a66/trips
       Accept: application/json
 
 
-#### Response
+Response
+++++++++
+
+.. code-block:: json
 
       HTTP/1.1 200 OK
       Content-Type: application/json
@@ -99,7 +118,8 @@ Please note, that trips are sometimes created asynchronously--either because the
 
 
 
-### Get Details of a Trip
+Get Details of a Trip
+`````````````````````
 
 For each trip, more detailed information regarding overall trip statistics is available here. This includes start and stop location as well as a few other statistical information which may be of interest.  These items include:
 
@@ -111,13 +131,19 @@ For each trip, more detailed information regarding overall trip statistics is av
 * `maxSpeed` - the maximum speed (in kph) reported for the Vehicle during the Trip
 * `stopCount` - the number of times the Vehicle came to a stop (excludes the beginning and end of the Trip)
 
-#### Request
+Request
++++++++
+
+.. code-block:: json
 
       GET https://trips.vin.li/api/v1/trips/e960a385-0ced-4654-8404-3238e147ad45
       Accept: application/json
 
 
-#### Response
+Response
+++++++++
+
+.. code-block:: json
 
       HTTP/1.1 200 OK
       Content-Type: application/json
@@ -168,7 +194,7 @@ For each trip, more detailed information regarding overall trip statistics is av
 
 
 Trip Telemetry Proxies
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
 The following three methods are essentially proxies of Telemetry Services that enforces a time bound based on the Trip that is referenced.  These are intended to make it easy to paginate through the telemetry data associated with a specific trip without having to construct the URL yourself.
 
@@ -177,16 +203,23 @@ They use the same parameters and return the same results as the original methods
 For more specific information, please refer to the respective sections in "Telemetry Services" above.
 
 
-### Get Telemetry Snapshots of Trip
+Get Telemetry Snapshots of Trip
+```````````````````````````````
 
 See "Telemetry Service - Telemetry Snapshot Service" above.
 
-#### Request
+Request
++++++++
+
+.. code-block:: json
 
       GET https://trips.vin.li/api/v1/trips/e960a385-0ced-4654-8404-3238e147ad45/snapshots?fields=rpm,vehicleSpeed,calculatedLoadValue,fuelType
       Accept: application/json
 
-#### Response
+Response
+++++++++
+
+.. code-block:: json
 
       HTTP/1.1 200 OK
       Content-Type: application/json
@@ -224,16 +257,23 @@ See "Telemetry Service - Telemetry Snapshot Service" above.
       }
 
 
-### Get Locations of Trip
+Get Locations of Trip
+`````````````````````
 
 See "Telemetry Service - Location History Service" above.
 
-#### Request
+Request
++++++++
+
+.. code-block:: json
 
       GET https://trips.vin.li/api/v1/trips/e960a385-0ced-4654-8404-3238e147ad45/locations
       Accept: application/json
 
-#### Response
+Response
+++++++++
+
+.. code-block:: json
 
       HTTP/1.1 200 OK
       Content-Type: application/json
@@ -282,16 +322,23 @@ See "Telemetry Service - Location History Service" above.
       }
 
 
-### Get Telemetry Messages of Trip
+Get Telemetry Messages of Trip
+``````````````````````````````
 
 See "Telemetry Service - Telemetry Message Service" above.
 
-#### Request
+Request
++++++++
+
+.. code-block:: json
 
       GET https://trips.vin.li/api/v1/trips/e960a385-0ced-4654-8404-3238e147ad45/messages
       Accept: application/json
 
-#### Response
+Response
+++++++++
+
+.. code-block:: json
 
       HTTP/1.1 200 OK
       Content-Type: application/json
