@@ -1,15 +1,15 @@
-### Vehicle Collision Service
+## Vehicle Collision Service
 
-#### Get a list of Collisions for a Device
+### Get a list of Collisions for a Device
 
 Returns a list of registered Collisions for a given device.
 
-##### Request
+#### Request
 
       GET https://safety.vin.li/api/v1/devices/8b8a1810-d6d8-11e3-9c1a-0800200c9a66/collisions
       Accept: application/json
 
-##### Response
+#### Response
 
 
       HTTP/1.1 200 OK
