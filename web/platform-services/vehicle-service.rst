@@ -1,5 +1,5 @@
 Vehicle Service
----------------
+~~~~~~~~~~~~~~~
 
 Vinli keeps track of which vehicle a device is or has been plugged into and provides detailed information regarding thee specifics about the vehicle.  This gives your application the chance to better personlize the experience of a user as well as the information necessary to classify users and their data by vehicle.  You are only allowed to see vehicles that are associated with a device that you have registered with your app, and you cannot see other devices that have been plugged into this vehicle.
 
@@ -8,19 +8,25 @@ Vehicle-device assocation is time-based.  A device that is plugged into one vehi
 Note that when a vehicle is first added to the system (when a Vinli device is plugged into a specific vehicle for the first time), only the VIN number is available.  At some point in time after this, Vinli will update the vehicle information with Year, Make, Model, and Trim in addition to even more detailed information (available through the Vehicle's "self" link).
 
 
-### List All of a Device's Vehicles
+List All of a Device's Vehicles
+```````````````````````````````
 
 
 Returns the vehicles associated with the given device in chronological order.
 
 
-#### Request
+Request
++++++++
+
+.. code-block:: json
 
       GET https://platform.vin.li/api/v1/devices/821374c0-d6d8-11e3-9c1a-0800200c9a66/vehicles
       Accept: application/json
 
+Response
+++++++++
 
-#### Response
+.. code-block:: json
 
       HTTP/1.1 200 OK
       Content-Type: application/json
@@ -64,20 +70,27 @@ Returns the vehicles associated with the given device in chronological order.
       }
 
 
-### List a Device's Latest Vehicle
+List a Device's Latest Vehicle
+``````````````````````````````
 
 
 Returns the vehicle most recently associated with the given device if it exists.  If the device has not been associated with a vehicle, a null vehicle object is returned.
 
 Basic vehicle information is returned as part of this response.  Follow the vehicle's "self" link to get full detailed information about the vehicle.
 
-#### Request
+Request
++++++++
+
+.. code-block:: json
 
       GET https://platform.vin.li/api/v1/devices/821374c0-d6d8-11e3-9c1a-0800200c9a66/vehicles/_latest
       Accept: application/json
 
 
-#### Response
+Response
+++++++++
+
+.. code-block:: json
 
       HTTP/1.1 200 OK
       Content-Type: application/json
@@ -98,7 +111,8 @@ Basic vehicle information is returned as part of this response.  Follow the vehi
       }
 
 
-### Get Information About a Vehicle
+Get Information About a Vehicle
+```````````````````````````````
 
 Returns detailed information about a vehicle.  This may include, but is not limitted to:
 
@@ -111,13 +125,19 @@ Returns detailed information about a vehicle.  This may include, but is not limi
 * Available Options
 
 
-#### Request
+Request
++++++++
+
+.. code-block:: json
 
       GET https://platform.vin.li/api/v1/vehicles/67e1e940-d6da-11e3-9c1a-0800200c9a66
       Accept: application/json
 
 
-#### Response
+Response
+++++++++
+
+.. code-block:: json
 
       HTTP/1.1 200 OK
       Content-Type: application/json

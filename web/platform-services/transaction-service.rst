@@ -1,20 +1,25 @@
 Transaction Service
--------------------
+~~~~~~~~~~~~~~~~~~~
 
-
-### Get All Transactions for this Application
+Get All Transactions for this Application
+`````````````````````````````````````````
 
 Returns a list of all transactions performed by this Application.
 
 Results are returned in reverse-chronological order and use the "Stream Pagination" method.
 
-#### Request
+Request
++++++++
 
+.. code-block:: json
 
       GET https://platform.vin.li/api/v1/transactions
       Accept: application/json
 
-#### Response
+Response
+++++++++
+
+.. code-block:: json
 
       HTTP/1.1 200 OK
       Content-Type: application/json

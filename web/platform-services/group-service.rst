@@ -1,21 +1,26 @@
 Group Service
--------------
-
+~~~~~~~~~~~~~
 
 Groups belong to one Application and contain multiple devices.  A device may belong to zero, one, or more Groups.
 
 For the most part, Groups are used by the Rules service to simplify applying one Rule to multiple devices.  However, they may also be used as a means of organizing Devices within your application.
 
 
-### List all Groups
+List all Groups
+```````````````
 
+Request
++++++++
 
-#### Request
+.. code-block:: json
 
       GET https://platform.vin.li/api/v1/groups
       Accept: application/json
 
-#### Response
+Response
+++++++++
+
+.. code-block:: json
 
 
       HTTP/1.1 200 OK
@@ -46,11 +51,13 @@ For the most part, Groups are used by the Rules service to simplify applying one
       }
 
 
-### Create a Group
+Create a Group
+``````````````
 
+Request
++++++++
 
-#### Request
-
+.. code-block:: json
 
       POST https://platform.vin.li/api/v1/groups
       Content-Type: application/json
@@ -63,8 +70,10 @@ For the most part, Groups are used by the Rules service to simplify applying one
       }
 
 
-#### Response:
+Response:
+++++++++
 
+.. code-block:: json
 
       HTTP/1.1 201 CREATED
       Content-Type: application/json
@@ -82,16 +91,21 @@ For the most part, Groups are used by the Rules service to simplify applying one
       }
 
 
-### Get a Group
+Get a Group
+```````````
 
+Request
++++++++
 
-#### Request
+.. code-block:: json
 
       GET https://platform.vin.li/api/v1/groups/{groupId}
       Accept: application/json
 
+Response
+++++++++
 
-#### Response
+.. code-block:: json
 
       HTTP/1.1 200 OK
       Content-Type: application/json
@@ -108,12 +122,15 @@ For the most part, Groups are used by the Rules service to simplify applying one
       }
 
 
-
-### Edit a Group
+Edit a Group
+````````````
 
 Allows you to rename a Group.  This is purely decorative.
 
-#### Request
+Request
++++++++
+
+.. code-block:: json
 
       PUT https://platform.vin.li/api/v1/groups/8b5f3460-d610-11e3-9c1a-0800200c9a66
       Content-Type: application/json
@@ -124,31 +141,40 @@ Allows you to rename a Group.  This is purely decorative.
         }
       }
 
+Response
+++++++++
 
-#### Response
+.. code-block:: json
 
       HTTP/1.1 204 NO CONTENT
 
 
-### Delete a Group
+Delete a Group
+``````````````
 
+Request
++++++++
 
-#### Request
+.. code-block:: json
 
       DELETE https://platform.vin.li/api/v1/groups/8b5f3460-d610-11e3-9c1a-0800200c9a66
 
 
-#### Response
+Response
+++++++++
+
+.. code-block:: json
 
       HTTP/1.1 204 NO CONTENT
 
 
+Add a Device to a Group
+```````````````````````
 
+Request
++++++++
 
-### Add a Device to a Group
-
-
-#### Request
+.. code-block:: json
 
       POST https://platform.vin.li/api/v1/groups/8b5f3460-d610-11e3-9c1a-0800200c9a66/devices
       Content-Type: application/json
@@ -160,21 +186,30 @@ Allows you to rename a Group.  This is purely decorative.
         }
       }
 
-#### Response
+Response
+++++++++
+
+.. code-block:: json
 
       HTTP/1.1 204 NO CONTENT
 
 
-### List All of a Group's Devices
+List All of a Group's Devices
+`````````````````````````````
 
+Request
++++++++
 
-#### Request
+.. code-block:: json
 
       GET https://platform.vin.li/api/v1/groups/8b5f3460-d610-11e3-9c1a-0800200c9a66/devices
       Accept: application/json
 
 
-#### Response
+Response
+++++++++
+
+.. code-block:: json
 
       HTTP/1.1 200 OK
       Content-Type: application/json
@@ -207,16 +242,22 @@ Allows you to rename a Group.  This is purely decorative.
       }
 
 
-### List All of a Device's Groups
+List All of a Device's Groups
+`````````````````````````````
 
+Request
++++++++
 
-#### Request
+.. code-block:: json
 
       GET https://platform.vin.li/api/v1/devices/821374c0-d6d8-11e3-9c1a-0800200c9a66/groups
       Accept: application/json
 
 
-#### Response
+Response
+++++++++
+
+.. code-block:: json
 
       HTTP/1.1 200 OK
       Content-Type: application/json
@@ -248,14 +289,20 @@ Allows you to rename a Group.  This is purely decorative.
       }
 
 
-### Remove a Device from a Group
+Remove a Device from a Group
+````````````````````````````
 
+Request
++++++++
 
-#### Request
+.. code-block:: json
 
       DELETE https://platform.vin.li/api/v1/groups/8b5f3460-d610-11e3-9c1a-0800200c9a66/devices/{deviceId}
 
 
-#### Response
+Response
+++++++++
+
+.. code-block:: json
 
       HTTP/1.1 204 NO CONTENT

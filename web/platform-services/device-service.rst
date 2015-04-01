@@ -1,20 +1,26 @@
 Device Service
---------------
+~~~~~~~~~~~~~~
 
 The root element in all interaction with the Vinli platform is the Device.  Each Vinil Basic device has an associated Device ID by which it is referred to within the platform.  However, before your application can access any data or perform any actions on a Device, it must be authorized by the owner of the device and then added to your application's device list (using the "Register a Device" method below).
 
 
-### List all Devices
+List all Devices
+````````````````
 
 This returns a paginated list of devices that are registered with your application sorted chronologically by when the device was added.
 
-#### Request
+Request
++++++++
+
+.. code-block:: json
 
       GET https://platform.vin.li/api/v1/devices
       Accept: application/json
 
-#### Response
+Response
+++++++++
 
+.. code-block:: json
 
       HTTP/1.1 200 OK
       Content-Type: application/json
@@ -47,16 +53,18 @@ This returns a paginated list of devices that are registered with your applicati
       }
 
 
-### Register a Device
-
+Register a Device
+`````````````````
 
 Your application may register a device after it has been authorized by the owner of the device (See section above on "Authentication for User Actions").  This step is necessary before your application can access any data from the device or perform any actions on the device.
 
 A two-step process allow you to manage device authorization independent of user action.  You can remove a device without requiring a user to revoke access to the device.
 
 
-#### Request
+Request
++++++++
 
+.. code-block:: json
 
       POST https://platform.vin.li/api/v1/devices
       Content-Type: application/json
@@ -68,9 +76,10 @@ A two-step process allow you to manage device authorization independent of user 
         }
       }
 
+Response:
+++++++++
 
-#### Response:
-
+.. code-block:: json
 
       HTTP/1.1 201 CREATED
       Content-Type: application/json
@@ -89,15 +98,21 @@ A two-step process allow you to manage device authorization independent of user 
       }
 
 
-### Get a Device
+Get a Device
+````````````
 
-#### Request
+Request
++++++++
+
+.. code-block:: json
 
       GET https://platform.vin.li/api/v1/devices/821374c0-d6d8-11e3-9c1a-0800200c9a66
       Accept: application/json
 
+Response
+++++++++
 
-#### Response
+.. code-block:: json
 
       HTTP/1.1 200 OK
       Content-Type: application/json
@@ -115,35 +130,49 @@ A two-step process allow you to manage device authorization independent of user 
       }
 
 
-### Deregister a Device
+Deregister a Device
+````````````````````````````````
 
 Deregistering a Device from your application prevents you from accessing that device's data.  Note this has several various effects on other section of the Vinli Platform.  For instance,  Event Services will remove any Rules associated with the device, Safety Services will remove any Emergency Contact actions from the Device (if your application registered the Device with Safety Services), and Diagnostic Services will remove any DTC alerts for this Device registered by your Application.
 
 It's important to note that deregistering a Device is an Application-level action that will have no effect on any other Application (yours or someone else's) that has been authorized for the Device.
 
 
-#### Request
+Request
++++++++
+
+.. code-block:: json
 
       DELETE https://platform.vin.li/api/v1/devices/821374c0-d6d8-11e3-9c1a-0800200c9a66
 
 
-#### Response
+Response
+++++++++
+
+.. code-block:: json
 
       HTTP/1.1 204 NO CONTENT
 
 
-### List All of a Device's Startups
+List All of a Device's Startups
+````````````````````````````````
 
 This method returns a paginated list of all times that a device reported a vehicle starting up in chronological order.  Included is the vehicle that the device was plugged into at the time.
 
 
-#### Request
+Request
++++++++
+
+.. code-block:: json
 
       GET https://platform.vin.li/api/v1/devices/821374c0-d6d8-11e3-9c1a-0800200c9a66/startups
       Accept: application/json
 
 
-#### Response
+Response
+++++++++
+
+.. code-block:: json
 
       HTTP/1.1 200 OK
       Content-Type: application/json
@@ -172,7 +201,8 @@ This method returns a paginated list of all times that a device reported a vehic
       }
 
 
-### List All of a Device's Shutdowns
+List All of a Device's Shutdowns
+````````````````````````````````
 
 This method returns a paginated list of all times that a device reported a vehicle shutting down in chronological order.  Included is the vehicle that the device was plugged into at the time.
 
@@ -181,13 +211,19 @@ Note that this is a raw list as reported by the Device.  There are situations in
 In order to get complete startup and shutdown information, use Trip Services.  Trip Services keeps track of vehicle startups and shutdowns and uses vehicle telemetry data to fill in the times when an explicit startup or shutdown message was not received from a Device.
 
 
-#### Request
+Request
++++++++
+
+.. code-block:: json
 
       GET https://platform.vin.li/api/v1/devices/821374c0-d6d8-11e3-9c1a-0800200c9a66/shutdowns
       Accept: application/json
 
 
-#### Response
+Response
+++++++++
+
+.. code-block:: json
 
       HTTP/1.1 200 OK
       Content-Type: application/json
