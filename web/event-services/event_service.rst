@@ -1,6 +1,5 @@
 Event Service
--------------
-
+~~~~~~~~~~~~~
 
 ### Get Events for a Rule
 
@@ -9,18 +8,24 @@ Returns the list all events for a given rule reverse-chronological order.  Each 
 Notification state is useful in debugging notification handlers on your Application.  This state property (as well as the `response` property) will inform you as to the result of Event Services' attempt to call the notification URL.
 
 
-#### Request
+Request
++++++++
+
+.. code-block:: json
 
       GET https://events.vin.li/api/v1/rules/68d489c0-d7a2-11e3-9c1a-0800200c9a66/events
       Accept: application/json
 
-
-#### Parameters
+Parameters
+++++++++++
 
 * `deviceId` - (optional) filter events for those for a given device
 
 
-#### Response
+Response
+++++++++
+
+.. code-block:: json
 
       HTTP/1.1 200 OK
       Content-Type: application/json

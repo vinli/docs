@@ -6,7 +6,8 @@ The set of tools provided by Vinli's Event Services allows an application to cre
 As data is streamed from the Vinli device to the platform, each snapshot is evaluated by the Event Service to see if the new information causes the device to leave or enter the boundaries of a given rule.  This can get a bit complicated, especially as the rules your application need grow.  The important thing to remember is that a Rule represents a continuity of states that the vehicle is either inside of (covered) or outside of (not covered).
 
 
-### Rules
+Rules
+~~~~~
 
 A Rule is a set of conditions (Boundaries) specified for a particular Device or Group.  Each Rule is evaluated when sufficient data is available for the corresponding Device or a member of the corresponding Group.  The state of a Rule as it pertains to a particular Device is maintained by the Event Services.  (This can be queried using the Device State Service described below.)  When creating a Rule, your application must include a URL that will be called when the state of the Rule for a particular device changes.
 
@@ -20,7 +21,8 @@ In a nutshell:
 * If a Rule changes state from "covered" to "uncovered" or vice versa, the notification settings on the rule are used to notify your application of the state change.
 
 
-### Boundaries
+Boundaries
+~~~~~~~~~~
 
 Rules consist of one or more Boundaries (individual conditions), and each of these boundaries can be either "parametric" or "geospatial."  A geospatial boundary, as the name suggests, is one that defines a specific area on the surface of the Earth.  This is referenced by by a single point and a radius, thus defining a particular circular area on the planet.  A parametric boundary is one that defines a specific range for a particular vehicle parameter (i.e. RPM between 2000 and 4000).  Parametric boundaries may also be open-ended (i.e. RPM greater than 3500).
 
@@ -33,10 +35,12 @@ There are a few important considerations when constructing the boundaries for a 
 * For the same reason, a rule may have no more than one geospatial boundary (or none at all).
 
 
-### Notifications
+Notifications
+~~~~~~~~~~~~~
 
 When a device moves from being covered by a rule to being not covered (or vice versa), an event is generated and a notification is triggered.  The `notificationUrl` of the rule is called via POST with a payload containing data regarding the event, rule, device, and snapshot that generated the notification.  The following is an example of the payload submitted for a particular rule (in this example this would have been POSTed to https://api.myapp.com/vinli_notifications):
 
+.. code-block:: json
 
     {
       "snapshot": {

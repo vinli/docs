@@ -1,23 +1,28 @@
 Rule Service
-------------
+~~~~~~~~~~~~
 
 The Rule Service allows your application to manage the rules for devices associated with it.
 
 It's important to note that Rules are immutable.  Once they are created, they cannot be modified; they can only be deleted and another rule created.  This is designed this way such that the continuity of the Rule and the Vehicles whose state is maintained for this rule remains consistent.  The Vehicle is allowed to move in space, but the Rule is not.
 
 
-### List all Rules
+List all Rules
+``````````````
 
 Returns a paginated list of all rules for your Application.
 
+Request
++++++++
 
-#### Request
+.. code-block:: json
 
       GET https://events.vin.li/api/v1/rules
       Accept: application/json
 
-#### Response
+Response
+++++++++
 
+.. code-block:: json
 
       HTTP/1.1 200 OK
       Content-Type: application/json
@@ -57,16 +62,21 @@ Returns a paginated list of all rules for your Application.
       }
 
 
-### List all Rules for a Device
+List all Rules for a Device
+```````````````````````````
 
+Request
++++++++
 
-#### Request
+.. code-block:: json
 
       GET https://events.vin.li/api/v1/devices/602c6490-d7a3-11e3-9c1a-0800200c9a66/rules
       Accept: application/json
 
-#### Response
+Response
+++++++++
 
+.. code-block:: json
 
       HTTP/1.1 200 OK
       Content-Type: application/json
@@ -106,16 +116,21 @@ Returns a paginated list of all rules for your Application.
       }
 
 
-### Get a Specific Rule
+Get a Specific Rule
+```````````````````
 
+Request
++++++++
 
-#### Request
+.. code-block:: json
 
       GET https://events.vin.li/api/v1/rules/68d489c0-d7a2-11e3-9c1a-0800200c9a66
       Accept: application/json
 
-#### Response
+Response
+++++++++
 
+.. code-block:: json
 
       HTTP/1.1 200 OK
       Content-Type: application/json
@@ -152,11 +167,13 @@ Returns a paginated list of all rules for your Application.
       }
 
 
-### Create a Rule for a Device
+Create a Rule for a Device
+``````````````````````````
 
+Request
++++++++
 
-#### Request
-
+.. code-block:: json
 
       POST https://events.vin.li/api/v1/devices/602c6490-d7a3-11e3-9c1a-0800200c9a66/rules
       Accept: application/json
@@ -189,8 +206,10 @@ Returns a paginated list of all rules for your Application.
       }
 
 
-#### Response
+Response
+++++++++
 
+.. code-block:: json
 
       HTTP/1.1 201 CREATED
       Content-Type: application/json
@@ -228,15 +247,20 @@ Returns a paginated list of all rules for your Application.
       }
 
 
-### Delete a Rule
+Delete a Rule
+`````````````
 
+Request
++++++++
 
-#### Request
+.. code-block:: json
 
       DELETE https://events.vin.li/api/v1/rules/68d489c0-d7a2-11e3-9c1a-0800200c9a66
 
+Response
+++++++++
 
-#### Response
+.. code-block:: json
 
       HTTP/1.1 204 NO CONTENT
 
