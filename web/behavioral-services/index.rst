@@ -10,3 +10,8 @@ The results of these analysis are "Report Cards" for both a single Trip and for 
 * **Driver Behavior** - the risk based on driving habits detected from the vehicle telemetry including aggressive inputs, erratic driving, speeding, etc.
 * **Vehicle Condition** - the risk based on data gathered about vehicle's maintenance condition
 * **Travel Patterns** - the risk based on where the driver travels most frequently
+
+.. toctree::
+   :maxdepth: 1
+
+   report-card-service
