@@ -9,6 +9,7 @@ Vinli Developer Documentation
 
     The documentation is split between each service of the Vinli Platform:
 
+`General`_
 
 `Platform Services`_
     The Platform Services offered allow access and control over devices, vehicles, and their relationships to your application in addition to some administrative access to transactions.
@@ -33,6 +34,7 @@ Vinli Developer Documentation
 `Saftey Services`_
     The Vinli Device is able to detect when a collision occurs based on internal sensor and select vehicle telemetry data. Using Vinli's Safety Services, your application can set up notification settings, list collision history, and retrieve detailed collision details.
 
+.. _General: web/general/index.html
 .. _Platform Services: web/platform-services/index.html
 .. _Telemetry Services: web/telemetry-services/index.html
 .. _Event Services: web/event-services/index.html
@@ -46,6 +48,14 @@ Find a bug, typo, or just want to make an improvement? This documentation is ope
 
 Contents
 --------
+
+General
+~~~~~~~~~~~~~~~~~
+
+.. toctree::
+   :maxdepth: 2
+
+   web/general/index
 
 Platform Services
 ~~~~~~~~~~~~~~~~~
