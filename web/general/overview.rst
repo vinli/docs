@@ -1,6 +1,5 @@
-Overview
+General
 ========
-
 
 The Vinli Web API provides access over HTTP/SSL to the data collected from the Vinli devices.  This set of tools provides two tiers of services for your applications to consume.  Tier 1 provides access and functionality around the "raw" data gathered from your customers' devices.  These include:
 

@@ -1,5 +1,5 @@
 Authentication
---------------
+~~~~~~~~~~~~~~
 
 All calls to the Vinli Platform must be authenticated by an Application.  Each Application is assigned an App ID and an App Secret when it is created.  Both of these are required for an API call to be authenticated.
 
@@ -12,6 +12,8 @@ Each request must include the App ID and App Secret in the Authentorization head
 
 could request a list of all of its Devices using CURL with
 
+.. code-block:: json
+
     curl -u c87d5be0-2e69-11e4-8c21-0800200c9a66:HKLFFoSILb8VHFJD https://platform.vin.li/api/v1/devices
 
 and CURL will take care of setting the Authorization header.  Almost all HTTP libraries you will encounter while writing your application handle BasicAuth for you given the username and password.  In case you need to implement it yourself for some reason follow the steps below to generate the header value:
@@ -22,13 +24,15 @@ and CURL will take care of setting the Authorization header.  Almost all HTTP li
 
 For the example above the Authorization header would be sent as:
 
+.. code-block:: json
+
     Authorization: Basic Yzg3ZDViZTAtMmU2OS0xMWU0LThjMjEtMDgwMDIwMGM5YTY2OkhLTEZGb1NJTGI4VkhGSkQ=
 
 It should be obvious but bear repeating that your App Secret should be kept safe and rotated often.  You can reset the secret from the App Management page of the Developer Portal.
 
 
 Authentication for User Actions
--------------------------------
+```````````````````````````````
 
 Authentication for actions on behalf of users, such as adding their device to your application, is handled using OAuth 2. To get started with the OAuth 2 workflow, developers must first create a client within their app for each platform they would like to support.  This is done via the Developer Portal.  In general, there are two types of OAuth 2 clients, those that expect response tokens and those that expect response codes.
 
