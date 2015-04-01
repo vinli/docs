@@ -14,12 +14,14 @@ Returns a Report Card based on historical data for a specified week of the year.
 
 In some cases, not enough information was gathered during the course of a week to generate a Report Card.  In these cases, the grades will be reported as "I" (for "Incomplete" to keep the school report card metaphore going).
 
-** Request **
+Request
++++++++
 
       GET https://behavior.vin.li/api/v1/devices/602c6490-d7a3-11e3-9c1a-0800200c9a66/report_card?week=2014-W16
       Accept: application/json
 
-** Response **
+Response
+++++++++
 
 
       HTTP/1.1 200 OK
@@ -59,12 +61,14 @@ Lifetime Report Card for a Device
 
 Returns a Report Card based on all historical data available for a given Device.
 
-** Request **
+Request
++++++++
 
       GET https://behavior.vin.li/api/v1/devices/602c6490-d7a3-11e3-9c1a-0800200c9a66/report_card
       Accept: application/json
 
-** Response **
+Response
+++++++++
 
 
       HTTP/1.1 200 OK
@@ -108,12 +112,14 @@ In some cases, the Trip is too short to generate the data necessary for the Repo
 
 Note that the `travelPattern` score reported for a given Trip is actually based on a rolling window of Trips as a multiple Trips are required in order to determine this score.
 
-** Request **
+Request
++++++++
 
       GET https://behavior.vin.li/api/v1/trips/1f6ed1a0-6044-4505-a828-715c0f3eccf7/report_card
       Accept: application/json
 
-** Response **
+Response
+++++++++
 
 
       HTTP/1.1 200 OK
