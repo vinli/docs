@@ -17,12 +17,15 @@ In some cases, not enough information was gathered during the course of a week t
 Request
 +++++++
 
+.. code-block:: json
+
       GET https://behavior.vin.li/api/v1/devices/602c6490-d7a3-11e3-9c1a-0800200c9a66/report_card?week=2014-W16
       Accept: application/json
 
 Response
 ++++++++
 
+.. code-block:: json
 
       HTTP/1.1 200 OK
       Content-Type: application/json
@@ -64,12 +67,15 @@ Returns a Report Card based on all historical data available for a given Device.
 Request
 +++++++
 
+.. code-block:: json
+
       GET https://behavior.vin.li/api/v1/devices/602c6490-d7a3-11e3-9c1a-0800200c9a66/report_card
       Accept: application/json
 
 Response
 ++++++++
 
+.. code-block:: json
 
       HTTP/1.1 200 OK
       Content-Type: application/json
@@ -115,12 +121,15 @@ Note that the `travelPattern` score reported for a given Trip is actually based 
 Request
 +++++++
 
+.. code-block:: json
+
       GET https://behavior.vin.li/api/v1/trips/1f6ed1a0-6044-4505-a828-715c0f3eccf7/report_card
       Accept: application/json
 
 Response
 ++++++++
 
+.. code-block:: json
 
       HTTP/1.1 200 OK
       Content-Type: application/json
