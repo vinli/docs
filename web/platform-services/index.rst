@@ -8,5 +8,4 @@ The Platform Services offered allow access and control over devices, vehicles, a
 
    device-service
    vehicle-service
-   group-service
    transaction-service
