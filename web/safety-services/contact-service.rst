@@ -1,5 +1,5 @@
-## Emergency Contact Service
-
+Emergency Contact Service
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Vinli's Safety Services provide information to a device as to what to do in the event of a collision.  The device will attempt to send SMS messages to each of the contacts specified here in order of the priority.
 
@@ -10,17 +10,23 @@ One contact can be labeled as a voice contact.  If the associated Vinli device i
 Note that changes to the Emergency Contacts for a Device will not take effect immediately.  The Device will attempt to load update Emergency Contacts at each startup, but in cases where cellular coverage is not available, it may be several startup before this information can be updated.
 
 
-### Get a list of Emergency Contacts for a Device
+Get a list of Emergency Contacts for a Device
+`````````````````````````````````````````````
 
 Returns a list of Emergency Contacts for a given device in order of ascending priority value.
 
-#### Request
+Request
++++++++
+
+.. code-block:: json
 
       GET https://safety.vin.li/api/v1/devices/8b8a1810-d6d8-11e3-9c1a-0800200c9a66/emergency_contacts
       Accept: application/json
 
-#### Response
+Response
+++++++++
 
+.. code-block:: json
 
       HTTP/1.1 200 OK
       Content-Type: application/json
@@ -53,12 +59,13 @@ Returns a list of Emergency Contacts for a given device in order of ascending pr
       }
 
 
+Create an Emergency Contact for a Device
+````````````````````````````````````````
 
-### Create an Emergency Contact for a Device
+Request
++++++++
 
-
-#### Request
-
+.. code-block:: json
 
       POST https://safety.vin.li/api/v1/devices/8b8a1810-d6d8-11e3-9c1a-0800200c9a66/emergency_contacts
       Accept: application/json
@@ -73,8 +80,10 @@ Returns a list of Emergency Contacts for a given device in order of ascending pr
       }
 
 
-#### Response
+Response
+++++++++
 
+.. code-block:: json
 
       HTTP/1.1 201 CREATED
       Content-Type: application/json
@@ -95,11 +104,13 @@ Returns a list of Emergency Contacts for a given device in order of ascending pr
 
 
 
-### Update an Emergency Contact for a Device
+Update an Emergency Contact for a Device
+````````````````````````````````````````
 
+Request
++++++++
 
-#### Request
-
+.. code-block:: json
 
       PUT https://safety.vin.li/api/v1/devices/8b8a1810-d6d8-11e3-9c1a-0800200c9a66/emergency_contacts/a9beede5-a282-4a94-9a50-9ad8a280570f
       Accept: application/json
@@ -113,8 +124,10 @@ Returns a list of Emergency Contacts for a given device in order of ascending pr
       }
 
 
-#### Response
+Response
+++++++++
 
+.. code-block:: json
 
       HTTP/1.1 200 OK
       Content-Type: application/json
@@ -134,14 +147,20 @@ Returns a list of Emergency Contacts for a given device in order of ascending pr
       }
 
 
-### Delete an Emergency Contact
+Delete an Emergency Contact
+```````````````````````````
 
+Request
++++++++
 
-#### Request
+.. code-block:: json
 
       DELETE https://safety.vin.li/api/v1/devices/8b8a1810-d6d8-11e3-9c1a-0800200c9a66/emergency_contacts/a9beede5-a282-4a94-9a50-9ad8a280570f
 
 
-#### Response
+Response
+++++++++
+
+.. code-block:: json
 
       HTTP/1.1 204 NO CONTENT
