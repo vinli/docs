@@ -33,13 +33,13 @@ Vinli Developer Documentation
 `Saftey Services`_
     The Vinli Device is able to detect when a collision occurs based on internal sensor and select vehicle telemetry data. Using Vinli's Safety Services, your application can set up notification settings, list collision history, and retrieve detailed collision details.
 
-.. _Platform Services: platform-services/index.html
-.. _Telemetry Services: telemetry-services/index.html
-.. _Event Services: event-services/index.html
-.. _Diagnostic Services: diagnostic-services/index.html
-.. _Trip Services: trip-services/index.html
-.. _Behavioral Services: behavioral-services/index.html
-.. _Saftey Services: saftey-services/index.html
+.. _Platform Services: web/platform-services/index.html
+.. _Telemetry Services: web/telemetry-services/index.html
+.. _Event Services: web/event-services/index.html
+.. _Diagnostic Services: web/diagnostic-services/index.html
+.. _Trip Services: web/trip-services/index.html
+.. _Behavioral Services: web/behavioral-services/index.html
+.. _Saftey Services: web/saftey-services/index.html
 
 Find a bug, typo, or just want to make an improvement? This documentation is open source and available on `GitHub <https://github.com/vinli/docs/>`__. We like contributions!
 
@@ -53,7 +53,7 @@ Platform Services
 .. toctree::
    :maxdepth: 2
 
-   platform-services/index
+   web/platform-services/index
 
 Telemetry Services
 ~~~~~~~~~~~~~~~~~~
@@ -61,7 +61,7 @@ Telemetry Services
 .. toctree::
    :maxdepth: 3
 
-   telemetry-services/index
+   web/telemetry-services/index
 
 Event Services
 ~~~~~~~~~~~~~~
@@ -69,7 +69,7 @@ Event Services
 .. toctree::
   :maxdepth: 3
 
-  event-services/index
+  web/event-services/index
 
 Diagnostic Services
 ~~~~~~~~~~~~~~~~~~~
@@ -77,7 +77,7 @@ Diagnostic Services
 .. toctree::
   :maxdepth: 3
 
-  diagnostic-services/index
+  web/diagnostic-services/index
 
 Trip Services
 ~~~~~~~~~~~~~
@@ -85,7 +85,7 @@ Trip Services
 .. toctree::
   :maxdepth: 3
 
-  cloud-and-lan-connected-device-types-developers-guide/index
+  web/trip-services/index
 
 Behavioral Services
 ~~~~~~~~~~~~~~~~~~~
@@ -93,7 +93,7 @@ Behavioral Services
 .. toctree::
   :maxdepth: 3
 
-  behavioral-services/index
+  web/behavioral-services/index
 
 Saftey Services
 ~~~~~~~~~~~~~~~
@@ -101,6 +101,6 @@ Saftey Services
 .. toctree::
    :maxdepth: 2
 
-   saftey-services/index
+   web/saftey-services/index
 
 
