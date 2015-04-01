@@ -1,65 +1,85 @@
-html_theme = 'default'
-html_style = 'css/vinli.css'
-html_static_path = ['_static']
-
-# -*- coding: utf-8 -*-
-#
-import os
 import sys
+import os
 
-sys.path.insert(0, os.path.abspath('../readthedocs'))
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings.sqlite")
-from django.conf import settings
+# -- General configuration ------------------------------------------------
 
-
-sys.path.append(os.path.abspath('_ext'))
+# Add any Sphinx extension module names here, as strings. They can be
+# extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
+# ones.
 extensions = [
-    'sphinx.ext.autodoc',
-    'sphinx.ext.intersphinx',
-    'sphinx_http_domain',
-    'djangodocs',
+    'sphinx.ext.todo',
 ]
+
+# Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
+
+# The suffix of source filenames.
 source_suffix = '.rst'
+
+# The encoding of source files.
+#source_encoding = 'utf-8-sig'
+
+# The master toctree document.
 master_doc = 'index'
-project = u'Read The Docs'
-copyright = u'2010, Eric Holscher, Charlie Leifer, Bobby Grace'
+
+# General information about the project.
+project = u'Vinli Documentation'
+copyright = u'Vinli'
+
+# The version info for the project you're documenting, acts as replacement for
+# |version| and |release|, also used in various other places throughout the
+# built documents.
+#
+# The short X.Y version.
 version = '1.0'
+# The full version, including alpha/beta/rc tags.
 release = '1.0'
-exclude_patterns = ['_build']
-default_role = 'obj'
+
+# The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
-intersphinx_mapping = {
-    'python': ('http://python.readthedocs.org/en/latest/', None),
-    'django': ('http://django.readthedocs.org/en/latest/', None),
-    'sphinx': ('http://sphinx.readthedocs.org/en/latest/', None),
+
+
+# -- Options for HTML output ----------------------------------------------
+
+# The theme to use for HTML and HTML Help pages.  See the documentation for
+# a list of builtin themes.
+#html_theme = []
+
+# Theme options are theme-specific and customize the look and feel of a theme
+# further.  For a list of options available for each theme, see the
+# documentation.
+html_theme_options = {
+  "relbarbgcolor": "red"
 }
-# This doesn't exist since we aren't shipping any static files ourselves.
-#html_static_path = ['_static']
-htmlhelp_basename = 'ReadTheDocsdoc'
-latex_documents = [
-    ('index', 'ReadTheDocs.tex', u'Read The Docs Documentation',
-     u'Eric Holscher, Charlie Leifer, Bobby Grace', 'manual'),
-]
-man_pages = [
-    ('index', 'read-the-docs', u'Read The Docs Documentation',
-     [u'Eric Holscher, Charlie Leifer, Bobby Grace'], 1)
-]
 
-exclude_patterns = [
-    #'api' # needed for ``make gettext`` to not die.
-]
+# Add any paths that contain custom themes here, relative to this directory.
+#html_theme_path = []
 
-language = 'en'
+# The name for this set of Sphinx documents.  If None, it defaults to
+# "<project> v<release> documentation".
+#html_title = None
 
-locale_dirs = [
-    'locale/',
-]
-gettext_compact = False
+# A shorter title for the navigation bar.  Default is the same as html_title.
+#html_short_title = None
+
+# The name of an image file (relative to this directory) to place at the top
+# of the sidebar.
+#html_logo = None
+
+# The name of an image file (within the static path) to use as favicon of the
+# docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
+# pixels large.
+#html_favicon = None
+
+# Add any paths that contain custom static files (such as style sheets) here,
+# relative to this directory. They are copied after the builtin static files,
+# so a file named "default.css" will overwrite the builtin "default.css".
 
 
-on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
-if not on_rtd:  # only import and set the theme if we're building docs locally
-    import sphinx_rtd_theme
-    html_theme = 'sphinx_rtd_theme'
-    html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+# Add any extra paths that contain custom files (such as robots.txt or
+# .htaccess) here, relative to this directory. These files are copied
+# directly to the root of the documentation.
+#html_extra_path = []
+
+# If true, "Created using Sphinx" is shown in the HTML footer. Default is True.
+html_show_sphinx = False
