@@ -44,7 +44,7 @@ pygments_style = 'sphinx'
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 # html_theme = []
-html_static_path = ['_static']
+html_static_path = ['custom']
 html_style = 'css/vinli.css'
 
 # Theme options are theme-specific and customize the look and feel of a theme
