@@ -1,13 +1,15 @@
 Location History Service
-------------------------
-
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Returns the latest `limit` number of points of the device's location before or at the `until` time and after the `since` time. If the `until` time is not specified, then the service will return snapshots until the current time when the call is made. The `location` property contains a valid GeoJSON FeatureCollection object consisting of Point features for each location. The timestamp for each location is the in the `properties` field of the feature.
 
 Additionally, selected or all parameters that were recorded at each location can also be included in the `properties` field. When `all` is specified, this method acts just like the Device Messages method below, but it is formatted as valid GeoJSON.
 
 
-#### Request
+Request
++++++++
+
+.. code-block:: json
 
       GET https://telemetry.vin.li/api/v1/devices/27a2ac50-d7bd-11e3-9c1a-0800200c9a66/locations?fields=rpm,vehicleSpeed
       Accept: application/json
@@ -18,7 +20,10 @@ Additionally, selected or all parameters that were recorded at each location can
 * `limit` - Results will contain no more than `limit` number of snapshots
 
 
-#### Response
+Response
+++++++++
+
+.. code-block:: json
 
       {
         "locations" : {

@@ -1,14 +1,18 @@
 Telemetry Messages Service
---------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-### Get a List of Telemetry Messages
+Get a List of Telemetry Messages
+````````````````````````````````
 
 Returns the latest `limit` number of telemetry messages that occurred before or at the `until` time and after the `since` time. If the `until` time is not specified, then the service will return snapshots until the current time when the call is made.
 
 These messages are sent at least every five seconds and include the latest value of parameters captured by the Vinli device since the last message sent.
 
 
-#### Request
+Request
++++++++
+
+.. code-block:: json
 
       GET https://telemetry.vin.li/api/v1/devices/27a2ac50-d7bd-11e3-9c1a-0800200c9a66/messages
       Accept: application/json
@@ -18,7 +22,10 @@ These messages are sent at least every five seconds and include the latest value
 * `limit` - Results will contain no more than `limit` number of snapshots
 
 
-#### Response
+Response
+++++++++
+
+.. code-block:: json
 
       HTTP/1.1 200 OK
       Content-Type: application/json
@@ -72,19 +79,25 @@ These messages are sent at least every five seconds and include the latest value
 
 
 
-### Get a Specific Telemetry Message
-
+Get a Specific Telemetry Message
+````````````````````````````````
 
 Returns a particular message by `messageId`. This is primarily used when a specific message is referenced by a different service.
 
 
-#### Request
+Request
++++++++
+
+.. code-block:: json
 
       GET https://telemetry.vin.li/api/v1/devices/27a2ac50-d7bd-11e3-9c1a-0800200c9a66/messages/2f11d630-141e-11e4-b717-5977b6c38d23
       Accept: application/json
 
 
-#### Response
+Response
+++++++++
+
+.. code-block:: json
 
       HTTP/1.1 200 OK
       Content-Type: application/json
