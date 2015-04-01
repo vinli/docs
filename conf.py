@@ -45,7 +45,6 @@ pygments_style = 'sphinx'
 # a list of builtin themes.
 # html_theme = []
 html_static_path = ['_static']
-html_theme = 'sphinx_rtd_theme'
 html_style = 'css/vinli.css'
 
 # Theme options are theme-specific and customize the look and feel of a theme
