@@ -240,7 +240,7 @@ Response
             "smsPhoneNumber": "2145551212"
           },
           "links" : {
-            "self" : "https://events.vin.li/api/v1/rules/68d489c0-d7a2-11e3-9c1a-0800200c9a66"
+            "self" : "https://events.vin.li/api/v1/rules/68d489c0-d7a2-11e3-9c1a-0800200c9a66",
             "events" : "/api/v1/rules/68d489c0-d7a2-11e3-9c1a-0800200c9a66/events"
           }
         }
