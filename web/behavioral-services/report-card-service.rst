@@ -41,14 +41,14 @@ Response
             "major" : "C",
             "minor" : "+",
             "factors" : {
-              "good" : [ "acceleration", "turns" ]
+              "good" : [ "acceleration", "turns" ],
               "bad" : [ "braking" ]
           },
           "vehicleCondition" : {
             "major" : "A",
             "minor" : "",
             "factors" : {
-              "good" : [ "brakesAndTires", "engineEfficiency" ]
+              "good" : [ "brakesAndTires", "engineEfficiency" ],
               "bad" : []
           },
           "travelPattern" : {
@@ -91,14 +91,14 @@ Response
             "major" : "C",
             "minor" : "+",
             "factors" : {
-              "good" : [ "acceleration", "turns" ]
+              "good" : [ "acceleration", "turns" ],
               "bad" : [ "braking" ]
           },
           "vehicleCondition" : {
             "major" : "A",
             "minor" : "",
             "factors" : {
-              "good" : [ "brakesAndTires", "engineEfficiency" ]
+              "good" : [ "brakesAndTires", "engineEfficiency" ],
               "bad" : []
           },
           "travelPattern" : {
@@ -146,14 +146,14 @@ Response
             "major" : "C",
             "minor" : "-",
             "factors" : {
-              "good" : [ "acceleration"]
+              "good" : [ "acceleration"],
               "bad" : [ "braking", "speed" ]
           },
           "vehicleCondition" : {
             "major" : "B",
             "minor" : "",
             "factors" : {
-              "good" : [ "brakesAndTires" ]
+              "good" : [ "brakesAndTires" ],
               "bad" : []
           },
           "travelPattern" : {
