@@ -55,7 +55,7 @@ Response
           },
           ...
         ],
-        meta: {
+        "meta": {
           "pagination" : {
             "total" : 24,
             "limit" : 10,
@@ -102,7 +102,7 @@ Response
           "make" : "Toyota",
           "model" : "Camry",
           "trim" : "SE V6",
-          "vin" : "2B4GP44R6WR942762"
+          "vin" : "2B4GP44R6WR942762",
           "start": "2014-08-25T02:00:01.542Z",
           "links" : {
             "self" : "https://platform.vin.li/api/v1/vehicles/67e1e940-d6da-11e3-9c1a-0800200c9a66"
