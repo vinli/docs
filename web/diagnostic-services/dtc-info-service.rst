@@ -46,7 +46,7 @@ Response
           "possibleResolutions" : [
             "Replace O2 Sensor (Bank 1)",
             ...
-          ]
+          ],a
           "severity" : "low"
         }
       }
