@@ -1,7 +1,7 @@
 Vehicle Service
 ~~~~~~~~~~~~~~~
 
-Vinli keeps track of which vehicle a device is or has been plugged into and provides detailed information regarding thee specifics about the vehicle.  This gives your application the chance to better personlize the experience of a user as well as the information necessary to classify users and their data by vehicle.  You are only allowed to see vehicles that are associated with a device that you have registered with your app, and you cannot see other devices that have been plugged into this vehicle.
+Vinli keeps track of which vehicle a device is or has been plugged into and provides detailed information regarding thee specifics about the vehicle.  This gives your application the chance to better personlize the experience of a user as well as the information necessary to classify users and their data by vehicle.  You are only allowed to see vehicles that are associated with a device to which you're application has access.
 
 Vehicle-device assocation is time-based.  A device that is plugged into one vehicle will be associated with that vehicle until it is plugged into a differnt vehicle.  Vinli keeps track of this history for you.  In the case of a device that is shared between multiple vehicles, the same vehicle will appear multiple times in the history.
 
@@ -40,17 +40,21 @@ Response
             "model" : "Camry",
             "trim" : "SE V6",
             "vin" : "2B4GP44R6WR942762",
-            "start": "2014-08-25T02:00:01.542Z",
             "links" : {
-              "self" : "https://platform.vin.li/api/v1/vehicles/67e1e940-d6da-11e3-9c1a-0800200c9a66"
+              "self" : "https://platform.vin.li/api/v1/vehicles/67e1e940-d6da-11e3-9c1a-0800200c9a66",
+              "trips" : "https://trip.vin.li/api/v1/vehicles/67e1e940-d6da-11e3-9c1a-0800200c9a66/trips",
+              "collisions" : "https://safety.vin.li/api/v1/vehicles/67e1e940-d6da-11e3-9c1a-0800200c9a66/collisions",
+              "reportCards" : "https://behavioral.vin.li/api/v1/vehicles/67e1e940-d6da-11e3-9c1a-0800200c9a66/reportCards"
             }
           },
           {
             "id" : "2a88b0f0-d6db-11e3-9c1a-0800200c9a66",
             "vin" : "JE3BW50W4NZ676124",
-            "start" : "2014-08-26T14:03:34.893Z",
             "links" : {
-              "self" : "https://platform.vin.li/api/v1/vehicles/67e1e940-d6da-11e3-9c1a-0800200c9a66"
+              "self" : "https://platform.vin.li/api/v1/vehicles/2a88b0f0-d6db-11e3-9c1a-0800200c9a66",
+              "trips" : "https://trip.vin.li/api/v1/vehicles/2a88b0f0-d6db-11e3-9c1a-0800200c9a66/trips",
+              "collisions" : "https://safety.vin.li/api/v1/vehicles/2a88b0f0-d6db-11e3-9c1a-0800200c9a66/collisions",
+              "reportCards" : "https://behavioral.vin.li/api/v1/vehicles/2a88b0f0-d6db-11e3-9c1a-0800200c9a66/reportCards"
             }
           },
           ...
@@ -103,9 +107,11 @@ Response
           "model" : "Camry",
           "trim" : "SE V6",
           "vin" : "2B4GP44R6WR942762",
-          "start": "2014-08-25T02:00:01.542Z",
           "links" : {
-            "self" : "https://platform.vin.li/api/v1/vehicles/67e1e940-d6da-11e3-9c1a-0800200c9a66"
+            "self" : "https://platform.vin.li/api/v1/vehicles/67e1e940-d6da-11e3-9c1a-0800200c9a66",
+            "trips" : "https://trip.vin.li/api/v1/vehicles/67e1e940-d6da-11e3-9c1a-0800200c9a66/trips",
+            "collisions" : "https://safety.vin.li/api/v1/vehicles/67e1e940-d6da-11e3-9c1a-0800200c9a66/collisions",
+            "reportCards" : "https://behavioral.vin.li/api/v1/vehicles/67e1e940-d6da-11e3-9c1a-0800200c9a66/reportCards"
           }
         }
       }

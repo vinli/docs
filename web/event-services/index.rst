@@ -8,6 +8,6 @@ As data is streamed from the Vinli device to the platform, each snapshot is eval
    :maxdepth: 1
 
    overview
-   rule-service
    event-service
-   device-state-service
+   subscription-service
+   notification-service

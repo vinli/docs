@@ -10,8 +10,9 @@
 ** Services Service
 * Telemetry Services
 * Event Servives
-** Rule Service
 ** Event Service
-** Device State Service
+** Subscription Service
+** Notification Service
+* Rule Service
 * Diagnostic Services
 ** DTC Info Service

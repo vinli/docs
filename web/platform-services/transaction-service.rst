@@ -27,13 +27,20 @@ Response
       {
         "transactions" : [
           {
-            "id": "f7ef31e5-9db0-438c-9328-927f66ceab77",
-            "timestamp": "2014-08-25T05:26:55.426Z",
-            "path": "https://telemetry.vin.li/api/v1/devices/27a2ac50-d7bd-11e3-9c1a-0800200c9a66/snapshots?fields=rpm,vehicleSpeed,calculatedLoadValue,fuelType",
-            "service": "telemetry",
+            "id": "e7924989-e942-4ebb-a566-427984b91af1",
+            "timestamp": "2015-06-22T00:30:19.455Z",
+            "path": "/api/v1/devices?limit=1",
             "statusCode": 200,
             "method": "GET",
-            "deviceId": "27a2ac50-d7bd-11e3-9c1a-0800200c9a66"
+            "service": "vinli-platform-service"
+          },
+          {
+            "id": "b7d746ce-1794-4796-9dc9-30ae091d1ce6",
+            "timestamp": "2015-06-20T21:41:13.520Z",
+            "path": "/api/v1/devices/c38ce5f2-0c4d-4d82-b301-fd87af5fcbd3/locations?limit=20",
+            "service": "vinli-telemetry-service",
+            "method": "GET",
+            "statusCode": 200
           },
           ...
         ],
