@@ -1,6 +1,8 @@
 Notifications
 ~~~~~~~~~~~~~
 
+Each time a subscription is triggered by an event, a new Notification is created that represents the event, subscription, and subsequent actions taken by the Vinli platform to notify your application.
+
 Notification state is useful in debugging notification handlers on your App.  This `state`, `responseCode`, and `response` properties will inform you as to the result of Event Services' attempt to call the notification URL.  A notification will be linked to one subscription and may contain additional metadata depending on the trigger of the subscription.  In the case of subscriptions to Rules, this metadata
 
 Fields included in a notification response include:
