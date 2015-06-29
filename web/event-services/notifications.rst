@@ -1,41 +1,182 @@
 Notifications
 ~~~~~~~~~~~~~
 
-Notification state is useful in debugging notification handlers on your App.  This state property (as well as the `response` property) will inform you as to the result of Event Services' attempt to call the notification URL.
+Notification state is useful in debugging notification handlers on your App.  This `state`, `responseCode`, and `response` properties will inform you as to the result of Event Services' attempt to call the notification URL.  A notification will be linked to one subscription and may contain additional metadata depending on the trigger of the subscription.  In the case of subscriptions to Rules, this metadata
+
+Fields included in a notification response include:
+
+* `id` - ID of the notification
+* `eventId` - ID of the event that triggered the notification
+* `eventType` - Type of the associated event
+* `eventTimestamp` - Time that the associated event occurred
+* `subscriptionId` - ID of the subscription that this notification is associated with
+* `url` - URL that was called by Event Service; this is copied from the subscription at the creation of the notification
+* `payload` - String of the payload exactly as it was posted to the above URL
+* `state` - Current state of the notification.  State values may include `created`, `queued`, `complete`, or `error`
+
+The `state` of a notification start as  `created` and moves to `queued` as soon as it is placed in the notification queue to be processed.  Once the notification has been posted to the callback URL, the state will be moved to `complete` if the HTTP transaction was completed and a response code in the 200s was received.  If the HTTP call is not able to be completed or a response code other than the 200s, the state will become `error`.
+
+If the notification is in the `complete` or `error` state, the fields below will be available in the response:
+
+* `responseCode` - HTTP code received from the URL above
+* `response` - String of the response from the URL above
+* `notifiedAt` - Time that the HTTP call was initiated
+* `respondedAt` - Time that the HTTP call was completed (if successful)
+
+### Get a specific Notification
+
+Request
++++++++
+
+.. code-block:: json
+
+      GET https://events.vin.li/api/v1/notifications/09704b59-83d9-44a5-a0f8-33d973bdac5e
+      Accept: application/json
 
 
-{
-    "notifications": [
-        {
-            "id": "c12418d5-d1c9-4470-96eb-a6cf52185230",
-            "eventId": "afe5b914-58ab-4701-8e24-56dccbda301a",
-            "eventType": "rule-leave",
-            "eventTimestamp": "2015-06-16T13:12:34.000Z",
-            "subscriptionId": "cedeb7c2-cfd2-4087-8976-3bb3bad8cbb3",
-            "responseCode": 201,
-            "response": "{\"message\":{\"id\":\"SMd19c47b4ca2c4dd7964ad4b70cb97f9a\",\"to\":\"+15042207366\",\"from\":\"+12143909033\",\"body\":\"From Beagle: Test Device has left \\\"Marlee\\\"\",\"status\":\"queued\",\"errorCode\":null,\"errorMessage\":null}}",
-            "url": "https://beagle-dev.vin.li/api/v1/notifications",
-            "payload": "{\"notification\":{\"event\":{\"id\":\"afe5b914-58ab-4701-8e24-56dccbda301a\",\"timestamp\":\"2015-06-16T13:12:34.000Z\",\"deviceId\":\"fe4bbc20-cc90-11e3-8e05-f3abac5b60ff\",\"stored\":\"2015-06-16T13:12:35.825Z\",\"storageLatency\":1825,\"eventType\":\"rule-leave\",\"meta\":{\"direction\":\"leave\",\"firstEval\":false,\"rule\":{\"id\":\"41d68c9e-2914-4923-8593-3abdf299537c\",\"name\":\"[geofence] Marlee\",\"deviceId\":\"fe4bbc20-cc90-11e3-8e05-f3abac5b60ff\",\"boundaries\":[],\"evaluated\":true,\"covered\":false,\"createdAt\":\"2015-06-16T12:54:09.601Z\",\"links\":{\"self\":\"https://rules-dev.vin.li/api/v1/rules/41d68c9e-2914-4923-8593-3abdf299537c\",\"events\":\"https://events-dev.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b60ff/events?type=rule&objectId=41d68c9e-2914-4923-8593-3abdf299537c\",\"subscriptions\":\"https://events-dev.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b60ff/subscriptions?objectType=rule&objectId=41d68c9e-2914-4923-8593-3abdf299537c\"}},\"message\":{\"id\":\"cd339f3d-b0d8-49a9-a87d-ca7ee3a937e2\",\"timestamp\":\"2015-06-16T13:12:34.000Z\",\"snapshot\":{\"location\":{\"lat\":32.9745468870112,\"lon\":-96.9689222519258},\"vehicleSpeed\":0}}},\"object\":{\"id\":\"41d68c9e-2914-4923-8593-3abdf299537c\",\"type\":\"rule\",\"appId\":\"b75afd8f-7247-46e6-a0f9-04f187c9d9bd\"}},\"subscription\":{\"id\":\"cedeb7c2-cfd2-4087-8976-3bb3bad8cbb3\",\"deviceId\":\"fe4bbc20-cc90-11e3-8e05-f3abac5b60ff\",\"eventType\":\"rule-leave\",\"url\":\"https://beagle-dev.vin.li/api/v1/notifications\",\"object\":{\"id\":\"41d68c9e-2914-4923-8593-3abdf299537c\",\"type\":\"rule\"},\"appData\":\"{\\\"phoneNumber\\\":\\\"+15042207366\\\",\\\"body\\\":\\\"From Beagle: Test Device has left \\\\\\\"Marlee\\\\\\\"\\\",\\\"skipFirstEval\\\":true}\"}}}",
-            "state": "complete",
-            "notifiedAt": "2015-06-16T13:12:35.862Z",
-            "respondedAt": "2015-06-16T13:12:36.300Z",
-            "createdAt": "2015-06-16T13:12:35.842Z",
-            "links": {
-                "self": "https://events-dev.vin.li/api/v1/notifications/c12418d5-d1c9-4470-96eb-a6cf52185230",
-                "event": "https://events-dev.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b60ff/events/afe5b914-58ab-4701-8e24-56dccbda301a",
-                "subscription": "https://events-dev.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b60ff/subscriptions/cedeb7c2-cfd2-4087-8976-3bb3bad8cbb3"
-            }
-        }
-    ],
-    "meta": {
-        "pagination": {
-            "total": 1,
-            "limit": 20,
-            "offset": 0,
-            "links": {
-                "first": "https://events-dev.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b60ff/subscriptions/cedeb7c2-cfd2-4087-8976-3bb3bad8cbb3/notifications?offset=0&limit=20",
-                "last": "https://events-dev.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b60ff/subscriptions/cedeb7c2-cfd2-4087-8976-3bb3bad8cbb3/notifications?offset=0&limit=20"
-            }
-        }
-    }
-}
+Response
+++++++++
+
+.. code-block:: json
+
+      HTTP/1.1 200 OK
+      Content-Type: application/json
+
+      {
+          "notification": {
+              "id": "09704b59-83d9-44a5-a0f8-33d973bdac5e",
+              "eventId": "314d7fcd-d4d6-4b78-9804-b171db60790a",
+              "eventType": "rule-leave",
+              "eventTimestamp": "2015-06-16T13:12:34.000Z",
+              "subscriptionId": "a896ff7d-ca46-4bf4-af71-b9b1573c3ef1",
+              "state": "complete",
+              "responseCode": 201,
+              "response": "{\"status\":\"success\"}",
+              "url": "https://myapp.com/notifications",
+              "payload": "{\"notification\":{\"event\":{\"id\":\"314d7fcd-d4d6-4b78-9804-b171db60790a\",\"timestamp\":\"2015-06-16T13:12:34.000Z\",\"deviceId\":\"4bffefbb-9fba-43ee-aebe-ed7f7f2fae84\",\"stored\":\"2015-06-16T13:12:35.825Z\",\"storageLatency\":1825,\"eventType\":\"rule-leave\",\"meta\":{\"direction\":\"leave\",\"firstEval\":false,\"rule\":{\"id\":\"79f2e013-b6b9-44dd-9f34-4be5da971d7a\",\"name\":\"[geofence] Marlee\",\"deviceId\":\"4bffefbb-9fba-43ee-aebe-ed7f7f2fae84\",\"boundaries\":[],\"evaluated\":true,\"covered\":false,\"createdAt\":\"2015-06-16T12:54:09.601Z\",\"links\":{\"self\":\"https://rules.vin.li/api/v1/rules/79f2e013-b6b9-44dd-9f34-4be5da971d7a\",\"events\":\"https://events.vin.li/api/v1/devices/4bffefbb-9fba-43ee-aebe-ed7f7f2fae84/events?type=rule&objectId=79f2e013-b6b9-44dd-9f34-4be5da971d7a\",\"subscriptions\":\"https://events.vin.li/api/v1/devices/4bffefbb-9fba-43ee-aebe-ed7f7f2fae84/subscriptions?objectType=rule&objectId=79f2e013-b6b9-44dd-9f34-4be5da971d7a\"}},\"message\":{\"id\":\"cd339f3d-b0d8-49a9-a87d-ca7ee3a937e2\",\"timestamp\":\"2015-06-16T13:12:34.000Z\",\"snapshot\":{\"location\":{\"lat\":32.5536468870112,\"lon\":-96.1153222519258}}}},\"object\":{\"id\":\"79f2e013-b6b9-44dd-9f34-4be5da971d7a\",\"type\":\"rule\",\"appId\":\"b75afd8f-7247-46e6-a0f9-04f187c9d9bd\"}},\"subscription\":{\"id\":\"a896ff7d-ca46-4bf4-af71-b9b1573c3ef1\",\"deviceId\":\"4bffefbb-9fba-43ee-aebe-ed7f7f2fae84\",\"eventType\":\"rule-leave\",\"url\":\"https://myapp.com/notifications\",\"object\":{\"id\":\"79f2e013-b6b9-44dd-9f34-4be5da971d7a\",\"type\":\"rule\"},\"appData\":\"{\\\"message\\\":\\\"This is your app-specific data\\\"}\"}}}",
+              "notifiedAt": "2015-06-16T13:12:35.862Z",
+              "respondedAt": "2015-06-16T13:12:36.300Z",
+              "createdAt": "2015-06-16T13:12:35.842Z",
+              "links": {
+                  "self": "https://events.vin.li/api/v1/notifications/09704b59-83d9-44a5-a0f8-33d973bdac5e",
+                  "event": "https://events.vin.li/api/v1/devices/4bffefbb-9fba-43ee-aebe-ed7f7f2fae84/events/314d7fcd-d4d6-4b78-9804-b171db60790a",
+                  "subscription": "https://events.vin.li/api/v1/devices/4bffefbb-9fba-43ee-aebe-ed7f7f2fae84/subscriptions/a896ff7d-ca46-4bf4-af71-b9b1573c3ef1"
+              }
+          }
+      }
+
+### Get Notifications for a Subscription
+
+Request
++++++++
+
+.. code-block:: json
+
+      GET https://events.vin.li/api/v1/subscriptions/a896ff7d-ca46-4bf4-af71-b9b1573c3ef1/notifications
+      Accept: application/json
+
+
+Response
+++++++++
+
+.. code-block:: json
+
+      HTTP/1.1 200 OK
+      Content-Type: application/json
+
+      {
+          "notifications": [
+              {
+                  "id": "09704b59-83d9-44a5-a0f8-33d973bdac5e",
+                  "eventId": "314d7fcd-d4d6-4b78-9804-b171db60790a",
+                  "eventType": "rule-leave",
+                  "eventTimestamp": "2015-06-16T13:12:34.000Z",
+                  "subscriptionId": "a896ff7d-ca46-4bf4-af71-b9b1573c3ef1",
+                  "state": "complete",
+                  "responseCode": 201,
+                  "response": "{\"status\":\"success\"}",
+                  "url": "https://myapp.com/notifications",
+                  "payload": "{\"notification\":{\"event\":{\"id\":\"314d7fcd-d4d6-4b78-9804-b171db60790a\",\"timestamp\":\"2015-06-16T13:12:34.000Z\",\"deviceId\":\"4bffefbb-9fba-43ee-aebe-ed7f7f2fae84\",\"stored\":\"2015-06-16T13:12:35.825Z\",\"storageLatency\":1825,\"eventType\":\"rule-leave\",\"meta\":{\"direction\":\"leave\",\"firstEval\":false,\"rule\":{\"id\":\"79f2e013-b6b9-44dd-9f34-4be5da971d7a\",\"name\":\"[geofence] Marlee\",\"deviceId\":\"4bffefbb-9fba-43ee-aebe-ed7f7f2fae84\",\"boundaries\":[],\"evaluated\":true,\"covered\":false,\"createdAt\":\"2015-06-16T12:54:09.601Z\",\"links\":{\"self\":\"https://rules.vin.li/api/v1/rules/79f2e013-b6b9-44dd-9f34-4be5da971d7a\",\"events\":\"https://events.vin.li/api/v1/devices/4bffefbb-9fba-43ee-aebe-ed7f7f2fae84/events?type=rule&objectId=79f2e013-b6b9-44dd-9f34-4be5da971d7a\",\"subscriptions\":\"https://events.vin.li/api/v1/devices/4bffefbb-9fba-43ee-aebe-ed7f7f2fae84/subscriptions?objectType=rule&objectId=79f2e013-b6b9-44dd-9f34-4be5da971d7a\"}},\"message\":{\"id\":\"cd339f3d-b0d8-49a9-a87d-ca7ee3a937e2\",\"timestamp\":\"2015-06-16T13:12:34.000Z\",\"snapshot\":{\"location\":{\"lat\":32.5536468870112,\"lon\":-96.1153222519258}}}},\"object\":{\"id\":\"79f2e013-b6b9-44dd-9f34-4be5da971d7a\",\"type\":\"rule\",\"appId\":\"b75afd8f-7247-46e6-a0f9-04f187c9d9bd\"}},\"subscription\":{\"id\":\"a896ff7d-ca46-4bf4-af71-b9b1573c3ef1\",\"deviceId\":\"4bffefbb-9fba-43ee-aebe-ed7f7f2fae84\",\"eventType\":\"rule-leave\",\"url\":\"https://myapp.com/notifications\",\"object\":{\"id\":\"79f2e013-b6b9-44dd-9f34-4be5da971d7a\",\"type\":\"rule\"},\"appData\":\"{\\\"message\\\":\\\"This is your app-specific data\\\"}\"}}}",
+                  "notifiedAt": "2015-06-16T13:12:35.862Z",
+                  "respondedAt": "2015-06-16T13:12:36.300Z",
+                  "createdAt": "2015-06-16T13:12:35.842Z",
+                  "links": {
+                      "self": "https://events.vin.li/api/v1/notifications/09704b59-83d9-44a5-a0f8-33d973bdac5e",
+                      "event": "https://events.vin.li/api/v1/devices/4bffefbb-9fba-43ee-aebe-ed7f7f2fae84/events/314d7fcd-d4d6-4b78-9804-b171db60790a",
+                      "subscription": "https://events.vin.li/api/v1/devices/4bffefbb-9fba-43ee-aebe-ed7f7f2fae84/subscriptions/a896ff7d-ca46-4bf4-af71-b9b1573c3ef1"
+                  }
+              }
+          ],
+          "meta": {
+              "pagination": {
+                  "total": 1,
+                  "limit": 20,
+                  "offset": 0,
+                  "links": {
+                      "first": "https://events.vin.li/api/v1/subscriptions/a896ff7d-ca46-4bf4-af71-b9b1573c3ef1/notifications?offset=0&limit=20",
+                      "last": "https://events.vin.li/api/v1/subscriptions/a896ff7d-ca46-4bf4-af71-b9b1573c3ef1/notifications?offset=0&limit=20"
+                  }
+              }
+          }
+      }
+
+
+
+### Get Notifications for an Event
+
+Returns the notifications that were triggered for any subscription associated with a given event.
+
+
+Request
++++++++
+
+.. code-block:: json
+
+      GET https://events.vin.li/api/v1/events/314d7fcd-d4d6-4b78-9804-b171db60790a/notifications
+      Accept: application/json
+
+
+Response
+++++++++
+
+.. code-block:: json
+
+      HTTP/1.1 200 OK
+      Content-Type: application/json
+
+      {
+          "notifications": [
+              {
+                  "id": "09704b59-83d9-44a5-a0f8-33d973bdac5e",
+                  "eventId": "314d7fcd-d4d6-4b78-9804-b171db60790a",
+                  "eventType": "rule-leave",
+                  "eventTimestamp": "2015-06-16T13:12:34.000Z",
+                  "subscriptionId": "a896ff7d-ca46-4bf4-af71-b9b1573c3ef1",
+                  "state": "complete",
+                  "responseCode": 201,
+                  "response": "{\"status\":\"success\"}",
+                  "url": "https://myapp.com/notifications",
+                  "payload": "{\"notification\":{\"event\":{\"id\":\"314d7fcd-d4d6-4b78-9804-b171db60790a\",\"timestamp\":\"2015-06-16T13:12:34.000Z\",\"deviceId\":\"4bffefbb-9fba-43ee-aebe-ed7f7f2fae84\",\"stored\":\"2015-06-16T13:12:35.825Z\",\"storageLatency\":1825,\"eventType\":\"rule-leave\",\"meta\":{\"direction\":\"leave\",\"firstEval\":false,\"rule\":{\"id\":\"79f2e013-b6b9-44dd-9f34-4be5da971d7a\",\"name\":\"[geofence] Marlee\",\"deviceId\":\"4bffefbb-9fba-43ee-aebe-ed7f7f2fae84\",\"boundaries\":[],\"evaluated\":true,\"covered\":false,\"createdAt\":\"2015-06-16T12:54:09.601Z\",\"links\":{\"self\":\"https://rules.vin.li/api/v1/rules/79f2e013-b6b9-44dd-9f34-4be5da971d7a\",\"events\":\"https://events.vin.li/api/v1/devices/4bffefbb-9fba-43ee-aebe-ed7f7f2fae84/events?type=rule&objectId=79f2e013-b6b9-44dd-9f34-4be5da971d7a\",\"subscriptions\":\"https://events.vin.li/api/v1/devices/4bffefbb-9fba-43ee-aebe-ed7f7f2fae84/subscriptions?objectType=rule&objectId=79f2e013-b6b9-44dd-9f34-4be5da971d7a\"}},\"message\":{\"id\":\"cd339f3d-b0d8-49a9-a87d-ca7ee3a937e2\",\"timestamp\":\"2015-06-16T13:12:34.000Z\",\"snapshot\":{\"location\":{\"lat\":32.5536468870112,\"lon\":-96.1153222519258}}}},\"object\":{\"id\":\"79f2e013-b6b9-44dd-9f34-4be5da971d7a\",\"type\":\"rule\",\"appId\":\"b75afd8f-7247-46e6-a0f9-04f187c9d9bd\"}},\"subscription\":{\"id\":\"a896ff7d-ca46-4bf4-af71-b9b1573c3ef1\",\"deviceId\":\"4bffefbb-9fba-43ee-aebe-ed7f7f2fae84\",\"eventType\":\"rule-leave\",\"url\":\"https://myapp.com/notifications\",\"object\":{\"id\":\"79f2e013-b6b9-44dd-9f34-4be5da971d7a\",\"type\":\"rule\"},\"appData\":\"{\\\"message\\\":\\\"This is your app-specific data\\\"}\"}}}",
+                  "notifiedAt": "2015-06-16T13:12:35.862Z",
+                  "respondedAt": "2015-06-16T13:12:36.300Z",
+                  "createdAt": "2015-06-16T13:12:35.842Z",
+                  "links": {
+                      "self": "https://events.vin.li/api/v1/notifications/09704b59-83d9-44a5-a0f8-33d973bdac5e",
+                      "event": "https://events.vin.li/api/v1/devices/4bffefbb-9fba-43ee-aebe-ed7f7f2fae84/events/314d7fcd-d4d6-4b78-9804-b171db60790a",
+                      "subscription": "https://events.vin.li/api/v1/devices/4bffefbb-9fba-43ee-aebe-ed7f7f2fae84/subscriptions/a896ff7d-ca46-4bf4-af71-b9b1573c3ef1"
+                  }
+              }
+          ],
+          "meta": {
+              "pagination": {
+                  "total": 1,
+                  "limit": 20,
+                  "offset": 0,
+                  "links": {
+                      "first": "https://events.vin.li/api/v1/events/314d7fcd-d4d6-4b78-9804-b171db60790a/notifications?offset=0&limit=20",
+                      "last": "https://events.vin.li/api/v1/events/314d7fcd-d4d6-4b78-9804-b171db60790a/notifications?offset=0&limit=20"
+                  }
+              }
+          }
+      }
+
