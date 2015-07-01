@@ -9,10 +9,10 @@
 ** Transaction Service
 ** Services Service
 * Telemetry Services
-* Event Servives
-** Event Service
-** Subscription Service
-** Notification Service
+* Event Service
+** Events
+** Subscriptions
+** Notifications
 * Rule Service
 * Diagnostic Services
 ** DTC Info Service
