@@ -1,7 +1,8 @@
 Events
 ~~~~~~
 
-### Get Events for a Device
+Get All Events for a Device
+``````````````````````````
 
 Returns the list all events for a given Device in reverse-chronological order.  Each Event contains information regarding the device, the object involved in the event, and associated metadata.
 
@@ -114,7 +115,8 @@ Response
       }
 
 
-### Get a Specific Event
+Get a Specific Event
+````````````````````
 
 Returns information about a specific event.
 

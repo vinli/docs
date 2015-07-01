@@ -25,7 +25,8 @@ If the notification is in the `complete` or `error` state, the fields below will
 * `notifiedAt` - Time that the HTTP call was initiated
 * `respondedAt` - Time that the HTTP call was completed (if successful)
 
-### Get a specific Notification
+Get a Specific Notification
+```````````````````````````
 
 Request
 +++++++
@@ -67,7 +68,8 @@ Response
           }
       }
 
-### Get Notifications for a Subscription
+Get Notifications for a Subscription
+````````````````````````````````````
 
 Request
 +++++++
@@ -124,7 +126,8 @@ Response
 
 
 
-### Get Notifications for an Event
+Get Notifications for an Event
+``````````````````````````````
 
 Returns the notifications that were triggered for any subscription associated with a given event.
 
