@@ -14,6 +14,6 @@ It's important to note that the pattern in which each parameter is reported is d
 .. toctree::
   :maxdepth: 1
 
-  telemetry-snapshots
-  location-history
   device-messages
+  location-history
+  telemetry-snapshots
