@@ -1,0 +1,6 @@
+@import url("https://media.readthedocs.org/css/sphinx_rtd_theme.css");
+
+
+.wy-side-nav-search {
+  background: red !important;
+}
