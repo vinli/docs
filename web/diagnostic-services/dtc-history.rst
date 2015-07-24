@@ -66,13 +66,13 @@ Response
         ],
         "meta" : {
           "pagination" : {
-            "total" : 5,
-            "offset" : 0,
+            "remaining": 0,
+            "until": "2015-07-24T23:00:40.683Z",
+            "since": "1970-01-01T00:00:00.000Z",
+            "limit": 20,
+            "sortDir": "desc",
             "limit" : 100,
-            "links" : {
-              "first" : "https://diagnostics.vin.li/api/v1/vehicles/47fa348e-c3fa-4cad-8272-61940eae7748/codes?offset=0&limit=20",
-              "last" : "https://diagnostics.vin.li/api/v1/vehicles/47fa348e-c3fa-4cad-8272-61940eae7748/codes?offset=0&limit=20"
-            }
+            "links" : {}
           }
         }
       }
