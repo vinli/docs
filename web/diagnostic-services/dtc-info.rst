@@ -24,29 +24,16 @@ Response
 
       {
         "code" : {
-          "id" : "c2a5ab0a-e665-4d65-ba1d-b8118d757e63",
-          "number" : "P0171",
-          "name" : "System Too Lean (Bank 1)",
-          "type" : "generic",
-          "system" : "powertrain",
-          "subSystem" : "emission_management",
-          "description" : "O2 Sensor (Bank 1) has detected a lean exhaust condition",
-          "possibleSymptoms" : [
-            "Lack of Power",
-            "Engine Knock",
-            "Rough at Idle"
-          ],
-          "possibleCauses" : [
-            "Faulty O2 Sensor (Bank 1)",
-            "Vacuum leak downstream of the MAF sensor",
-            "Cracked vacuum or PCV line/connection",
-            "Exhaust leak between engine and first oxygen sensor",
-            ...
-          ],
-          "possibleResolutions" : [
-            "Replace O2 Sensor (Bank 1)",
-            ...
-          ],
-          "severity" : "low"
+          make: 'generic',
+          twoByte: {
+            number: 'P0001',
+            description: 'Fuel Volume Regulator Control Circuit/Open'
+          },
+          threeByte: {
+            number: 'P0001',
+            ftb: '13',
+            fault: 'Circuit Open',
+            description: 'Fuel Volume Regulator Control'
+          }
         }
       }
