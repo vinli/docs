@@ -133,7 +133,7 @@ For each trip, more detailed information regarding overall trip statistics is av
 * `fuelConsumed` - estimated amount of fuel (in liters) consumed during this trip
 * `fuelEconomy` - estimated fuel economy (in miles per gallon) during this trip
 * `hardAccelCount` - the number of times the Vehicle experienced a hard acceleration during this trip
-* `hardStopCount` - the number of times the Vehicle experienced a hard stop during this trip
+* `hardBrakeCount` - the number of times the Vehicle experienced a hard stop during this trip
 * `maxSpeed` - the maximum speed (in kph) reported for the Vehicle during the Trip
 * `stdDevMovingSpeed` - the standard deviation of the speed while the vehicle was in motion
 * `stopCount` - the number of times the Vehicle came to a stop
