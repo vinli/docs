@@ -160,11 +160,11 @@ Response
           "id" : "e960a385-0ced-4654-8404-3238e147ad45",
           "start" : "2014-07-23T14:17:18.324Z",
           "stop" : "2014-07-23T14:19:45.737Z",
-          "startLocation" :  {
+          "startPoint" :  {
             "type": "Point",
             "coordinates": [-100.0, 31.0]
           },
-          "stopLocation" : {
+          "stopPoint" : {
             "type": "Point",
             "coordinates": [-96.0, 32.0]
           },
