@@ -1,16 +1,14 @@
 Vehicle Service
 ~~~~~~~~~~~~~~~
 
-Vinli keeps track of which vehicle a device is or has been plugged into and provides detailed information regarding thee specifics about the vehicle.  This gives your application the chance to better personlize the experience of a user as well as the information necessary to classify users and their data by vehicle.  You are only allowed to see vehicles that are associated with a device to which you're application has access.
+Vinli keeps track of which vehicle a device it is or has been plugged in to, and provides detailed, vehicle-specific information.  With this information, your application will be able to better personalize the user experience as well as provide information necessary to classify users and their data by vehicle. Your application is only allowed to see vehicles that are associated with a device to which it has access to.
 
-Vehicle-device assocation is time-based.  A device that is plugged into one vehicle will be associated with that vehicle until it is plugged into a differnt vehicle.  Vinli keeps track of this history for you.  In the case of a device that is shared between multiple vehicles, the same vehicle will appear multiple times in the history.
+Vehicle-device association is time-based.  When a device is plugged in to a vehicle, it will be associated with that vehicle until it is plugged in to a different vehicle. Vinli keeps track of this information for you. Therefore, in the case of a device that is shared between multiple vehicles, the same vehicle will appear multiple times in the history.
 
-Note that when a vehicle is first added to the system (when a Vinli device is plugged into a specific vehicle for the first time), only the VIN number is available.  At some point in time after this, Vinli will update the vehicle information with Year, Make, Model, and Trim in addition to even more detailed information (available through the Vehicle's "self" link).
-
+.. note:: When a Vinli device is plugged into a specific vehicle for the first time, that vehicle is added to the system and only the VIN number is available. Soon after the VIN is acquired, Vinli will update the vehicle information with the Year, Make, Mode, & Trim. Additionally, even more detailed information will be available through the vehicle's "self" link.
 
 List All of a Device's Vehicles
 ```````````````````````````````
-
 
 Returns the vehicles associated with the given device in chronological order.
 
@@ -78,9 +76,9 @@ List a Device's Latest Vehicle
 ``````````````````````````````
 
 
-Returns the vehicle most recently associated with the given device if it exists.  If the device has not been associated with a vehicle, a null vehicle object is returned.
+Returns the vehicle most recently associated with the given device (if it exists).  If the device has not been associated with a vehicle, a null vehicle object is returned.
 
-Basic vehicle information is returned as part of this response.  Follow the vehicle's "self" link to get full detailed information about the vehicle.
+This response only returns basic vehicle information. Follow the vehicle's "self" link to get full, detailed information about the vehicle.
 
 Request
 +++++++
@@ -120,7 +118,7 @@ Response
 Get Information About a Vehicle
 ```````````````````````````````
 
-Returns detailed information about a vehicle.  This may include, but is not limitted to:
+Returns detailed information about a vehicle.  This may include, but is not limited to:
 
 * Year
 * Make

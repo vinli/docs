@@ -1,7 +1,7 @@
 Device Service
 ~~~~~~~~~~~~~~
 
-The root element in all interaction with the Vinli platform is the Device.  Each Vinil Basic device has an associated Device ID by which it is referred to within the platform.  However, before your application can access any data or perform any actions on a Device, it must be authorized by the owner of the device.
+The root element in all interaction with the Vinli platform is the Device.  Each Vinil Basic device has an associated Device ID by which it is referred to within the platform.  Before your application can access any data or perform any actions on a Device, it must be authorized by the owner of the device.
 
 Enterprise-level applications, which require specific approval from Vinli, are able to manage a specific block of devices that are "owned" by the application.
 
@@ -9,7 +9,7 @@ Enterprise-level applications, which require specific approval from Vinli, are a
 List all Devices
 ````````````````
 
-This returns a paginated list of devices that are registered with your application sorted chronologically by when the device was added.
+This returns a paginated list of devices that are registered with your application, sorted chronologically by when the device was added.
 
 Request
 +++++++

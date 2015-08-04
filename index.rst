@@ -9,14 +9,15 @@ Vinli Developer Documentation
 
     The documentation is split between each service of the Vinli Platform:
 
-`General`_
+`General API Overview`_
+    This overview discusses the Vinli API Tiers and covers authentication, pagination, dates & times.
 
 `Platform Service`_
-    The Platform Service offered allow access and control over devices, vehicles, and their relationships to your application in addition to some administrative access to transactions.
+    The Platform Service allows access and control over devices, vehicles, and governs their relationships to your application in addition to some administrative access to transactions.
 
 `Telemetry Service`_
-    The collection of Telemetry Service are meant to provide the full history of vehicle telemetry transmitted by a device. This history is made available in three different formats across three separate, but similar API methods.
-
+    Telemetry Services are meant to provide a complete history of vehicle telemetry transmitted by a device. This history is made available in three different formats across three separate but similar API methods.
+    
 `Event Service`_
     The set of tools provided by Vinli's Event Service allows an application to create and manage complex sets of Rules that are evaluated on particular devices or groups of devices.
 
@@ -112,5 +113,3 @@ Saftey Service
    :maxdepth: 2
 
    web/saftey-services/index
-
-

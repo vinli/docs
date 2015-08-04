@@ -1,7 +1,7 @@
 Platform Services
 ===================
 
-The Platform Services offered allow access and control over devices, vehicles, and their relationships to your application in addition to some administrative access to transactions.
+The Platform Service allows access and control over devices, vehicles, and governs their relationships to your application in addition to some administrative access to transactions.
 
 .. toctree::
    :maxdepth: 1

@@ -3,7 +3,7 @@ Locations
 
 Returns the latest `limit` number of points of the device's location before or at the `until` time and after the `since` time. If the `until` time is not specified, then the service will return snapshots until the current time when the call is made. The `location` property contains a valid GeoJSON FeatureCollection object consisting of Point features for each location. The timestamp for each location is the in the `properties` field of the feature.
 
-Additionally, selected or all parameters that were recorded at each location can also be included in the `properties` field. When `all` is specified, this method acts just like the Device Messages method below, but it is formatted as valid GeoJSON.
+Additionally, selected or all parameters that were recorded at each location can also be included in the `properties` field. When `all` is specified. This method acts just like the Device Messages method below, but is formatted as valid GeoJSON.
 
 
 Request

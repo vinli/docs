@@ -4,7 +4,7 @@ Telemetry Messages
 Get a List of Telemetry Messages
 ````````````````````````````````
 
-Returns the latest `limit` number of telemetry messages that occurred before or at the `until` time and after the `since` time. If the `until` time is not specified, then the service will return snapshots until the current time when the call is made.
+Returns the latest number of telemetry messages, up to the `limit`, that occurred on or before the `until` time and after the `since` time. If the `until` time is not specified, the service will return snapshots until the time the call was made.
 
 These messages are sent at least every five seconds and include the latest value of parameters captured by the Vinli device since the last message sent.
 
@@ -17,9 +17,9 @@ Request
       GET https://telemetry.vin.li/api/v1/devices/27a2ac50-d7bd-11e3-9c1a-0800200c9a66/messages
       Accept: application/json
 
-* `until` - Results will contain snapshots whose timestamps are less than or equal to the `until` value. If an `until` value is not specified, the current time when the call is made will be used as the `until` value.
-* `since` - Results will contain snapshots whose timestamps are greater than the `since` value. If an `since` value is not specified, no lower limit will be placed on the returned snapshots.
 * `limit` - Results will contain no more than `limit` number of snapshots
+* `since` - Results will contain snapshots whose timestamps are greater than the `since` value. If an `since` value is not specified, no lower limit will be placed on the returned snapshots.
+* `until` - Results will contain snapshots whose timestamps are less than or equal to the `until` value. If an `until` value is not specified, the current time when the call is made will be used as the `until` value.
 
 
 Response
@@ -115,6 +115,3 @@ Response
           }
         }
       }
-
-
-

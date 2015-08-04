@@ -6,7 +6,7 @@ Get All Transactions for this Application
 
 Returns a list of all transactions performed by this Application.
 
-Results are returned in reverse-chronological order and use the "Stream Pagination" method.
+Results are returned in reverse-chronological order using the "Stream Pagination" method.
 
 Request
 +++++++
@@ -56,6 +56,3 @@ Response
           }
         }
       }
-
-
-
