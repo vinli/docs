@@ -93,7 +93,7 @@ Request
 
 .. code-block:: json
 
-      GET https://trips.vin.li/api/v1/vehicle/27b8db50-1274-11e4-9191-0800200c9a66/trips
+      GET https://trips.vin.li/api/v1/vehicles/27b8db50-1274-11e4-9191-0800200c9a66/trips
       Accept: application/json
 
 
