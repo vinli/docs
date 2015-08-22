@@ -177,6 +177,8 @@ For each trip, more detailed information regarding overall trip statistics is av
 * `stdDevMovingSpeed` - the standard deviation of the speed while the vehicle was in motion
 * `stopCount` - the number of times the Vehicle came to a stop
 
+All of the detailed information listed in the above verbiage is available via the get trips by device or get trips by vehicle.
+
 Request
 +++++++
 
