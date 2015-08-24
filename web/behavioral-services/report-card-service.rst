@@ -32,10 +32,16 @@ Response
 
       {
         "report_card" : {
-          "deviceId" : "602c6490-d7a3-11e3-9c1a-0800200c9a66",
-          "overallGrade" : {
-            "major" : "B",
-            "minor" : "-",
+          "id": "549d628c-48dc-412d-8087-44a9f82f187e",
+          "deviceId": "fe4bbc20-cc90-11e3-8e05-f3abac5b6b58",
+          "vehicleId": "ca10cd7a-d2a5-4bb3-b47b-2aa0b8848f55",
+          "tripId": "b9e58eb4-0743-45e9-b9c6-86500f5412bb",
+          "grade": "I",
+          "links": {
+            "self": "https://behavioral-dev.vin.li/api/v1/report_cards/549d628c-48dc-412d-8087-44a9f82f187e",
+            "trip": "https://trips-dev.vin.li/api/v1/trips/b9e58eb4-0743-45e9-b9c6-86500f5412bb",
+            "device": "https://platform-dev.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58",
+            "vehicle": "https://platform-dev.vin.li/api/v1/vehicles/ca10cd7a-d2a5-4bb3-b47b-2aa0b8848f55"
           }
         }
       }
@@ -64,10 +70,16 @@ Response
 
       {
         "report_card" : {
-          "deviceId" : "602c6490-d7a3-11e3-9c1a-0800200c9a66",
-          "overallGrade" : {
-            "major" : "B",
-            "minor" : "-",
+          "id": "549d628c-48dc-412d-8087-44a9f82f187e",
+          "deviceId": "fe4bbc20-cc90-11e3-8e05-f3abac5b6b58",
+          "vehicleId": "ca10cd7a-d2a5-4bb3-b47b-2aa0b8848f55",
+          "tripId": "b9e58eb4-0743-45e9-b9c6-86500f5412bb",
+          "grade": "I",
+          "links": {
+            "self": "https://behavioral-dev.vin.li/api/v1/report_cards/549d628c-48dc-412d-8087-44a9f82f187e",
+            "trip": "https://trips-dev.vin.li/api/v1/trips/b9e58eb4-0743-45e9-b9c6-86500f5412bb",
+            "device": "https://platform-dev.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58",
+            "vehicle": "https://platform-dev.vin.li/api/v1/vehicles/ca10cd7a-d2a5-4bb3-b47b-2aa0b8848f55"
           }
         }
       }
@@ -98,11 +110,16 @@ Response
 
       {
         "report_card" : {
-          "deviceId" : "602c6490-d7a3-11e3-9c1a-0800200c9a66",
-          "tripId" : "1f6ed1a0-6044-4505-a828-715c0f3eccf7",
-          "overallGrade" : {
-            "major" : "A",
-            "minor" : "-",
+          "id": "549d628c-48dc-412d-8087-44a9f82f187e",
+          "deviceId": "fe4bbc20-cc90-11e3-8e05-f3abac5b6b58",
+          "vehicleId": "ca10cd7a-d2a5-4bb3-b47b-2aa0b8848f55",
+          "tripId": "b9e58eb4-0743-45e9-b9c6-86500f5412bb",
+          "grade": "I",
+          "links": {
+            "self": "https://behavioral-dev.vin.li/api/v1/report_cards/549d628c-48dc-412d-8087-44a9f82f187e",
+            "trip": "https://trips-dev.vin.li/api/v1/trips/b9e58eb4-0743-45e9-b9c6-86500f5412bb",
+            "device": "https://platform-dev.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58",
+            "vehicle": "https://platform-dev.vin.li/api/v1/vehicles/ca10cd7a-d2a5-4bb3-b47b-2aa0b8848f55"
           }
         }
       }
