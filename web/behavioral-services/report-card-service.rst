@@ -7,19 +7,17 @@ The Driver Report Card contains the overall score for that scope.
 Each score is represented by a `major` and `minor` score.  These are split in order to allow for easy rendering to the end-user, but are meant to be concatenated to produce school-like grades such as "A-" or "C+".
 
 
-Weekly Report Card for a Device
+Report Card for a Device
 ```````````````````````````````
 
-Returns a Report Card based on historical data for a specified week of the year.  The week is denoted using the ISO 8601 date format.  For example, "2014-W16" represents the 16th week of 2014.
-
-In some cases, not enough information was gathered during the course of a week to generate a Report Card.  In these cases, the grades will be reported as "I" (for "Incomplete" to keep the school report card metaphore going).
+Returns a Report Card based on historical data for a specified period. In some cases, not enough information was gathered to generate a Report Card.  In these cases, the grades will be reported as "I" (for "Incomplete" to keep the school report card metaphore going).
 
 Request
 +++++++
 
 .. code-block:: json
 
-      GET https://behavior.vin.li/api/v1/devices/602c6490-d7a3-11e3-9c1a-0800200c9a66/report_card?week=2014-W16
+      GET https://behavior.vin.li/api/v1/devices/602c6490-d7a3-11e3-9c1a-0800200c9a66/report_cards
       Accept: application/json
 
 Response
@@ -57,7 +55,7 @@ Request
 
 .. code-block:: json
 
-      GET https://behavior.vin.li/api/v1/devices/602c6490-d7a3-11e3-9c1a-0800200c9a66/report_card
+      GET https://behavior.vin.li/api/v1/devices/602c6490-d7a3-11e3-9c1a-0800200c9a66/report_cards
       Accept: application/json
 
 Response
