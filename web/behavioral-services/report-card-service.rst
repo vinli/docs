@@ -36,10 +36,10 @@ Response
           "tripId": "b9e58eb4-0743-45e9-b9c6-86500f5412bb",
           "grade": "I",
           "links": {
-            "self": "https://behavioral-dev.vin.li/api/v1/report_cards/549d628c-48dc-412d-8087-44a9f82f187e",
-            "trip": "https://trips-dev.vin.li/api/v1/trips/b9e58eb4-0743-45e9-b9c6-86500f5412bb",
-            "device": "https://platform-dev.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58",
-            "vehicle": "https://platform-dev.vin.li/api/v1/vehicles/ca10cd7a-d2a5-4bb3-b47b-2aa0b8848f55"
+            "self": "https://behavioral.vin.li/api/v1/report_cards/549d628c-48dc-412d-8087-44a9f82f187e",
+            "trip": "https://trips.vin.li/api/v1/trips/b9e58eb4-0743-45e9-b9c6-86500f5412bb",
+            "device": "https://platform.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58",
+            "vehicle": "https://platform.vin.li/api/v1/vehicles/ca10cd7a-d2a5-4bb3-b47b-2aa0b8848f55"
           }
         }
       }
@@ -74,10 +74,10 @@ Response
           "tripId": "b9e58eb4-0743-45e9-b9c6-86500f5412bb",
           "grade": "I",
           "links": {
-            "self": "https://behavioral-dev.vin.li/api/v1/report_cards/549d628c-48dc-412d-8087-44a9f82f187e",
-            "trip": "https://trips-dev.vin.li/api/v1/trips/b9e58eb4-0743-45e9-b9c6-86500f5412bb",
-            "device": "https://platform-dev.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58",
-            "vehicle": "https://platform-dev.vin.li/api/v1/vehicles/ca10cd7a-d2a5-4bb3-b47b-2aa0b8848f55"
+            "self": "https://behavioral.vin.li/api/v1/report_cards/549d628c-48dc-412d-8087-44a9f82f187e",
+            "trip": "https://trips.vin.li/api/v1/trips/b9e58eb4-0743-45e9-b9c6-86500f5412bb",
+            "device": "https://platform.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58",
+            "vehicle": "https://platform.vin.li/api/v1/vehicles/ca10cd7a-d2a5-4bb3-b47b-2aa0b8848f55"
           }
         }
       }
@@ -114,10 +114,10 @@ Response
           "tripId": "b9e58eb4-0743-45e9-b9c6-86500f5412bb",
           "grade": "I",
           "links": {
-            "self": "https://behavioral-dev.vin.li/api/v1/report_cards/549d628c-48dc-412d-8087-44a9f82f187e",
-            "trip": "https://trips-dev.vin.li/api/v1/trips/b9e58eb4-0743-45e9-b9c6-86500f5412bb",
-            "device": "https://platform-dev.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58",
-            "vehicle": "https://platform-dev.vin.li/api/v1/vehicles/ca10cd7a-d2a5-4bb3-b47b-2aa0b8848f55"
+            "self": "https://behavioral.vin.li/api/v1/report_cards/549d628c-48dc-412d-8087-44a9f82f187e",
+            "trip": "https://trips.vin.li/api/v1/trips/b9e58eb4-0743-45e9-b9c6-86500f5412bb",
+            "device": "https://platform.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58",
+            "vehicle": "https://platform.vin.li/api/v1/vehicles/ca10cd7a-d2a5-4bb3-b47b-2aa0b8848f55"
           }
         }
       }
