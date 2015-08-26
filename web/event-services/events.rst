@@ -22,7 +22,7 @@ Request
 
 .. code-block:: json
 
-      GET https://events.vin.li/api/v1/device/68d489c0-d7a2-11e3-9c1a-0800200c9a66/events
+      GET https://events.vin.li/api/v1/devices/68d489c0-d7a2-11e3-9c1a-0800200c9a66/events
       Accept: application/json
 
 
