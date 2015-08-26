@@ -70,12 +70,12 @@ Response
           "stopCount": 8
         },
         "links": {
-          "self": "https://trips-dev.vin.li/api/v1/trips/a51a3c87-baa7-4e5d-98e6-4f9588d7c2e1",
-          "device": "https://platform-dev.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58",
-          "vehicle": "https://platform-dev.vin.li/api/v1/vehicles/0c785aa0-1a48-4cc6-9f5c-028350dd907d",
-          "locations": "https://telemetry-dev.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/locations?since=1440012315951&until=1440012928875",
-          "messages": "https://telemetry-dev.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/messages?since=1440012315951&until=1440012928875",
-          "events": "https://events-dev.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/events?since=1440012315951&until=1440012928875"
+          "self": "https://trips.vin.li/api/v1/trips/a51a3c87-baa7-4e5d-98e6-4f9588d7c2e1",
+          "device": "https://platform.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58",
+          "vehicle": "https://platform.vin.li/api/v1/vehicles/0c785aa0-1a48-4cc6-9f5c-028350dd907d",
+          "locations": "https://telemetry.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/locations?since=1440012315951&until=1440012928875",
+          "messages": "https://telemetry.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/messages?since=1440012315951&until=1440012928875",
+          "events": "https://events.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/events?since=1440012315951&until=1440012928875"
         }
       }
 
@@ -146,12 +146,12 @@ Response
           "stopCount": 8
         },
         "links": {
-          "self": "https://trips-dev.vin.li/api/v1/trips/a51a3c87-baa7-4e5d-98e6-4f9588d7c2e1",
-          "device": "https://platform-dev.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58",
-          "vehicle": "https://platform-dev.vin.li/api/v1/vehicles/0c785aa0-1a48-4cc6-9f5c-028350dd907d",
-          "locations": "https://telemetry-dev.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/locations?since=1440012315951&until=1440012928875",
-          "messages": "https://telemetry-dev.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/messages?since=1440012315951&until=1440012928875",
-          "events": "https://events-dev.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/events?since=1440012315951&until=1440012928875"
+          "self": "https://trips.vin.li/api/v1/trips/a51a3c87-baa7-4e5d-98e6-4f9588d7c2e1",
+          "device": "https://platform.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58",
+          "vehicle": "https://platform.vin.li/api/v1/vehicles/0c785aa0-1a48-4cc6-9f5c-028350dd907d",
+          "locations": "https://telemetry.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/locations?since=1440012315951&until=1440012928875",
+          "messages": "https://telemetry.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/messages?since=1440012315951&until=1440012928875",
+          "events": "https://events.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/events?since=1440012315951&until=1440012928875"
         }
       }
 
@@ -237,11 +237,11 @@ Response
           "stopCount": 8
         },
         "links": {
-          "self": "https://trips-dev.vin.li/api/v1/trips/a51a3c87-baa7-4e5d-98e6-4f9588d7c2e1",
-          "device": "https://platform-dev.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58",
-          "vehicle": "https://platform-dev.vin.li/api/v1/vehicles/0c785aa0-1a48-4cc6-9f5c-028350dd907d",
-          "locations": "https://telemetry-dev.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/locations?since=1440012315951&until=1440012928875",
-          "messages": "https://telemetry-dev.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/messages?since=1440012315951&until=1440012928875",
-          "events": "https://events-dev.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/events?since=1440012315951&until=1440012928875"
+          "self": "https://trips.vin.li/api/v1/trips/a51a3c87-baa7-4e5d-98e6-4f9588d7c2e1",
+          "device": "https://platform.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58",
+          "vehicle": "https://platform.vin.li/api/v1/vehicles/0c785aa0-1a48-4cc6-9f5c-028350dd907d",
+          "locations": "https://telemetry.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/locations?since=1440012315951&until=1440012928875",
+          "messages": "https://telemetry.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/messages?since=1440012315951&until=1440012928875",
+          "events": "https://events.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/events?since=1440012315951&until=1440012928875"
         }
       }
