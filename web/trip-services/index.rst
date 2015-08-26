@@ -37,14 +37,14 @@ Response
         "vehicleId": "0c785aa0-1a48-4cc6-9f5c-028350dd907d",
         "deviceId": "fe4bbc20-cc90-11e3-8e05-f3abac5b6b58",
         "startPoint": {
-          "type": "point",
+          "type": "Point",
           "coordinates": [
             -96.789791,
             32.780046
           ]
         },
         "stopPoint": {
-          "type": "point",
+          "type": "Point",
           "coordinates": [
             -96.791057,
             32.780671
@@ -113,14 +113,14 @@ Response
         "vehicleId": "0c785aa0-1a48-4cc6-9f5c-028350dd907d",
         "deviceId": "fe4bbc20-cc90-11e3-8e05-f3abac5b6b58",
         "startPoint": {
-          "type": "point",
+          "type": "Point",
           "coordinates": [
             -96.789791,
             32.780046
           ]
         },
         "stopPoint": {
-          "type": "point",
+          "type": "Point",
           "coordinates": [
             -96.791057,
             32.780671
@@ -204,14 +204,14 @@ Response
         "vehicleId": "0c785aa0-1a48-4cc6-9f5c-028350dd907d",
         "deviceId": "fe4bbc20-cc90-11e3-8e05-f3abac5b6b58",
         "startPoint": {
-          "type": "point",
+          "type": "Point",
           "coordinates": [
             -96.789791,
             32.780046
           ]
         },
         "stopPoint": {
-          "type": "point",
+          "type": "Point",
           "coordinates": [
             -96.791057,
             32.780671
