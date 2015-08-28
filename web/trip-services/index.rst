@@ -17,7 +17,7 @@ Request
 
 .. code-block:: json
 
-      GET https://trips.vin.li/api/v1/devices/821374c0-d6d8-11e3-9c1a-0800200c9a66/trips
+      GET https://trips.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/trips
       Accept: application/json
 
 
@@ -29,7 +29,7 @@ Response
       HTTP/1.1 200 OK
       Content-Type: application/json
 
-      {
+      [{
         "id": "a51a3c87-baa7-4e5d-98e6-4f9588d7c2e1",
         "start": "2015-08-19T19:25:15.951Z",
         "stop": "2015-08-19T19:35:28.875Z",
@@ -77,7 +77,20 @@ Response
           "messages": "https://telemetry.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/messages?since=1440012315951&until=1440012928875",
           "events": "https://events.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/events?since=1440012315951&until=1440012928875"
         }
-      }
+      }],
+      "meta": {
+          "pagination": {
+            "remaining": 1,
+            "until": "2015-06-19T23:59:59.000Z",
+            "since": "1970-01-01T00:00:00.000Z",
+            "limit": 20,
+            "sortDir": "desc",
+            "links": {
+              "prior": "https://trips-dev.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/trips?until=1434129972999"
+            }
+          }
+        }
+
 
 
 List All of a Vehicle's Trips
@@ -93,7 +106,7 @@ Request
 
 .. code-block:: json
 
-      GET https://trips.vin.li/api/v1/vehicles/27b8db50-1274-11e4-9191-0800200c9a66/trips
+      GET https://trips.vin.li/api/v1/vehicles/0c785aa0-1a48-4cc6-9f5c-028350dd907d/trips
       Accept: application/json
 
 
@@ -105,7 +118,7 @@ Response
       HTTP/1.1 200 OK
       Content-Type: application/json
 
-      {
+      [{
         "id": "a51a3c87-baa7-4e5d-98e6-4f9588d7c2e1",
         "start": "2015-08-19T19:25:15.951Z",
         "stop": "2015-08-19T19:35:28.875Z",
@@ -153,7 +166,20 @@ Response
           "messages": "https://telemetry.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/messages?since=1440012315951&until=1440012928875",
           "events": "https://events.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/events?since=1440012315951&until=1440012928875"
         }
-      }
+      }],
+      "meta": {
+          "pagination": {
+            "remaining": 1,
+            "until": "2015-06-19T23:59:59.000Z",
+            "since": "1970-01-01T00:00:00.000Z",
+            "limit": 20,
+            "sortDir": "desc",
+            "links": {
+              "prior": "https://trips-dev.vin.li/api/v1/vehicles/0c785aa0-1a48-4cc6-9f5c-028350dd907d/trips?until=1434129972999"
+            }
+          }
+        }
+
 
 
 
@@ -184,7 +210,7 @@ Request
 
 .. code-block:: json
 
-      GET https://trips.vin.li/api/v1/trips/e960a385-0ced-4654-8404-3238e147ad45
+      GET https://trips.vin.li/api/v1/trips/a51a3c87-baa7-4e5d-98e6-4f9588d7c2e1
       Accept: application/json
 
 
