@@ -25,22 +25,23 @@ Response
       HTTP/1.1 200 OK
       Content-Type: application/json
 
-      [{
-        "report_card" : {
-          "id": "549d628c-48dc-412d-8087-44a9f82f187e",
-          "deviceId": "fe4bbc20-cc90-11e3-8e05-f3abac5b6b58",
-          "vehicleId": "ca10cd7a-d2a5-4bb3-b47b-2aa0b8848f55",
-          "tripId": "b9e58eb4-0743-45e9-b9c6-86500f5412bb",
-          "grade": "A",
-          "links": {
-            "self": "https://behavioral.vin.li/api/v1/report_cards/549d628c-48dc-412d-8087-44a9f82f187e",
-            "trip": "https://trips.vin.li/api/v1/trips/b9e58eb4-0743-45e9-b9c6-86500f5412bb",
-            "device": "https://platform.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58",
-            "vehicle": "https://platform.vin.li/api/v1/vehicles/ca10cd7a-d2a5-4bb3-b47b-2aa0b8848f55"
+      {
+        "reportCards" : [
+          {
+            "id": "549d628c-48dc-412d-8087-44a9f82f187e",
+            "deviceId": "fe4bbc20-cc90-11e3-8e05-f3abac5b6b58",
+            "vehicleId": "ca10cd7a-d2a5-4bb3-b47b-2aa0b8848f55",
+            "tripId": "b9e58eb4-0743-45e9-b9c6-86500f5412bb",
+            "grade": "A",
+            "links": {
+              "self": "https://behavioral.vin.li/api/v1/report_cards/549d628c-48dc-412d-8087-44a9f82f187e",
+              "trip": "https://trips.vin.li/api/v1/trips/b9e58eb4-0743-45e9-b9c6-86500f5412bb",
+              "device": "https://platform.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58",
+              "vehicle": "https://platform.vin.li/api/v1/vehicles/ca10cd7a-d2a5-4bb3-b47b-2aa0b8848f55"
+            }
           }
-        }
-      }],
-      "meta": {
+        ],
+        "meta": {
           "pagination": {
             "remaining": 34,
             "until": "2015-08-13T22:20:59.330Z",
@@ -52,6 +53,7 @@ Response
             }
           }
         }
+      }
 
 
 
@@ -106,32 +108,22 @@ Response
       HTTP/1.1 200 OK
       Content-Type: application/json
 
-      [{
-        "report_card" : {
-          "id": "549d628c-48dc-412d-8087-44a9f82f187e",
-          "deviceId": "fe4bbc20-cc90-11e3-8e05-f3abac5b6b58",
-          "vehicleId": "ca10cd7a-d2a5-4bb3-b47b-2aa0b8848f55",
-          "tripId": "b9e58eb4-0743-45e9-b9c6-86500f5412bb",
-          "grade": "I",
-          "links": {
-            "self": "https://behavioral.vin.li/api/v1/report_cards/549d628c-48dc-412d-8087-44a9f82f187e",
-            "trip": "https://trips.vin.li/api/v1/trips/b9e58eb4-0743-45e9-b9c6-86500f5412bb",
-            "device": "https://platform.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58",
-            "vehicle": "https://platform.vin.li/api/v1/vehicles/ca10cd7a-d2a5-4bb3-b47b-2aa0b8848f55"
-          }
-        }
-      }],
-      "meta": {
-          "pagination": {
-            "remaining": 34,
-            "until": "2015-08-13T22:20:59.330Z",
-            "since": "1970-01-01T00:00:00.000Z",
-            "limit": 20,
-            "sortDir": "desc",
+      {
+        "reportCards" : [
+          {
+            "id": "549d628c-48dc-412d-8087-44a9f82f187e",
+            "deviceId": "fe4bbc20-cc90-11e3-8e05-f3abac5b6b58",
+            "vehicleId": "ca10cd7a-d2a5-4bb3-b47b-2aa0b8848f55",
+            "tripId": "b9e58eb4-0743-45e9-b9c6-86500f5412bb",
+            "grade": "I",
             "links": {
-              "prior": "https://behavioral-dev.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/report_cards?until=1439418498459"
+              "self": "https://behavioral.vin.li/api/v1/report_cards/549d628c-48dc-412d-8087-44a9f82f187e",
+              "trip": "https://trips.vin.li/api/v1/trips/b9e58eb4-0743-45e9-b9c6-86500f5412bb",
+              "device": "https://platform.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58",
+              "vehicle": "https://platform.vin.li/api/v1/vehicles/ca10cd7a-d2a5-4bb3-b47b-2aa0b8848f55"
             }
           }
-        }
+        ]
+      }
 
 
