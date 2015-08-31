@@ -35,13 +35,13 @@ Vinli Developer Documentation
     The Vinli Device is able to detect when a collision occurs based on internal sensor and select vehicle telemetry data. Using Vinli's Safety Service, your application can set up notification settings, list collision history, and retrieve detailed collision details.
 
 .. _General: web/general/index.rst
-.. _Platform Service: web/platform-services/index.html
-.. _Telemetry Service: web/telemetry-services/index.html
-.. _Event Service: web/event-services/index.html
-.. _Diagnostic Service: web/diagnostic-services/index.html
-.. _Trip Service: web/trip-services/index.html
-.. _Behavioral Service: web/behavioral-services/index.html
-.. _Safety Service: web/safety-services/index.html
+.. _Platform Service: web/platform-services/index.rst
+.. _Telemetry Service: web/telemetry-services/index.rst
+.. _Event Service: web/event-services/index.rst
+.. _Diagnostic Service: web/diagnostic-services/index.rst
+.. _Trip Service: web/trip-services/index.rst
+.. _Behavioral Service: web/behavioral-services/index.rst
+.. _Safety Service: web/safety-services/index.rst
 
 Find a bug, typo, or just want to make an improvement? This documentation is open source and available on `GitHub <https://github.com/vinli/docs/>`__. We like contributions!
 
@@ -55,7 +55,7 @@ General
 .. toctree::
    :maxdepth: 2
 
-   tree/master/web/general/index
+   web/general/index
 
 Platform Service
 ~~~~~~~~~~~~~~~~~
