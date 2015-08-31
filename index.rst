@@ -34,7 +34,7 @@ Vinli Developer Documentation
 `Safety Service`_
     The Vinli Device is able to detect when a collision occurs based on internal sensor and select vehicle telemetry data. Using Vinli's Safety Service, your application can set up notification settings, list collision history, and retrieve detailed collision details.
 
-.. _General: web/general/index.html
+.. _General: web/general/index.rst
 .. _Platform Service: web/platform-services/index.html
 .. _Telemetry Service: web/telemetry-services/index.html
 .. _Event Service: web/event-services/index.html
