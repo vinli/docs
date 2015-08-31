@@ -12,21 +12,21 @@ Vinli Developer Documentation
 `General`_
 
 `Platform Service`_
-    The Platform Service offered allow access and control over devices, vehicles, and their relationships to your application in addition to some administrative access to transactions.
+    The Platform Service offered allows access and control over devices, vehicles, and their relationships to your application in addition to some administrative access to transactions.
 
 `Telemetry Service`_
-    The collection of Telemetry Service are meant to provide the full history of vehicle telemetry transmitted by a device. This history is made available in three different formats across three separate, but similar API methods.
+    The collection of Telemetry Service is meant to provide the full history of vehicle telemetry transmitted by a device. This history is made available in three different formats across three separate, but similar API methods.
 
 `Event Service`_
     The set of tools provided by Vinli's Event Service allows an application to create and manage complex sets of Rules that are evaluated on particular devices or groups of devices.
 
 `Diagnostic Service`_
-    In addition to transmitting real-time vehicle telemetry information, the Vinli Device interrogates the vehicle for the status of the malfunction indicator lamp (MIL) or "Check Engine Light". If the device detects that the MIL is illuniated, it requests the active diagnostic trouble codes (DTCs) for the vehicle. All of this inforamtion is sent to the Vinli Platform and can be accessed via the Diagnost Service API.
+    In addition to transmitting real-time vehicle telemetry information, the Vinli Device interrogates the vehicle for the status of the malfunction indicator lamp (MIL) or "Check Engine Light". If the device detects that the MIL is illuminated, it requests the active diagnostic trouble codes (DTCs) for the vehicle. All of this information is sent to the Vinli Platform and can be accessed via the Diagnost Service API.
 
 `Trip Service`_
     The Vinli device detects vehicle ignition and shutdown and sends those events to the platform. From these events, it is possible to organize the telemetry data into logical "Trips" for organizing users' activities in your application. The Trip Service provides access to a catalog of these Trips by Device or by Vehicle and provides mirrors of the Telemetry Service methods centered around these Trips.
 
-    It's important to note that trips are sometimes created asyncrhonously--either because they have to be constructed by post-processing or after bulk data upload for a given device.
+    It's important to note that trips are sometimes created asynchronously--either because they have to be constructed by post-processing or after bulk data upload for a given device.
 
 `Behavioral Service`_
     Based on long-term driving data, Vinli calculates and keeps track of behavioral statistics for particular devices and vehicles.
