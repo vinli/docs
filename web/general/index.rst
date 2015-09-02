@@ -1,21 +1,25 @@
 The Vinli Platform
 ==================
 
-The Vinli Web API provides access over HTTP/SSL to the data collected from the Vinli devices.  This set of tools provides two tiers of services for your applications to consume.  Tier 1 provides access and functionality around the "raw" data gathered from your customers' devices.  These include:
+The Vinli Platform allows applications to get data from Vinli devices, using a fast, simple RESTful API. Applications can get both raw and synthesized data.
 
-* Platform Service - provides the administrative actions for your application such as maanging devices, getting vehicle information, and monitoring transactions
-* Telemetry Service - provides access to time-series data for all vehicle telemetry gathered on a device-by-device basis
-* Event Service - provides access to vehicle events as well as the ability to create subscriptions to these events
-* Rule Service - provides tools to create rules based on vehicle parameter limits or geofences
+For raw data:
 
-Tier 2 services provide a bit more analysis and "expertise" on top of the data provided by Tier 1.  These services include:
+* **Platform Service** administers your application. You can manage devices, get vehicle information, and monitor transactions.
+* **Telemetry Service** delivers time-series data.
+* **Event Service** offers subscriptions for vehicle events and powerful, rule- based event notifications.
+* **Rule Service** creates event subscriptions based on vehicle state or georeferences.
 
-* Trip Service - automatically detects "trips" for a given device or vehicle and gives telemetry and other information on a trip-by-trip basis
-* Diagnostic Service - provides access to detailed diagnostic information about a device (DTC Codes aka "Check Engine Light") including historical diagnostics
-* Behavioral Service - provides "report cards" for given devices or vehicles based on the driver's behavior and other factors
-* Safety Service - provides access to collision history and collected safety information
+For synthesized data:
 
-All of the services above is accessed in a similar manner with respect to authentication, pagination, etc.  More detail about these standards is included in the following sections.
+* **Trip Service** organizes and summarizes telemetry by vehicle ignition and shutdown.
+* **Diagnostic Service** allows applications to discover the malfunction state of the vehicle and provides diagnostic trouble codes.
+* **Behavioral Service** categorizes driver risk based on driver behavior, vehicle conditions, and geographical travel patterns.
+* **Safety Service** provides collision history and telemetry details of collisions. This service is often used together with an Event Service subscription to *collision* events.
+
+Vinli Platform services authenticate your application and let you configure pagination. Vinli applications must authenticate themselves and their user’s actions. Pagination can affect the format of dates and times.
+
+Get the details in these sections:  
 
 .. toctree::
    :maxdepth: 2
