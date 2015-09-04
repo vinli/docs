@@ -12,7 +12,7 @@ The documentation is split between platform:
 We discuss below a few things that are consistent across all of the platforms.
 
 ## Vehicle Parameters
-The basic "currency" of all of the Vinli's services are the vehicle parameters read and transmitted by the Vinli Device.
+The basic "currency" of all of Vinli's services are the vehicle parameters read and transmitted by the Vinli Device.
 
 The rate at which each parameter is read from the vehicle is curated by the Vinli Device based on what parameters the vehicle provides as well as a set priority of parameters based on what is most useful and most frequently changing. While each vehicle is slightly different in the parameters that are made available, most of your user's vehicles will transmit similar high-frequency parameters.
 
@@ -23,7 +23,7 @@ The Vinli platform provides a consistent naming system for parameters along with
 
 [https://dev.vin.li/parameters.json]
 
-Each parameter is referenced by a "CamelCase" key throughout the platform. Lookup up this key inside of te
+Each parameter is referenced by a "CamelCase" key throughout the platform. Lookup this key inside of the json referenced above. 
 
 * name - English name of the parameter (i.e. "Calculated Load Value")
 * description - text describing the parameter in more detail
@@ -52,7 +52,7 @@ The remainder of the parameters that the vehicle provides are reported at a much
 * ambientAirTemperature
 * etc.
 
-These parameters are reported as often as once every 10 seconds or as seldom as once very 5 minutes.
+These parameters are reported as often as once every 10 seconds or as seldom as once every 5 minutes.
 
 ## Api Transactions
 Vinli keeps track of every action performed on behalf of your application within the Vinli Platform. This includes calls made by the SDKs and the Developer Portal*. We hold on to each transaction's time, the specific service used, the Device associated with the call (if there is one), and the resulting HTTP code. You can access this information via the Web API's Platform Services.
