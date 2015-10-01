@@ -112,7 +112,7 @@ Request
         }
       }
 
-Response:
+Response
 ++++++++
 
 .. code-block:: json
@@ -135,7 +135,7 @@ Response:
 
 
 Deregister a Device
-````````````````````````````````
+```````````````````
 
 .. note:: This route is only accessible by Enterprise applications.  Consumer applications gain and lose devices as users authorize access via the OAuth flow in MyVinli.
 
