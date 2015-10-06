@@ -1,191 +1,38 @@
-Rule Service
-~~~~~~~~~~~~
+Rules
+=====
 
-The Rule Service allows your application to manage the rules for devices associated with it.
+Rules
+^^^^^
 
-It's important to note that Rules are immutable.  Once they are created, they cannot be modified; they can only be deleted and another rule created.  This is designed this way such that the continuity of the Rule and the Vehicles whose state is maintained for this rule remains consistent.  The Device is allowed to move in space, but the Rule is not.
+A Rule contains:
 
+#. a Device identifier
+#. a collection of `Boundaries`_ for the Device
+#. a state which is always exactly one of:
 
-List all Rules for a Device
-```````````````````````````
+	- "unevaluated" meaning not enough geospatial data is available
+	- "uncovered" meaning at least one of the boundaries conditions is unsatisfied
+	- "covered" meaning that all of the boundary conditions are satisfied
 
-Request
-+++++++
+A Rule is "covered" when all boundary conditions are true. A Rule is "uncovered" when at least one boundary condition is false. When there is insufficient data to determine whether a Rule is "covered" or "uncovered" the Rule's state is "unevaluated".
 
-.. code-block:: json
+When sufficient geospatial data is available to change state, the Rule Service:
 
-      GET https://rules.vin.li/api/v1/devices/de01abb1-453d-4293-831a-f0d804b48fdf/rules
-      Accept: application/json
+- changes the state of the Rule to "covered" or "uncovered", and
+- creates either a "rule-entry" or "rule-leave" event for applications
 
-Response
-++++++++
+For example, suppose an app establishes a Boundary condition around the home of a vehicle owner. When the owner drives home from work, the Rule Service detects that a geospatial Boundary condition is satisfied, The service sets the Rule state to "covered" and then sends a "rule-entry" event to the app.
 
-.. code-block:: json
+Likewise, when the vehicle owner leaves home for work, the Rule Service detects that a geospatial Boundary condition is no longer met. The service sets the Rule state to "uncovered" and then sends a "rule-leave" event to the app.
 
-      HTTP/1.1 200 OK
-      Content-Type: application/json
+Applications can subscribe to these events in three ways:
 
-      {
-        "rules" : [
-          {
-            "id" : "68d489c0-d7a2-11e3-9c1a-0800200c9a66",
-            "name" : "Speed over 70mph",
-            "deviceId" : "de01abb1-453d-4293-831a-f0d804b48fdf",
-            "evaluated": true,
-            "covered": false,
-            "createdAt": "2015-06-01T21:26:51.086Z",
-            "links" : {
-              "self" : "https://rules.vin.li/api/v1/rules/68d489c0-d7a2-11e3-9c1a-0800200c9a66",
-              "events": "https://events.vin.li/api/v1/devices/de01abb1-453d-4293-831a-f0d804b48fdf/events?type=rule&objectId=68d489c0-d7a2-11e3-9c1a-0800200c9a66",
-              "subscriptions": "https://events.vin.li/api/v1/devices/de01abb1-453d-4293-831a-f0d804b48fdf/subscriptions?objectType=rule&objectId=68d489c0-d7a2-11e3-9c1a-0800200c9a66"
-            }
-          },
-         ...
-        ],
-        "meta" : {
-          "pagination" : {
-            "total" : 1431,
-            "offset" : 0,
-            "limit" : 20,
-            "links" : {
-              "first" : "https://rules.vin.li/api/v1/devices/de01abb1-453d-4293-831a-f0d804b48fdf/rules?offset=0&limit=20",
-              "last" : "https://rules.vin.li/api/v1/devices/de01abb1-453d-4293-831a-f0d804b48fdf/rules?offset=1420&limit=20",
-              "next" : "https://rules.vin.li/api/v1/devices/de01abb1-453d-4293-831a-f0d804b48fdf/rules?offset=20&limit=20"
-            }
-          }
-        }
-      }
+- to the "rule-entry" only
+- to the "rule-leave" only
+- or to both with "rule-\*"
 
 
-Get a Specific Rule
-```````````````````
+.. toctree::
+   :maxdepth: 1
 
-Request
-+++++++
-
-.. code-block:: json
-
-      GET https://rules.vin.li/api/v1/rules/68d489c0-d7a2-11e3-9c1a-0800200c9a66
-      Accept: application/json
-
-Response
-++++++++
-
-.. code-block:: json
-
-      HTTP/1.1 200 OK
-      Content-Type: application/json
-
-      {
-        "rule" : {
-          "id" : "68d489c0-d7a2-11e3-9c1a-0800200c9a66",
-          "name" : "Speed over 35mph near Superdome",
-          "boundaries" : [
-            {
-              "type" : "parametric",
-              "parameter" : "vehicleSpeed",
-              "min" : 35
-            },
-            {
-              "type" : "radius",
-              "lon" : -90.0811,
-              "lat" : 29.9508,
-              "radius" : 500
-            }
-          ],
-          "deviceId" : "de01abb1-453d-4293-831a-f0d804b48fdf",
-          "links" : {
-            "self" : "https://rules.vin.li/api/v1/rules/68d489c0-d7a2-11e3-9c1a-0800200c9a66",
-            "events": "https://events.vin.li/api/v1/devices/de01abb1-453d-4293-831a-f0d804b48fdf/events?type=rule&objectId=68d489c0-d7a2-11e3-9c1a-0800200c9a66",
-            "subscriptions": "https://events.vin.li/api/v1/devices/de01abb1-453d-4293-831a-f0d804b48fdf/subscriptions?objectType=rule&objectId=68d489c0-d7a2-11e3-9c1a-0800200c9a66"
-          }
-        }
-      }
-
-
-Create a Rule for a Device
-``````````````````````````
-
-Request
-+++++++
-
-.. code-block:: json
-
-      POST https://rules.vin.li/api/v1/devices/de01abb1-453d-4293-831a-f0d804b48fdf/rules
-      Accept: application/json
-      Content-Type: application/json
-
-      {
-        "rule" : {
-          "name" : "Speed over 35mph near Superdome",
-          "boundaries" : [
-            {
-              "type" : "parametric",
-              "parameter" : "vehicleSpeed",
-              "min" : 35,
-              "max" : null
-            },
-            {
-              "type" : "radius",
-              "lon" : -90.0811,
-              "lat" : 29.9508,
-              "radius" : 500
-            }
-          ]
-        }
-      }
-
-
-Response
-++++++++
-
-.. code-block:: json
-
-      HTTP/1.1 201 CREATED
-      Content-Type: application/json
-      Location: https://rules.vin.li/api/v1/rules/68d489c0-d7a2-11e3-9c1a-0800200c9a66
-
-      {
-        "rule" : {
-          "id" : "68d489c0-d7a2-11e3-9c1a-0800200c9a66",
-          "name" : "Speed over 35mph near the Superdome",
-          "boundaries" : [
-            {
-              "type" : "parametric",
-              "parameter" : "vehicleSpeed",
-              "min" : 35
-            },
-            {
-              "type" : "radius",
-              "lon" : -90.0811,
-              "lat" : 29.9508,
-              "radius" : 500
-            }
-          ],
-          "deviceId" : "de01abb1-453d-4293-831a-f0d804b48fdf",
-          "links" : {
-            "self" : "https://rules.vin.li/api/v1/rules/68d489c0-d7a2-11e3-9c1a-0800200c9a66",
-            "events": "https://events.vin.li/api/v1/devices/de01abb1-453d-4293-831a-f0d804b48fdf/events?type=rule&objectId=68d489c0-d7a2-11e3-9c1a-0800200c9a66",
-            "subscriptions": "https://events.vin.li/api/v1/devices/de01abb1-453d-4293-831a-f0d804b48fdf/subscriptions?objectType=rule&objectId=68d489c0-d7a2-11e3-9c1a-0800200c9a66"
-          }
-        }
-      }
-
-
-Delete a Rule
-`````````````
-
-Request
-+++++++
-
-.. code-block:: json
-
-      DELETE https://rules.vin.li/api/v1/rules/68d489c0-d7a2-11e3-9c1a-0800200c9a66
-
-Response
-++++++++
-
-.. code-block:: json
-
-      HTTP/1.1 204 NO CONTENT
-
+   rule-services
