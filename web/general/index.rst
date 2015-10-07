@@ -19,11 +19,12 @@ For synthesized data:
 
 Vinli Platform services authenticate your application and let you configure pagination. Vinli applications must authenticate themselves and their user’s actions. Pagination can affect the format of dates and times.
 
-Get the details in these sections:  
+Get the details in these sections:
 
 .. toctree::
    :maxdepth: 2
 
    authentication
+   dev-device
    pagination
    dates
