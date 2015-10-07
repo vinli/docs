@@ -1,7 +1,7 @@
 Dates and Times
 ~~~~~~~~~~~~~~~
 
-When interacting with the Vinli Platform Web API, it's worth spending some time to discuss date and time formatting.
+Before using Vinli services, it's worth spending some time to discuss date and time formatting.
 
 Submitting Dates
 ````````````````

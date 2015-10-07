@@ -1,14 +1,14 @@
 Pagination
-~~~~~~~~~~
+==========
 
-Vinli's APIs provide pagination on all list responses.  This pagination varies slightly depending on the type of data being returned.  Two main types of pagination are provided:
+Vinli APIs paginate all list responses. Pagination varies slightly depending on the type of data being returned:
 
-* Resource List - For use with lists of relatively static resources (i.e. devices, groups, etc.)
-* Stream - For use with rapidly changing time-series data (i.e. vehicle telemetry, location, etc.)
+* resource lists for relatively static resources (devices, groups, etc.)
+* streams for rapidly changing data (telemetry, location, etc.)
 
 
 Resource List Pagination
-````````````````````````
+-------------------------
 
 This pagination uses `offset` and `limit` to page through a sorted lists of objects.  By default this sorting is based on the creation time and is sorted in chronological order, but this sorting can be modified by using the `sortBy` and `sortDirection` parameters.  The API will return, as part of the `meta` property's `pagination` field in the response, the following properties:
 
@@ -25,7 +25,7 @@ Pagination is done within the context of any other URL parameters passed.  For i
 
 
 Stream Pagination
-`````````````````
+-----------------
 
 This pagination uses the `since` and `until` parameters to traverse a constantly growing list of items.  The most important use of this type of pagination is when dealing with historical data from  Telemetry Services.  In this situation, data are constantly being added to the front of the list as vehicles report additional telemetry information.  In order to keep consistent paging, time constraints are placed on the data returned.  In this way a single URL will continue to return the same set of data, even as more data are added to the front of the list.
 

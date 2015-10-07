@@ -1,25 +1,20 @@
 The Vinli Platform
 ==================
 
-The Vinli Platform allows applications to get data from Vinli devices, using a fast, simple RESTful API. Applications can get both raw and synthesized data.
+Vinli Platform service:
 
-For raw data:
+* authenticates your application, and
+* configures pagination
 
-* **Platform Service** administers your application. You can manage devices, get vehicle information, and monitor transactions.
-* **Telemetry Service** delivers time-series data.
-* **Event Service** offers subscriptions for vehicle events and powerful, rule- based event notifications.
-* **Rule Service** creates event subscriptions based on vehicle state or georeferences.
+Authentication using OAUTH 2 is mandatory for all Vinli apps. Apps must authenticate themselves and user actions to use Vinli services.
 
-For synthesized data:
+Vinli paginates data using:
 
-* **Trip Service** organizes and summarizes telemetry by vehicle ignition and shutdown.
-* **Diagnostic Service** allows applications to discover the malfunction state of the vehicle and provides diagnostic trouble codes.
-* **Behavioral Service** categorizes driver risk based on driver behavior, vehicle conditions, and geographical travel patterns.
-* **Safety Service** provides collision history and telemetry details of collisions. This service is often used together with an Event Service subscription to *collision* events.
+* resource lists for static resources, or
+* streams for rapidly changing data
 
-Vinli Platform services authenticate your application and let you configure pagination. Vinli applications must authenticate themselves and their user’s actions. Pagination can affect the format of dates and times.
-
-Get the details in these sections:  
+Pagination can alter the format of dates and times. It's an important topic for apps that rely on telemetry data.
+ 
 
 .. toctree::
    :maxdepth: 2
