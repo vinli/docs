@@ -12,6 +12,6 @@ The results of these analysis are "Report Cards" for both a single Trip and for 
 * **Travel Patterns** - the risk based on where the driver travels most frequently
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    report-card-service

@@ -8,6 +8,6 @@ Event Services can be used to set up subscriptions to `collision` events, which 
 Note: It is extremely important to remind the user to call their local emergency services number (9-1-1, 1-1-2, etc.).  Vinli's Safety Services, while built to be as reliable as possible, should not be used in place of standard emergency procedures.
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    collision-service

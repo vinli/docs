@@ -12,7 +12,7 @@ Common across all three of these methods is the way in which the time-series dat
 It's important to note that the pattern in which each parameter is reported is different and somewhat unpredictable depending on the type of vehicle or the vehicle's condition. There are a few parameters that we try to send as often as possible (RPM, Vehicle Speed, etc.), and location is sent with every message when available. There are also some parameters that never change for a vehicle such as Fuel Type or O2 Sensor Locations (boring stuff, right?). However, all parameters that are provided by a vehicle are reported at least once every minute or so after startup.
 
 .. toctree::
-  :maxdepth: 1
+  :maxdepth: 2
 
   device-messages
   location-history
