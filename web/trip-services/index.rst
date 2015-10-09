@@ -56,6 +56,7 @@ Response
             "averageLoad": 42.6683,
             "averageMovingSpeed": 23.1505,
             "averageSpeed": 15.4892,
+            "comprehensiveLocations": true,
             "distance": 2125.35,
             "distanceByGPS": 2051.44,
             "distanceByVSS": 2125.35,
@@ -68,7 +69,8 @@ Response
             "maxSpeed": 47,
             "messageCount": 182,
             "stdDevMovingSpeed": 11.0187,
-            "stopCount": 8
+            "stopCount": 8,
+            "substantial": true
           },
           "links": {
             "self": "https://trips.vin.li/api/v1/trips/a51a3c87-baa7-4e5d-98e6-4f9588d7c2e1",
