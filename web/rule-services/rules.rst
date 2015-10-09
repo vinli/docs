@@ -32,6 +32,8 @@ Applications can subscribe to these events in three ways:
 - or to both with "rule-\*"
 
 
+.. _Boundaries: boundaries.html
+
 .. toctree::
    :maxdepth: 1
 
