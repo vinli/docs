@@ -10,7 +10,7 @@ Telemetry Services provide time-series data from vehicle parameters and location
 
 All of these data formats are provided using `stream pagination`_.
 
-The format in which each parameter is reported is different depending on the type of vehicle or the vehicle's condition.
+The reported format of each parameter can be different depending on the type of vehicle or the vehicle's condition.
 
 Some parameters change often, and others not at all. For example, Telemetry Service sends RPM, vehicle speed, etc. as often as possible, location with every message when available. However, Fuel Type or O2 Sensor Locations will never change.
 
