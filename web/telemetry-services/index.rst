@@ -1,15 +1,22 @@
 Telemetry Services
 ==================
 
-The collection of Telemetry Services are meant to provide the full history of vehicle telemetry transmitted by a device. This history is made available in three different formats across three separate, but similar API methods.
+Telemetry Services provide time-series data from vehicle parameters and location. This history is available in three formats:
 
-* Snapshots - Time-series history of one or more vehicle parameters
-* Locations - Time-series of locations with corresponding vehicle parameters returned as valid GeoJSON
-* Messages - Time-series of the raw, unfiltered messages from a device
+* **messages format** provides time-series of the raw, unfiltered messages from a device
+* **locations format** returns time-series of locations with corresponding vehicle parameters returned as valid GeoJSON
+* **telemetry snapshots** deliver time-series history of one or more vehicle parameters
 
-Common across all three of these methods is the way in which the time-series data is accessed. These follow the "Stream Pagination" pattern described above and allow for pagination in time.
 
-It's important to note that the pattern in which each parameter is reported is different and somewhat unpredictable depending on the type of vehicle or the vehicle's condition. There are a few parameters that we try to send as often as possible (RPM, Vehicle Speed, etc.), and location is sent with every message when available. There are also some parameters that never change for a vehicle such as Fuel Type or O2 Sensor Locations (boring stuff, right?). However, all parameters that are provided by a vehicle are reported at least once every minute or so after startup.
+All of these data formats are provided using `stream pagination`_.
+
+The format in which each parameter is reported is different depending on the type of vehicle or the vehicle's condition.
+
+Some parameters change often, and others not at all. For example, Telemetry Service sends RPM, vehicle speed, etc. as often as possible, location with every message when available. However, Fuel Type or O2 Sensor Locations will never change.
+
+In any case, all parameters that are provided by a vehicle are reported at least once every minute or so after startup.
+
+.. _stream pagination: ../general/pagination.html#stream-pagination
 
 .. toctree::
   :maxdepth: 2
