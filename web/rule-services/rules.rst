@@ -1,9 +1,6 @@
 Rules
 =====
 
-Rules
-^^^^^
-
 A Rule contains:
 
 #. a Device identifier
