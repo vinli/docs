@@ -3,7 +3,7 @@ The Vinli Platform
 
 Vinli Platform service:
 
-* authenticates your application, and
+* authenticates your application, Vinli device and
 * configures pagination
 
 Authentication using OAUTH 2 is mandatory for all Vinli apps. Apps must authenticate themselves and user actions to use Vinli services.
@@ -20,5 +20,6 @@ Pagination can alter the format of dates and times. It's an important topic for 
    :maxdepth: 2
 
    authentication
+   dev-device
    pagination
    dates
