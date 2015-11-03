@@ -14,7 +14,7 @@ Request
 
 .. code-block:: json
 
-      GET https://behavior.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/report_cards
+      POST https://behavior.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/report_cards
       Accept: application/json
 
 Response
@@ -22,7 +22,7 @@ Response
 
 .. code-block:: json
 
-      HTTP/1.1 200 OK
+      HTTP/1.1 201 Created
       Content-Type: application/json
 
       {
@@ -97,7 +97,7 @@ Request
 
 .. code-block:: json
 
-      GET https://behavior.vin.li/api/v1/trips/b9e58eb4-0743-45e9-b9c6-86500f5412bb/report_card
+      POST https://behavior.vin.li/api/v1/trips/b9e58eb4-0743-45e9-b9c6-86500f5412bb/report_card
       Accept: application/json
 
 Response
@@ -105,7 +105,7 @@ Response
 
 .. code-block:: json
 
-      HTTP/1.1 200 OK
+      HTTP/1.1 201 Created
       Content-Type: application/json
 
       {
