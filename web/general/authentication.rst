@@ -8,7 +8,7 @@ All API calls must use HTTP/SSL. Vinli will reject all plain HTTP calls at the s
 Application Authentication
 ---------------------------
 
-Each request must include the App ID and App Secret in the Authentorization header of the request.  This takes the form of a standard BasicAuth header where the App ID is the username and the App Secret is the password.  For example, an Application with the following credentials:
+Each request must include the App ID and App Secret in the Authorization header of the request.  This takes the form of a standard BasicAuth header where the App ID is the username and the App Secret is the password.  For example, an Application with the following credentials:
 
 * **App ID:** c87d5be0-2e69-11e4-8c21-0800200c9a66
 * **App Secret:** HKLFFoSILb8VHFJD

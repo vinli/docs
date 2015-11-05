@@ -3,8 +3,6 @@ Device Service
 
 The root element in all interaction with the Vinli platform is the Device.  Each Vinil device has an associated Device ID by which it is referred to within the platform.  However, before your application can access any data or perform any actions on a Device, it must be authorized by the owner of the device.
 
-Enterprise-level applications, which require specific approval from Vinli, are able to manage a specific block of devices that are "owned" by the application.
-
 
 List all Devices
 ````````````````
@@ -31,6 +29,7 @@ Response
         "devices" : [
           {
             "id" : "8b8a1810-d6d8-11e3-9c1a-0800200c9a66",
+            "name" : "testdevice001",
             "links" : {
               "self" : "https://platform.vin.li/api/v1/devices/8b8a1810-d6d8-11e3-9c1a-0800200c9a66",
               "vehicles" : "https://platform.vin.li/api/v1/devices/8b8a1810-d6d8-11e3-9c1a-0800200c9a66/vehicles",

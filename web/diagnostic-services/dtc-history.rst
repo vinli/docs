@@ -71,7 +71,6 @@ Response
             "since": "1970-01-01T00:00:00.000Z",
             "limit": 20,
             "sortDir": "desc",
-            "limit" : 100,
             "links" : {}
           }
         }

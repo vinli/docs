@@ -10,7 +10,7 @@ Vinli APIs paginate all list responses. Pagination varies slightly depending on 
 Resource List Pagination
 -------------------------
 
-This pagination uses `offset` and `limit` to page through a sorted lists of objects.  By default this sorting is based on the creation time and is sorted in chronological order, but this sorting can be modified by using the `sortBy` and `sortDirection` parameters.  The API will return, as part of the `meta` property's `pagination` field in the response, the following properties:
+This pagination uses `offset` and `limit` to page through a sorted lists of objects.  By default this sorting is based on the creation time and is sorted in reverse chronological order, i.e. time series order. The first item in the list is the most recent. This order can be modified using the `sortBy` and `sortDirection` parameters.  As part of the `meta` property's `pagination` field in the response, the API will return:
 
  * `count` - the total number of items available regardless of pagination
  * `limit` - the limit used for the list returned (This will be the limit requested by the client unless one was not passed, in which case the default for this method will be returned, or unless the limit requested by the client was larger than the max allowed for the method, in which case the maximum allowable limit will be returned)
