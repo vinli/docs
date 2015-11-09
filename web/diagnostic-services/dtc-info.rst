@@ -24,16 +24,16 @@ Response
 
       {
         "code" : {
-          make: 'generic',
-          twoByte: {
-            number: 'P0001',
-            description: 'Fuel Volume Regulator Control Circuit/Open'
+          "make": "generic",
+          "twoByte": {
+            "number": "P0001",
+            "description": "Fuel Volume Regulator Control Circuit/Open"
           },
-          threeByte: {
-            number: 'P0001',
-            ftb: '13',
-            fault: 'Circuit Open',
-            description: 'Fuel Volume Regulator Control'
+          "threeByte": {
+            "number": "P0001",
+            "ftb": "13",
+            "fault": "Circuit Open",
+            "description": "Fuel Volume Regulator Control"
           }
         }
       }
