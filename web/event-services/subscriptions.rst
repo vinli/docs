@@ -273,10 +273,10 @@ Response
       }
 
 
-Delete a Subscription
+Update a Subscription
 `````````````````````
 
-Subscriptins are primarliy immutable.  The `url` and `appData` properties can be updated; however, the "functional" parts of the Subscription (`eventType`, `object`, etc.) are not modifiable.
+Subscriptions are primarily immutable.  The `url` and `appData` properties can be updated; however, the "functional" parts of the Subscription (`eventType`, `object`, etc.) are not modifiable.
 
 
 Request
