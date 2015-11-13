@@ -1,5 +1,5 @@
 Rules
-=====
+-------
 
 A Rule contains:
 
@@ -30,8 +30,3 @@ Applications can subscribe to these events in three ways:
 
 
 .. _Boundaries: boundaries.html
-
-.. toctree::
-   :maxdepth: 1
-
-   rule-services

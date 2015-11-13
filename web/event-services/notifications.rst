@@ -1,5 +1,5 @@
 Notifications
-~~~~~~~~~~~~~
+--------------
 
 Each time a subscription is triggered by an event, a new Notification is created that represents the event, subscription, and subsequent actions taken by the Vinli platform to notify your application.
 

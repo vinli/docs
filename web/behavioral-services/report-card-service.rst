@@ -1,11 +1,11 @@
 Report Card Service
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
 
 The Driver Report Card contains the letter grades for trips associated with a device. They are representd as school-like grades such as A or C.
 
 Report Cards for a Device
-```````````````````````````````
+`````````````````````````
 
 Returns a Report Card based on historical data for a specified period. In some cases, not enough information was gathered to generate a Report Card.  In these cases, the grades will be reported as "I" (for "Incomplete" to keep the school report card metaphore going).
 
@@ -58,7 +58,7 @@ Response
 
 
 Lifetime Report Card for a Device
-`````````````````````````````````
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Returns a Report Card based on all historical data available for a given Device.
 
@@ -86,7 +86,7 @@ Response
 
 
 Report Card for a Trip
-``````````````````````
+```````````````````````
 
 The Trip-specific Report Card contains the same data as the Long-Term and Lifetime Report Card but is specific for a particular Trip.
 

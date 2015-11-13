@@ -1,5 +1,5 @@
 Telemetry Messages
-~~~~~~~~~~~~~~~~~~
+-------------------
 
 Get a List of Telemetry Messages
 ````````````````````````````````

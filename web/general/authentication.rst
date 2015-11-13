@@ -1,12 +1,12 @@
 Authentication
-==============
+---------------
 
 Apps must authenticate through Vinli Platform services. When you register an app at `dev.vin.li`_, the Vinli Platform assigns a unique App ID and App Secret. Your app will need both, to authenticate with Vinli services.
 
 All API calls must use HTTP/SSL. Vinli will reject all plain HTTP calls at the socket level.
 
 Application Authentication
----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Each request must include the App ID and App Secret in the Authorization header of the request.  This takes the form of a standard BasicAuth header where the App ID is the username and the App Secret is the password.  For example, an Application with the following credentials:
 
@@ -38,7 +38,7 @@ For the example above, the Authorization header would be sent as:
 
 
 User Action Authentication
---------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Vinli services require user actions to authernticate with OAuth 2. Developers must register their apps for each platform they would like to support. at `dev.vin.li`_.
 

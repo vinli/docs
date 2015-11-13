@@ -39,18 +39,19 @@ Tier 2, structured data services:
 .. _Behavioral Service: web/behavioral-services/index.html
 .. _Safety Service: web/safety-services/index.html
 .. _Rule Service: web/rule-services/index.html
+.. _API Reference: web/API-reference/index.html
 
 
 Contents
 --------
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    web/general/index
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    web/platform-services/index
 
@@ -85,8 +86,13 @@ Contents
   web/behavioral-services/index
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    web/safety-services/index
+
+.. toctree::
+   :maxdepth: 3
+
+   web/API-reference/index
 
 

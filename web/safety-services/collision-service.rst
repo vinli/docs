@@ -1,5 +1,5 @@
-Collision
-~~~~~~~~~
+Collision Service
+-------------------
 
 Get a list of Collisions for a Device
 `````````````````````````````````````

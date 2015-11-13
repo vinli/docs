@@ -24,7 +24,3 @@ A Rule is "covered" when all Boundary conditions are true. This fact has importa
 Because of these implications, the Rule Service allows at most one geospatial boundary in a Rule. This eliminates the problem of disjoint geospatial regions. However, app developers must still avoid creating disjoint parametric boundaries.
 
 
-.. toctree::
-   :maxdepth: 1
-
-   rule-services

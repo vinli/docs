@@ -1,5 +1,5 @@
 Overview
-========
+--------
 
 The API routes provided by the Event Service work in concert to provide both access to the historical events for a Device as well as web-hooks for your App to receive immediate notification when an event occurs.
 

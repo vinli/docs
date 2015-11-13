@@ -1,5 +1,5 @@
 Vehicle Service
-~~~~~~~~~~~~~~~
+-----------------
 
 Vinli keeps track of which vehicle a device is or has been plugged into and provides detailed information regarding thee specifics about the vehicle.  This gives your application the chance to better personlize the experience of a user as well as the information necessary to classify users and their data by vehicle.  You are only allowed to see vehicles that are associated with a device to which you're application has access.
 

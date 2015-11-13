@@ -1,5 +1,5 @@
 Device Service
-~~~~~~~~~~~~~~
+---------------
 
 The root element in all interaction with the Vinli platform is the Device.  Each Vinil device has an associated Device ID by which it is referred to within the platform.  However, before your application can access any data or perform any actions on a Device, it must be authorized by the owner of the device.
 

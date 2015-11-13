@@ -1,5 +1,5 @@
 Subscriptions
-~~~~~~~~~~~~~
+-------------
 
 In order to receive notification for vehicle events, your application must subscribe to events for each device individually.
 
@@ -7,7 +7,7 @@ Each Subscription relates to a given event or class of events from a given Devic
 
 
 Notification Payload
-````````````````````
+````````````````````````
 
 When a subscription is triggered, an HTTP call using the "POST" method is made to the Subscription's URL.  This call uses content-type of "application/json" and sends a JSON representation containing a `notification` root object along with representations of the Event that triggered the notification and the associated Subscription:
 
@@ -74,7 +74,7 @@ In the example above, the Subscription triggered is associated with a Rule.  In 
 
 
 Create a Subscription
-`````````````````````
+```````````````````````
 
 A Subscription must include, at a minimum an `eventType` and a `url`.  Additionally, if the subscription references a given Rule, it must be included in the `object`.
 
@@ -179,7 +179,7 @@ Response
 
 
 Get all Subscriptions for a Device
-``````````````````````````````````
+````````````````````````````````````
 
 Request
 +++++++
@@ -234,7 +234,7 @@ Response
 
 
 Get a Specific Subscription
-```````````````````````````
+`````````````````````````````
 
 Request
 +++++++
@@ -274,7 +274,7 @@ Response
 
 
 Update a Subscription
-`````````````````````
+```````````````````````
 
 Subscriptions are primarily immutable.  The `url` and `appData` properties can be updated; however, the "functional" parts of the Subscription (`eventType`, `object`, etc.) are not modifiable.
 
@@ -326,7 +326,7 @@ Response
 
 
 Delete a Subscription
-`````````````````````
+``````````````````````
 
 Request
 +++++++

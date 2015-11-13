@@ -1,8 +1,8 @@
 Device DTC  Service
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
 Get the list of all DTC Codes for a Device
-``````````````````````````````````````````
+`````````````````````````````````````````````
 
 The DTC History Service provides historical information for DTC codes for a given vehicle.  Each time a new DTC code is seen, it triggers a DTC Event.  These events either resolve when the DTC code is no longer seen or remain "open" until the code is resolved.
 

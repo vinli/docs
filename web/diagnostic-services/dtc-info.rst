@@ -1,8 +1,8 @@
 DTC Info Service
-~~~~~~~~~~~~~~~~
+-----------------
 
 Get Information About a DTC Code
-````````````````````````````````
+```````````````````````````````````
 
 There's a lot of information encoded in the DTC codes reported by a Vehicle.  This method is meant to provide this information for a given DTC code so that your Application can present useful information to the end-user.
 

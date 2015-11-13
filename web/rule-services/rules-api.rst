@@ -1,5 +1,5 @@
 Rule API
-========
+----------
 
 The Rule Service allows your application to manage the rules for devices.
 
@@ -7,7 +7,7 @@ Rules are immutable.  Once created, a rule cannot be modified. To change a Rule,
 
 
 List all Rules for a Device
-```````````````````````````
+````````````````````````````
 
 Request
 +++++++
@@ -189,8 +189,3 @@ Response
 
       HTTP/1.1 204 NO CONTENT
 
-
-.. toctree::
-   :maxdepth: 1
-
-   rule-services

@@ -1,5 +1,5 @@
 Telemetry Snapshots
-~~~~~~~~~~~~~~~~~~~
+--------------------
 
 Returns the latest `limit` number of telemetry snapshots that contain at least one of the requested parameters that occurred before or at the `until` time and after the `since` time. If the `until` time is not specified, then the service will return snapshots until the current time when the call is made.
 

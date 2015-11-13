@@ -17,7 +17,7 @@ Pagination can alter the format of dates and times. It's an important topic for 
  
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    authentication
    dev-device

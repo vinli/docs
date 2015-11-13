@@ -1,5 +1,5 @@
 Transaction Service
-~~~~~~~~~~~~~~~~~~~
+---------------------
 
 Get All Transactions for this Application
 `````````````````````````````````````````
