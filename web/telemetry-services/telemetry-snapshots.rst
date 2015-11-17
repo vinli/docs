@@ -51,7 +51,7 @@ Response
           "meta": {
               "pagination": {
                   "remainingCount": 1324,
-                  "limit": 50,
+                  "limit": 20,
                   "until": 1394733261450,
                   "links": {
                       "latest": "https://telemetry.vin.li/api/v1/devices/27a2ac50-d7bd-11e3-9c1a-0800200c9a66/snapshots?fields=rpm,vehicleSpeed,calculatedLoadValue,fuelType",

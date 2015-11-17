@@ -29,4 +29,4 @@ Receiving Dates
 
 Where possible, Vinli Platform's APIs will return dates as ISO 8601 formatted Strings.  This makes working with the API with debugging tools much easier as the dates will already be easily human-readable.  All major date libraries are able to parse ISO 8601 natively without much fuss.
 
-Pagination metadata that uses the "Stream Pagination", will generally return URLs with Unit Time query parameters.  As stated above, this avoids any issues with URL encoding and provides for slightly smaller URLs.
+Pagination metadata that uses the "Stream Pagination", will generally return URLs with Unix Time query parameters.  As stated above, this avoids any issues with URL encoding and provides for slightly smaller URLs.

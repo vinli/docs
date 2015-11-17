@@ -16,7 +16,7 @@ Request
 
 * `fields` - Can be `all` or a comma-separated list of parameter keys to be included in the `properties` field.
 * `until` - Results will contain snapshots whose timestamps are less than or equal to the `until` value. If an `until` value is not specified, the current time when the call is made will be used as the `until` value.
-* `since` - Results will contain snapshots whose timestamps are greater than the `since` value. If an `since` value is not specified, no lower limit will be placed on the returned snapshots.
+* `since` - Results will contain snapshots whose timestamps are greater than the `since` value. If a `since` value is not specified, no lower limit will be placed on the returned snapshots.
 * `limit` - Results will contain no more than `limit` number of snapshots
 
 

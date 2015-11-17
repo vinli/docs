@@ -46,7 +46,7 @@ Response
         ],
         "meta" : {
           "pagination" : {
-            "remainingCount" : 1324,
+            "remaining" : 1324,
             "limit" : 50,
             "until" : 1408945415426,
             "links" : {
