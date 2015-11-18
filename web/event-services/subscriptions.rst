@@ -70,7 +70,7 @@ When a subscription is triggered, an HTTP call using the "POST" method is made t
 
 Note that the `appData` attribute of the `subscription` property contains the Application-specific data that you created the Subscription with, if applicable.
 
-In the example above, the Subscription triggered is associated with a Rule.  In this case, additional information is made available in the Notificaiton including a reprsentation of the Rule in the `meta` property.  Additionally, a very useful property `firstEval` is provided that lets your Application know whether or not this is the first evaluation of the Rule.  The first evaluation of a Rule in which it can be established that the device is covered or not covered by the boundaries will always result in a notification.  Using the `firstEval` property, your App can determine if the device was previously in a different state or was just in an unknown state.
+In the example above, the Subscription triggered is associated with a Rule.  In this case, additional information is made available in the Notification including a representation of the Rule in the `meta` property.  Additionally, a very useful property `firstEval` is provided that lets your Application know whether or not this is the first evaluation of the Rule.  The first evaluation of a Rule in which it can be established that the device is covered or not covered by the boundaries will always result in a notification.  Using the `firstEval` property, your App can determine if the device was previously in a different state or was just in an unknown state.
 
 
 Create a Subscription

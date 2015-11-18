@@ -12,7 +12,7 @@ Resource List Pagination
 
 This pagination uses `offset` and `limit` to page through a sorted lists of objects.  By default this sorting is based on the creation time and is sorted in reverse chronological order, i.e. time series order. The first item in the list is the most recent. This order can be modified using the `sortBy` and `sortDirection` parameters.  As part of the `meta` property's `pagination` field in the response, the API will return:
 
- * `count` - the total number of items available regardless of pagination
+ * `total` - the total number of items available regardless of pagination
  * `limit` - the limit used for the list returned (This will be the limit requested by the client unless one was not passed, in which case the default for this method will be returned, or unless the limit requested by the client was larger than the max allowed for the method, in which case the maximum allowable limit will be returned)
  * `offset` - the offset used for the list returned (This will be the offset requested by the client unless one was not passed in the call, in which case 0 will be returned)
  * `links` - an object containing URLs for traversing the pages of the list
@@ -21,7 +21,7 @@ This pagination uses `offset` and `limit` to page through a sorted lists of obje
    * `next` - URL for the next page (If the current page is the last page, this field will not be returned.)
    * `prev` - URL for the previous page (If the current page is the first page, this field will not be returned.)
 
-Pagination is done within the context of any other URL parameters passed.  For instance, if a client requests transactions since January 1st, 2014 until February 1st, 2014 in chronological order, passing an `offset` of 0 will return the transactions starting on January 1st.  Incrementing the `offset` value will page through only the results that fall within the original constraints (i.e. the last page will contain the last transaction prior to February 1st).  The `totalCount` returned will be the total available resources that match the constraints (in this case, `since` and `until`). As with all other requests, attempting to increase the offset beyond `totalCount` will result in an empty response.
+Pagination is done within the context of any other URL parameters passed.  For instance, if a client requests transactions since January 1st, 2014 until February 1st, 2014 in chronological order, passing an `offset` of 0 will return the transactions starting on January 1st.  Incrementing the `offset` value will page through only the results that fall within the original constraints (i.e. the last page will contain the last transaction prior to February 1st).  The `total` returned will be the total available resources that match the constraints (in this case, `since` and `until`). As with all other requests, attempting to increase the offset beyond `total` will result in an empty response.
 
 
 Stream Pagination

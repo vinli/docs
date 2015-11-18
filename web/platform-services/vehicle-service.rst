@@ -1,7 +1,7 @@
 Vehicle Service
 -----------------
 
-Vinli keeps track of which vehicle a device is or has been plugged into and provides detailed information regarding thee specifics about the vehicle.  This gives your application the chance to better personlize the experience of a user as well as the information necessary to classify users and their data by vehicle.  You are only allowed to see vehicles that are associated with a device to which you're application has access.
+Vinli keeps track of which vehicle a device is or has been plugged into and provides detailed information regarding the specifics about the vehicle.  This gives your application the chance to better personlize the experience of a user as well as the information necessary to classify users and their data by vehicle.  You are only allowed to see vehicles that are associated with a device to which you're application has access.
 
 Vehicle-device assocation is time-based.  A device that is plugged into one vehicle will be associated with that vehicle until it is plugged into a differnt vehicle.  Vinli keeps track of this history for you.  In the case of a device that is shared between multiple vehicles, the same vehicle will appear multiple times in the history.
 
@@ -12,7 +12,7 @@ List All of a Device's Vehicles
 ```````````````````````````````
 
 
-Returns the vehicles associated with the given device in chronological order.
+Returns the vehicles associated with the given device in time series order.
 
 
 Request
