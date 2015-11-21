@@ -99,7 +99,7 @@ Request
 
 .. code-block:: json
 
-      GET https://telemetry.vin.li/api/v1/devices/27a2ac50-d7bd-11e3-9c1a-0800200c9a66/messages/2f11d630-141e-11e4-b717-5977b6c38d23
+      GET https://telemetry.vin.li/api/v1/messages/2f11d630-141e-11e4-b717-5977b6c38d23
       Accept: application/json
 
 
@@ -114,16 +114,19 @@ Response
       {
         "message" : {
           "id" : "27a2ac50-d7bd-11e3-9c1a-0800200c9a66",
-          "timestamp" : "2014-07-14T17:46:06.759Z",
-          "location" : {
-            "longitude" : -90.0811,
-            "latitude" : 29.9508
+          "timestamp": "2014-07-14T17:46:06.759Z",
+          "data": {
+            "location": {
+              "type": "point",
+              "coordinates": [
+                -90.0811,
+                29.9508
+              ]
+            },
+            "vehicleSpeed": 0
           },
-          "data" : {
-            "vehicleSpeed": 12,
-            "calculatedLoadValue": 34.5,
-            "fuelType": "Gasoline",
-            "rpm": 1254
+          "links" : {
+            self": "https://telemetry.vin.li/api/v1/messages/2f11d630-141e-11e4-b717-5977b6c38d23"
           }
         }
       }
