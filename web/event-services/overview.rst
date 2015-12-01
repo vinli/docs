@@ -23,8 +23,8 @@ There are several types of events that the platform will track on a device-by-de
  * `shutdown`
  * `rule-enter`
  * `rule-leave`
- * `dtc-code-detect`
- * `dtc-code-clear`
+ * `dtc-on`
+ * `dtc-off`
  * `collision`
  * `trip-started`
  * `trip-orphaned`
