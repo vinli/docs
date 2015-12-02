@@ -213,6 +213,8 @@ For each trip, more detailed information regarding overall trip statistics is av
 
 All of the detailed information listed in the above verbiage is available via the get trips by device or get trips by vehicle.
 
+* `fuelEconomy` invokes an operation to get the fuel type of a trip. fuelEconomy uses gasoline as the default fuel type. However, diesel will be set as the fuel type (and corresponding diesel values for calculations) if it is detected in a trip.   
+
 Request
 +++++++
 
