@@ -4,10 +4,10 @@ Vinli Services Documentation
 Overview
 --------
 
-Vinli is a platform for easily and quickly building connected car apps. Apps get vehicle data through Vinli services. These services are of two types.
+Vinli is a platform for easily and quickly building connected car apps. Apps get vehicle data through Vinli services.
 
 Tier 1, raw data services:
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+````````````````````````````
 
 * `Platform Service`_ manages devices, gets vehicle information, and monitors transactions.
 
@@ -17,9 +17,11 @@ Tier 1, raw data services:
 
 * `Diagnostic Service`_ reveals the malfunction state of the vehicle and provides diagnostic trouble codes.
 
+* `Distance Service`_ estimates the car odometer reading at a point in time and milage travelled in a time interval.
+
 
 Tier 2, structured data services:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+`````````````````````````````````
 
 * `Trip Service`_ organizes and summarizes telemetry by vehicle ignition and shutdown.
 
@@ -29,6 +31,17 @@ Tier 2, structured data services:
 
 * `Rule Service`_ creates event subscriptions based on vehicle state or geofences.
 
+
+Testing and Prototyping
+````````````````````````
+
+You can quickly prototype an app using `Virtual Vinli`_.
+
+* select a `Virtual Vinli Route`_
+
+* get data from a `Virtual Vinli Run`_ of the route
+
+* use the returned virtual data to test your ideas
 
 
 .. _Platform Service: web/platform-services/index.html
@@ -40,6 +53,10 @@ Tier 2, structured data services:
 .. _Safety Service: web/safety-services/index.html
 .. _Rule Service: web/rule-services/index.html
 .. _API Reference: web/API-reference/index.html
+.. _Distance Service: web/distance-services/index.html
+.. _Virtual Vinli: web/virtual-vinli/index.html
+.. _Virtual Vinli Route: web/virtual-vinli/routes.html
+.. _Virtual Vinli Run: web/virtual-vinli/runs.html
 
 
 Contents
@@ -78,6 +95,11 @@ Contents
 .. toctree::
   :maxdepth: 3
 
+  web/distance-services/index
+
+.. toctree::
+  :maxdepth: 3
+
   web/trip-services/index
 
 .. toctree::
@@ -94,5 +116,10 @@ Contents
    :maxdepth: 3
 
    web/API-reference/index
+
+.. toctree::
+   :maxdepth: 3
+
+   web/virtual-vinli/index
 
 

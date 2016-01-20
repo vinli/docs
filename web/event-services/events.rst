@@ -126,7 +126,7 @@ Response
 
 
 Get a Specific Event
-~~~~~~~~~~~~~~~~~~~~~
+`````````````````````
 
 Returns information about a specific event.
 

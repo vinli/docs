@@ -8,7 +8,7 @@ Vinli APIs paginate all list responses. Pagination varies slightly depending on 
 
 
 Resource List Pagination
-~~~~~~~~~~~~~~~~~~~~~~~~~
+````````````````````````````
 
 This pagination uses `offset` and `limit` to page through a sorted lists of objects.  By default this sorting is based on the creation time and is sorted in reverse chronological order, i.e. time series order. The first item in the list is the most recent. This order can be modified using the `sortBy` and `sortDirection` parameters.  As part of the `meta` property's `pagination` field in the response, the API will return:
 
@@ -25,7 +25,7 @@ Pagination is done within the context of any other URL parameters passed.  For i
 
 
 Stream Pagination
-~~~~~~~~~~~~~~~~~~~~
+```````````````````
 
 This pagination uses the `since` and `until` parameters to traverse a constantly growing list of items.  The most important use of this type of pagination is when dealing with historical data from  Telemetry Services.  In this situation, data are constantly being added to the front of the list as vehicles report additional telemetry information.  In order to keep consistent paging, time constraints are placed on the data returned.  In this way a single URL will continue to return the same set of data, even as more data are added to the front of the list.
 

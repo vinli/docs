@@ -15,7 +15,7 @@ The normal life-cycle of working with Event Service is:
 
 
 Event Types
-~~~~~~~~~~~
+````````````
 
 There are several types of events that the platform will track on a device-by-device basis.  These include:
 
@@ -32,7 +32,7 @@ There are several types of events that the platform will track on a device-by-de
  * `trip-completed`
 
 Objects
-~~~~~~~
+`````````
 
 Almost all events occur in the context of a higher-level object.  For example, startup and shutdown events occur in relation to a given Vehicle, rule-enter and rule-leave events occur in relation to a given Rule.  This information is available as part of the event object property.  Additionally, subscriptions can specifically reference a given object.  For example, a subscription to `startup` events can optionally reference a particular Vehicle; in this way, an App will only be notified of startups where the Device is attached to a particular Vehicle.
 
