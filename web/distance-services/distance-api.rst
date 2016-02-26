@@ -151,22 +151,22 @@ Response
  }
  }
 
-Create an Odometer Triggers
-```````````````````````````
+Create an Odometer Trigger
+``````````````````````````
 Request
 +++++++
- .. code-block:: json
+.. code-block:: json
 
-  POST https://distances.vin.li/api/v1/vehicles/{vehicleId}/odometers_triggers
-  Accept: application/json
-  Content-Type: application/json
+ POST https://distances.vin.li/api/v1/vehicles/{vehicleId}/odometers_triggers
+ Accept: application/json
+ Content-Type: application/json
 
-  {
-  "odometerTrigger": {
-   "type": "specific", // required. valid options are specific, from_now, and milestone
-   "threshold": 5000000 // required. will be adding same unit requirements as seen in POST odometers
-  }
-  }
+ {
+ "odometerTrigger": {
+  "type": "specific",
+  "threshold": 5000000
+ }
+ }
 
 Response
 ++++++++
