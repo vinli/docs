@@ -1,6 +1,6 @@
 Distance API
 ------------
-A vehicles Odometer reading is exposed through the OBDII port. However, knowing this reading can be handy in many use cases... thus we created Distance Service. Distance Service is our best effort guess at what the actual odometer of a car is at present time and/or to provide the milage travelled between 2 points in time.
+A vehicles Odometer reading is not exposed through the OBDII port. However, knowing this reading can be handy in many use cases... thus we created Distance Service. Distance Service is our best effort guess at what the actual odometer of a car is at present time and/or to provide the milage travelled between 2 points in time.
 
 **All distances are in meters.**
 
@@ -15,7 +15,8 @@ Request
       GET https://distances.vin.li/api/v1/vehicles/{vehicleId}/distances/
       Accept: application/json
 
-Optionally - this method accepts ``from`` and ``until`` query parameters.
+Optionally - this method accepts ``from`` and ``until`` query parameters. 
+You may also pass `x-unit` in the header with either `km`, `mi`, or `m` to modify the output units. Defaults to `m`.
 
 Response
 ++++++++
@@ -23,29 +24,26 @@ Response
 
       HTTP/1.1 200 OK
       Content-Type: application/json
-      {
-      "distances": [
-        {
-          "confidenceMin": 6300.627,
-          "confidenceMax": 38703.855,
-          "value": 22502.241,
-          "confidence": 0.28,
-          "source": "trips",
-          "lastOdometerDate": "2016-02-02T16:29:53.616Z"
-        },
-        {
-          "confidenceMin": 2894918,
-          "confidenceMax": 2896918,
-          "value": 2895918,
-          "confidence": 1,
-          "source": "dtc",
-          "lastOdometerDate": "2016-02-02T16:29:53.616Z"
-        }
-      ],
-      "links": {
-        "vehicle": "https://platform.vin.li/api/v1/vehicles/5d41c2b4-5fae-48e3-ac0a-f8df675f6c75"
-      }
-      }
+ {
+  "distances": [
+    {
+      "confidenceMin": 38270282.779,
+      "confidenceMax": 128122251.041,
+      "value": 83196266.91,
+      "confidence": 0.46,
+      "source": "trips",
+      "lastOdometerDate": "2016-02-24T20:59:53.633Z"
+    },
+    {
+      "confidenceMin": 83195691.2,
+      "confidenceMax": 83197691.2,
+      "value": 83196691.2,
+      "confidence": 1,
+      "source": "dtc",
+      "lastOdometerDate": "2016-02-24T20:59:53.633Z"
+    }
+  ]
+ }
 
 Details for Distances
 *********************
@@ -82,7 +80,7 @@ Request
 
 * `reading` - Required. The odometer value you are submitting.
 * `date` - The date/time at which this odometer reading applies. Optional, defaults to now.
-* `unit` - the unit of measure of the `reading`. Accepts `km`, `mi`, or `m`.
+* `unit` - Required. the unit of measure of the `reading`. Accepts `km`, `mi`, or `m`.
 
 Response
 ++++++++
@@ -150,6 +148,13 @@ Response
    }
  }
  }
+Delete an Odometer
+``````````````````
+Request
++++++++
+.. code-block:: json
+
+ DELETE https://distances.vin.li/api/v1/odometers/{odometerId}
 
 Create an Odometer Trigger
 ``````````````````````````
@@ -164,7 +169,8 @@ Request
  {
  "odometerTrigger": {
   "type": "specific",
-  "threshold": 5000000
+  "threshold": 5000000,
+  "unit": "km"
  }
  }
 
@@ -191,12 +197,14 @@ Response
 
 Details for Odometer Triggers
 *****************************
-* `type` - there are 3 types of triggers, `specifc`, `from_now`, `milestone`
+* `type` - Required. There are 3 types of triggers, `specifc`, `from_now`, `milestone`
 
  * `specific`: when an odometer hits a certain distance i.e. 50k miles
  * `from_now`: when an odometer hits a certain distance greater than the current distance
  * `milestone`: when an odometer hits a certain recurring interval i.e. every 5k miles
 
+* `threshold` - Required. The amount for your `type`.
+* `unit` - Required. The unit of measure of the `threshold`. Accepts `km`, `mi`, or `m`.
 
 Delete an Odometer Trigger
 ``````````````````````````
