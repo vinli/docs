@@ -16,7 +16,7 @@ Request
       Accept: application/json
 
 Optionally - this method accepts ``from`` and ``until`` query parameters. 
-You may also pass `x-unit` in the header with either `km`, `mi`, or `m` to modify the output units. Defaults to `m`.
+You may also pass ``x-unit`` in the header with either ``km``, ``mi``, or ``m`` to modify the output units. Defaults to ``m``.
 
 Response
 ++++++++
