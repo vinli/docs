@@ -6,16 +6,16 @@ A vehicles Odometer reading is not exposed through the OBDII port. However, know
 
 Get All of a Vehicles Distances
 ```````````````````````````````
-This method returns a list of all distances (or odemeter readings) that have been created for a vehicle.
+This method returns a list of all distances (or odometer readings) that have been created for a vehicle.
 
 Request
 +++++++
 .. code-block:: json
 
-      GET https://distances.vin.li/api/v1/vehicles/{vehicleId}/distances/
+      GET https://distance.vin.li/api/v1/vehicles/{vehicleId}/distances
       Accept: application/json
 
-Optionally - this method accepts ``from`` and ``until`` query parameters. 
+Optionally - this method accepts ``from`` and ``until`` query parameters.
 You may also pass ``x-unit`` in the header with either ``km``, ``mi``, or ``m`` to modify the output units. Defaults to ``m``.
 
 Response
@@ -30,35 +30,18 @@ Response
       "confidenceMin": 38270282.779,
       "confidenceMax": 128122251.041,
       "value": 83196266.91,
-      "confidence": 0.46,
-      "source": "trips",
       "lastOdometerDate": "2016-02-24T20:59:53.633Z"
     },
-    {
-      "confidenceMin": 83195691.2,
-      "confidenceMax": 83197691.2,
-      "value": 83196691.2,
-      "confidence": 1,
-      "source": "dtc",
-      "lastOdometerDate": "2016-02-24T20:59:53.633Z"
-    }
   ]
  }
 
 Details for Distances
 *********************
- * *confidenceMin* - the minimum range odometer value based on the confidence rating
- * *confidenceMax* - the maximum range odometer value based on the confidence rating
+ * *confidenceMin* - the minimum range value for the predicted odometer reading
+ * *confidenceMax* - the maximum range value for the predicted odometer reading
  * *value* - the best guess odometer value
- * *confidence* - 0-1 rating that indicates the likelihood of accuracy for the distance reading (0 being least accurate and 1 being most accurate)
- * *source* - the source by which the distance was derived
  * *lastOdometerDate* - the date/time of the most recent odometer record
 
-Sources
-*******
-Odometers can be obtained via 1 of 2 sources.
- * *dtc* - vehicles compile the milage driven since the dtc codes were last cleared. This is a highly accurate milage reading.
- * *trips* - odometers sourced from trips summarize trip distances recorded by Vinli. This is a less accurate measure.
 
 Create an Odometer Report
 ``````````````````````````
@@ -66,7 +49,7 @@ Request
 +++++++
 .. code-block:: json
 
- POST https://distances.vin.li/api/v1/vehicles/{vehicleId}/odometers/
+ POST https://distance.vin.li/api/v1/vehicles/{vehicleId}/odometers
  Accept: application/json
  Content-Type: application/json
 
@@ -106,7 +89,7 @@ Request
 +++++++
 .. code-block:: json
 
-      GET https://distances.vin.li/api/v1/vehicles/{vehicleId}/odometers/
+      GET https://distance.vin.li/api/v1/vehicles/{vehicleId}/odometers
       Accept: application/json
 
 Response
@@ -148,13 +131,44 @@ Response
    }
  }
  }
+
+
+Get an Odometer
+```````````````
+Request
++++++++
+.. code-block:: json
+
+ GET https://distance.vin.li/api/v1/odometers/{odometerId}
+ Accept: application/json
+
+Response
+++++++++
+.. code-block:: json
+
+   HTTP/1.1 200 OK
+   Content-Type: application/json
+
+ {
+  "odometer": {
+    "id": "bcdc8734-ce79-4d78-a911-f77c09316f5f",
+    "vehicleId": "0e14f2db-ff0b-43bd-b88c-01b9f226778f",
+    "reading": 83321969.16,
+    "date": "2016-03-03T20:23:53.726Z",
+    "links": {
+      "vehicle": "https://platform-dev.vin.li/api/v1/vehicles/0e14f2db-ff0b-43bd-b88c-01b9f226778f"
+      }
+    }
+  }
+
+
 Delete an Odometer
 ``````````````````
 Request
 +++++++
 .. code-block:: json
 
- DELETE https://distances.vin.li/api/v1/odometers/{odometerId}
+ DELETE https://distance.vin.li/api/v1/odometers/{odometerId}
 
 Create an Odometer Trigger
 ``````````````````````````
@@ -162,7 +176,7 @@ Request
 +++++++
 .. code-block:: json
 
- POST https://distances.vin.li/api/v1/vehicles/{vehicleId}/odometers_triggers
+ POST https://distance.vin.li/api/v1/vehicles/{vehicleId}/odometers_triggers
  Accept: application/json
  Content-Type: application/json
 
@@ -171,7 +185,7 @@ Request
   "type": "specific",
   "threshold": 5000000,
   "unit": "km"
- }
+  }
  }
 
 Response
@@ -197,7 +211,7 @@ Response
 
 Details for Odometer Triggers
 *****************************
-* `type` - Required. There are 3 types of triggers, `specifc`, `from_now`, `milestone`
+* `type` - Required. There are 3 types of triggers, `specific`, `from_now`, `milestone`
 
  * `specific`: when an odometer hits a certain distance i.e. 50k miles
  * `from_now`: when an odometer hits a certain distance greater than the current distance
@@ -212,7 +226,7 @@ Request
 +++++++
 .. code-block:: json
 
- DELETE https://distances.vin.li/api/v1/odometer_triggers/{odometerTriggerId}
+ DELETE https://distance.vin.li/api/v1/odometer_triggers/{odometerTriggerId}
 
 
 
@@ -222,7 +236,7 @@ Request
 +++++++
 .. code-block:: json
 
- GET https://distances.vin.li/api/v1/vehicles/{vehicleId}/odometers_triggers
+ GET https://distance.vin.li/api/v1/vehicles/{vehicleId}/odometers_triggers
 
 Response
 ++++++++
