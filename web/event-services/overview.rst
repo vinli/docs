@@ -30,6 +30,7 @@ There are several types of events that the platform will track on a device-by-de
  * `trip-orphaned`
  * `trip-stopped`
  * `trip-completed`
+ * `distance-trigger`
 
 Objects
 `````````
