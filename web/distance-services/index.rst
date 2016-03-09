@@ -1,13 +1,10 @@
-Distance Services
-===================
+Distance Service
+================
 
-The Distance Services can:
-
-* estimate a car's odometer reading at a point in time
-* give the milage travelled in a time interval
-
-
-
+The Distance Service is designed to enable odometer based features. Using distance service it is possible to:
+ * Generate a 'best guess' odometer reading for a given point in time
+ * Submit odometer readings to the Vinli Platform
+ * Create odometer triggers for milage milestones or a recurring milage intervals.
 
 
 .. toctree::

@@ -16,7 +16,7 @@ Request
       Accept: application/json
 
 Optionally - this method accepts ``from`` and ``until`` query parameters.
-You may also pass ``x-unit`` in the header with either ``km``, ``mi``, or ``m`` to modify the output units. Defaults to ``m``.
+You may also pass ``x-vinli-unit`` in the header with either ``km``, ``mi``, or ``m`` to modify the output units. Defaults to ``m``.
 
 Response
 ++++++++
@@ -162,13 +162,29 @@ Response
   }
 
 
-Delete an Odometer
-``````````````````
+Delete an Odometer Report
+`````````````````````````
 Request
 +++++++
 .. code-block:: json
 
  DELETE https://distance.vin.li/api/v1/odometers/{odometerId}
+
+
+Odometer Triggers
+`````````````````
+Odometer triggers generate events/notifications for milage thresholds that you define.
+
+ * `type` - Required. There are 3 types of triggers, `specific`, `from_now`, `milestone`
+
+  * `specific`: when an odometer hits a certain distance i.e. 50k miles
+  * `from_now`: when an odometer hits a certain distance greater than the current distance
+  * `milestone`: when an odometer hits a certain recurring interval i.e. every 5k miles
+
+ * `threshold` - Required. The amount for your `type`.
+ * `unit` - Required. The unit of measure of the `threshold`. Accepts `km`, `mi`, or `m`.
+
+Once an Odometer Trigger is set, `Events <http://docs.vin.li/en/latest/web/event-services/index.html>`_  will be created when the trigger criteria are met.
 
 Create an Odometer Trigger
 ``````````````````````````
@@ -209,16 +225,31 @@ Response
     }
 
 
-Details for Odometer Triggers
-*****************************
-* `type` - Required. There are 3 types of triggers, `specific`, `from_now`, `milestone`
 
- * `specific`: when an odometer hits a certain distance i.e. 50k miles
- * `from_now`: when an odometer hits a certain distance greater than the current distance
- * `milestone`: when an odometer hits a certain recurring interval i.e. every 5k miles
+Get an Odometer Trigger
+```````````````````````
+Request
++++++++
+.. code-block:: json
 
-* `threshold` - Required. The amount for your `type`.
-* `unit` - Required. The unit of measure of the `threshold`. Accepts `km`, `mi`, or `m`.
+ GET https://distance.vin.li/api/v1/odometer_triggers/{odometerTriggerId}
+
+Response
+++++++++
+
+.. code-block:: json
+
+ "odometerTrigger": {
+  "id": "2b45bf31-b920-4afd-be1f-32b3f867bc4a",
+  "vehicleId": "ab4e7199-a3a6-412f-9088-bc05b6d89e31",
+  "type": "from_now",
+  "threshold": 9496.086,
+  "events": 0,
+  "links": {
+    "vehicle": "https://platform.vin.li/api/v1/vehicles/ab4e7199-a3a6-412f-9088-bc05b6d89e31"
+  }
+ }
+
 
 Delete an Odometer Trigger
 ``````````````````````````
