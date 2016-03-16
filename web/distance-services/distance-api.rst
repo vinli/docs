@@ -192,7 +192,7 @@ Request
 +++++++
 .. code-block:: json
 
- POST https://distance.vin.li/api/v1/vehicles/{vehicleId}/odometers_triggers
+ POST https://distance.vin.li/api/v1/vehicles/{vehicleId}/odometer_triggers
  Accept: application/json
  Content-Type: application/json
 
@@ -267,7 +267,7 @@ Request
 +++++++
 .. code-block:: json
 
- GET https://distance.vin.li/api/v1/vehicles/{vehicleId}/odometers_triggers
+ GET https://distance.vin.li/api/v1/vehicles/{vehicleId}/odometer_triggers
 
 Response
 ++++++++
