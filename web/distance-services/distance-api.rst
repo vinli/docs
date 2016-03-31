@@ -15,7 +15,7 @@ Request
       GET https://distance.vin.li/api/v1/vehicles/{vehicleId}/distances
       Accept: application/json
 
-Optionally - this method accepts ``from`` and ``until`` query parameters.
+Optionally - this method accepts ``since`` and ``until`` query parameters.
 You may also pass ``x-vinli-unit`` in the header with either ``km``, ``mi``, or ``m`` to modify the output units. Defaults to ``m``.
 
 Response
