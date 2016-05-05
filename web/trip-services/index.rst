@@ -102,7 +102,8 @@ List All of a Vehicle's Trips
 
 This method returns a list of all trips that a given vehicle has taken.  This will include trips that have not yet been completed.  This list will include only trips for the vehicle for which the current application has access to the associated device.
 
-Please note, that trips are sometimes created asynchronously--either because they have to be constructed by post-processing or after bulk data upload for a given device.
+Note 1: Trips are sometimes created asynchronously--either because they have to be constructed by post-processing or after bulk data upload for a given device.
+Note 2: Only trips for the 20 most recent devices that have been in the vehicle will be returned.
 
 
 Request
@@ -213,7 +214,7 @@ For each trip, more detailed information regarding overall trip statistics is av
 
 All of the detailed information listed in the above verbiage is available via the get trips by device or get trips by vehicle.
 
-* `fuelEconomy` invokes an operation to get the fuel type of a trip. fuelEconomy uses gasoline as the default fuel type. However, diesel will be set as the fuel type (and corresponding diesel values for calculations) if it is detected in a trip.   
+* `fuelEconomy` invokes an operation to get the fuel type of a trip. fuelEconomy uses gasoline as the default fuel type. However, diesel will be set as the fuel type (and corresponding diesel values for calculations) if it is detected in a trip.
 
 Request
 +++++++
