@@ -13,7 +13,7 @@ Request
 
 .. code-block:: json
 
-      GET https://behavior.vin.li/api/v1/report_cards/549d628c-48dc-412d-8087-44a9f82f187e
+      GET https://behavioral.vin.li/api/v1/report_cards/549d628c-48dc-412d-8087-44a9f82f187e
       Accept: application/json
 
 Response
@@ -50,7 +50,7 @@ Request
 
 .. code-block:: json
 
-      GET https://behavior.vin.li/api/v1/vehicles/ca10cd7a-d2a5-4bb3-b47b-2aa0b8848f55/report_cards
+      GET https://behavioral.vin.li/api/v1/vehicles/ca10cd7a-d2a5-4bb3-b47b-2aa0b8848f55/report_cards
       Accept: application/json
 
 Response
@@ -102,7 +102,7 @@ Request
 
 .. code-block:: json
 
-      GET https://behavior.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/report_cards
+      GET https://behavioral.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/report_cards
       Accept: application/json
 
 Response
@@ -137,7 +137,7 @@ Response
             "limit": 20,
             "sortDir": "desc",
             "links": {
-              "prior": "https://behavioral-dev.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/report_cards?until=1439418498459"
+              "prior": "https://behavioral.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/report_cards?until=1439418498459"
             }
           }
         }
@@ -155,7 +155,7 @@ Request
 
 .. code-block:: json
 
-      GET https://behavior.vin.li/api/v1/devices/602c6490-d7a3-11e3-9c1a-0800200c9a66/report_cards/overall
+      GET https://behavioral.vin.li/api/v1/devices/602c6490-d7a3-11e3-9c1a-0800200c9a66/report_cards/overall
       Accept: application/json
 
 Response
@@ -186,7 +186,7 @@ Request
 
 .. code-block:: json
 
-      POST https://behavior.vin.li/api/v1/trips/report_card
+      POST https://behavioral.vin.li/api/v1/trips/report_card
       Content-Type: application/json
       Accept: application/json
 
@@ -217,5 +217,3 @@ Response
           }
         }
       }
-
-
