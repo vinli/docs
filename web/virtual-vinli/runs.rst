@@ -23,7 +23,7 @@ Request
 Parameters
 ++++++++++
 
-* `vin` - Required. A made up, 17 digit number that must start with 'VVV'
+* `vin` - Required. A made up, 17 digit number that must start with 'VV'
 * `routeID` - Required. A Dummy Route of your choice
 * `repeat` - Optional boolean. Defaults to false. If true, will automatically restart the run after completion. If false, will not automatically restart the run.
 
