@@ -31,7 +31,7 @@ Response
       "confidenceMax": 128122251.041,
       "value": 83196266.91,
       "lastOdometerDate": "2016-02-24T20:59:53.633Z"
-    },
+    }
   ]
  }
 
