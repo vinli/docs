@@ -1,4 +1,4 @@
-DTC Codes for Vehicles
+Working with DTC Codes
 ----------------------
 
 Get a list of DTCs for a Vehicle
@@ -89,7 +89,7 @@ This route returns a specific DTC occurrence.
 Request
 +++++++
 
-.. code-block:: json
+.. code-block::
 
       GET https://diagnostic.vin.li/api/v1/codes/313cc7d7-1ad6-491k-9e02-a3f48e62984a
 
