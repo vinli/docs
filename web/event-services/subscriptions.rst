@@ -6,10 +6,13 @@ In order to receive notification for vehicle events, your application must subsc
 Each Subscription relates to a given event or class of events from a given Device and specifies the external URL that will be called when the event occurs and any additional "App Data" that should be included.
 
 
-Notification Payload
+Notification Payloads
 ````````````````````````
 
-When a subscription is triggered, an HTTP call using the "POST" method is made to the Subscription's URL.  This call uses content-type of "application/json" and sends a JSON representation containing a `notification` root object along with representations of the Event that triggered the notification and the associated Subscription:
+When a subscription is triggered, an HTTP call using the "POST" method is made to the Subscription's URL.  This call uses content-type of "application/json" and sends a JSON representation containing a `notification` root object along with representations of the Event that triggered the notification and the associated Subscription. Below are several examples of Notifications for different types of Events.
+
+Rule-Leave
+==========
 
 .. code-block:: json
 
@@ -67,6 +70,185 @@ When a subscription is triggered, an HTTP call using the "POST" method is made t
               }
           }
       }
+
+
+Collision
+=========
+
+.. code-block:: json
+
+      {
+        "notification": {
+          "event": {
+            "id": "edae9b7a-c447-442d-aead-ee0bf4f5e6b4",
+            "timestamp": "2016-08-22T23:12:59.607Z",
+            "deviceId": "4bffefbb-9fba-43ee-aebe-ed7f7f2fae84",
+            "stored": "2016-08-22T23:13:15.167Z",
+            "storageLatency": 15560,
+            "eventType": "collision",
+            "object": {
+              "id": "ba8d8890-3d4d-413a-ad8e-a3269d990e91",
+              "type": "vehicle"
+            },
+            "links": {
+              "self": "http://10.200.37.245:30003/api/v1/events/edae9b7a-c447-442d-aead-ee0bf4f5e6b4",
+              "notifications": "http://10.200.37.245:30003/api/v1/events/edae9b7a-c447-442d-aead-ee0bf4f5e6b4/notifications"
+            }
+          },
+          "subscription": {
+            "id": "f4366076-afe0-4b05-83ff-55b6ddde0984",
+            "deviceId": "4bffefbb-9fba-43ee-aebe-ed7f7f2fae84",
+            "eventType": "collision",
+            "url": "https://myapp.com/notifications",
+            "appData": null,
+            "createdAt": "2016-08-22T23:11:36.814Z",
+            "updatedAt": "2016-08-22T23:11:36.814Z",
+            "links": {
+              "self": "http://10.200.37.245:30003/api/v1/subscriptions/f4366076-afe0-4b05-83ff-55b6ddde0984",
+              "notifications": "http://10.200.37.245:30003/api/v1/subscriptions/f4366076-afe0-4b05-83ff-55b6ddde0984/notifications"
+            }
+          }
+        }
+      }
+
+
+DTC-On
+======
+
+.. code-block:: json
+
+        {
+          "notification": {
+            "event": {
+              "id": "aa2842c3-b647-48a1-80f1-cc6019ce387c",
+              "timestamp": "2016-08-22T23:12:20.003Z",
+              "deviceId": "4bffefbb-9fba-43ee-aebe-ed7f7f2fae84",
+              "stored": "2016-08-22T23:12:22.036Z",
+              "storageLatency": 2033,
+              "eventType": "dtc-on",
+              "meta": {
+                "code": "313cc7d7-1ac6-491c-9e02-a3d08e62984a"
+              },
+              "object": {
+                "id": "ba8d8890-3d4d-413a-ad8e-a3269d990e91",
+                "type": "vehicle"
+              },
+              "links": {
+                "self": "http://10.220.0.66:30003/api/v1/events/aa2842c3-b647-48a1-80f1-cc6019ce387c",
+                "notifications": "http://10.220.0.66:30003/api/v1/events/aa2842c3-b647-48a1-80f1-cc6019ce387c/notifications"
+              }
+            },
+            "subscription": {
+              "id": "e480343c-172a-41da-81ef-ce7950790ee0",
+              "deviceId": "4bffefbb-9fba-43ee-aebe-ed7f7f2fae84",
+              "eventType": "dtc-on",
+              "url": "https://myapp.com/notifications",
+              "appData": null,
+              "createdAt": "2016-08-22T23:09:22.023Z",
+              "updatedAt": "2016-08-22T23:09:22.023Z",
+              "links": {
+                "self": "http://10.220.0.66:30003/api/v1/subscriptions/e480343c-172a-41da-81ef-ce7950790ee0",
+                "notifications": "http://10.220.0.66:30003/api/v1/subscriptions/e480343c-172a-41da-81ef-ce7950790ee0/notifications"
+              }
+            }
+          }
+        }
+
+Distance-Trigger
+================
+
+.. code-block:: json
+
+      {
+        "notification": {
+          "event": {
+            "id": "4449b8a1-88ce-479e-83ba-46d233895519",
+            "timestamp": "2016-07-18T22:32:41.737Z",
+            "deviceId": "4bffefbb-9fba-43ee-aebe-ed7f7f2fae84",
+            "stored": "2016-07-18T22:32:41.860Z",
+            "storageLatency": 123,
+            "eventType": "distance-trigger",
+            "meta": {
+              "odometerTrigger": {
+                "id": "bc043c26-3d79-44ce-b08e-8193f4c5e493",
+                "vehicleId": "03d8ec74-523b-4ff7-8f6f-8228146b93b9",
+                "type": "specific",
+                "threshold": 24146537.36,
+                "events": 0,
+                "links": {
+                  "vehicle": "https://platform.vin.li/api/v1/vehicles/03d8ec74-523b-4ff7-8f6f-8228146b93b9"
+                }
+              },
+              "estimatedOdometer": 24158103.340000004
+            },
+            "object": {
+              "id": "bc043c26-3d79-44ce-b08e-8193f4c5e493",
+              "type": "odometer-trigger"
+            },
+            "links": {
+              "self": "http://10.200.37.245:30003/api/v1/events/4449b8a1-88ce-479e-83ba-46d233895519",
+              "notifications": "http://10.200.37.245:30003/api/v1/events/4449b8a1-88ce-479e-83ba-46d233895519/notifications"
+            }
+          },
+          "subscription": {
+            "id": "2fc61637-8e2d-465f-8518-cce48f205faf",
+            "deviceId": "eb4f66ec-4050-4052-9559-baf5d8eb8511",
+            "eventType": "distance-trigger",
+            "url": "https://myapp.com/notifications",
+            "appData": null,
+            "createdAt": "2016-07-18T22:09:34.704Z",
+            "updatedAt": "2016-07-18T22:09:34.704Z",
+            "links": {
+              "self": "http://10.200.37.245:30003/api/v1/subscriptions/2fc61637-8e2d-465f-8518-cce48f205faf",
+              "notifications": "http://10.200.37.245:30003/api/v1/subscriptions/2fc61637-8e2d-465f-8518-cce48f205faf/notifications"
+            }
+          }
+        }
+      }
+
+Startup
+=======
+
+..code-block:: json
+
+      {
+        "notification": {
+          "event": {
+            "id": "5eca3320-7037-4eaf-8cea-08328bf25408",
+            "timestamp": "2016-08-24T20:26:04.816Z",
+            "deviceId": "4bffefbb-9fba-43ee-aebe-ed7f7f2fae84",
+            "stored": "2016-08-24T20:26:08.809Z",
+            "storageLatency": 3993,
+            "eventType": "startup",
+            "object": {
+              "id": "2271db32-aa6c-4ae5-9d68-f371eb3d1cfb",
+              "type": "vehicle"
+            },
+            "links": {
+              "self": "http://10.220.0.66:30003/api/v1/events/5eca3320-7037-4eaf-8cea-08328bf25408",
+              "notifications": "http://10.220.0.66:30003/api/v1/events/5eca3320-7037-4eaf-8cea-08328bf25408/notifications"
+            }
+          },
+          "subscription": {
+            "id": "050ea013-33f2-49ae-bcf2-f23032e6ca30",
+            "deviceId": "4bffefbb-9fba-43ee-aebe-ed7f7f2fae84",
+            "eventType": "startup",
+            "url": "https://myapp.io/startup",
+            "object": {
+              "id": "2271db32-aa6c-4ae5-9d68-f371eb3d1cfb",
+              "type": "vehicle"
+            },
+            "appData": null,
+            "createdAt": "2016-08-24T20:25:18.017Z",
+            "updatedAt": "2016-08-24T20:25:18.017Z",
+            "links": {
+              "self": "http://10.220.0.66:30003/api/v1/subscriptions/050ea013-33f2-49ae-bcf2-f23032e6ca30",
+              "notifications": "http://10.220.0.66:30003/api/v1/subscriptions/050ea013-33f2-49ae-bcf2-f23032e6ca30/notifications"
+            }
+          }
+        }
+      }
+
 
 Note that the `appData` attribute of the `subscription` property contains the Application-specific data that you created the Subscription with, if applicable.
 

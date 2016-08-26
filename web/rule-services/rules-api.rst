@@ -172,6 +172,34 @@ Response
       }
 
 
+We also support polygon geofences.
+
+.. code-block:: json
+
+      POST https://rules.vin.li/api/v1/devices/de01abb1-453d-4293-831a-f0d804b48fdf/rules
+      Accept: application/json
+      Content-Type: application/json
+
+      {
+      	"rule": {
+      		"name": "Polygon Boundary Example",
+      		"boundaries": [{
+      			"type": "polygon",
+      			"coordinates": [
+      				[
+      					[-96.7910099029541, 32.7838830957529],
+      					[-96.7893073707819, 32.78267779866992],
+      					[-96.79272651672362, 32.776558606411804],
+      					[-96.79242610931395, 32.78189868775024],
+      					[-96.79718971252441, 32.78254813524194],
+      					[-96.7910099029541, 32.7838830957529]
+      				]
+      			]
+      		}]
+      	}
+      }
+
+
 Delete a Rule
 `````````````
 
@@ -188,4 +216,3 @@ Response
 .. code-block:: json
 
       HTTP/1.1 204 NO CONTENT
-
