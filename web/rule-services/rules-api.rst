@@ -172,7 +172,7 @@ Response
       }
 
 
-We also super polygon geofences.
+We also support polygon geofences.
 
 .. code-block:: json
 
