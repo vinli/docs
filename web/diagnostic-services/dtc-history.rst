@@ -1,15 +1,15 @@
-Device DTC  Service
--------------------
+Working with DTC Codes
+----------------------
 
-Get the list of all DTC Codes for a Device
-`````````````````````````````````````````````
+Get a list of DTCs for a Vehicle
+````````````````````````````````
 
-The DTC History Service provides historical information for DTC codes for a given vehicle.  Each time a new DTC code is seen, it triggers a DTC Event.  These events either resolve when the DTC code is no longer seen or remain "open" until the code is resolved.
+This provides historical record of DTC codes for a given vehicle.  Each time a new DTC code is seen, it triggers a DTC Event.  These events either resolve when the DTC code is no longer seen or remain "open" until the code is resolved.
 
 Request
 +++++++
 
-.. code-block:: json
+.. code-block::
 
       GET https://diagnostic.vin.li/api/v1/vehicles/47fa348e-c3fa-4cad-8272-61940eae7748/codes
       Accept: application/json
@@ -77,6 +77,62 @@ Response
             "limit": 20,
             "sortDir": "desc",
             "links": {}
+          }
+        }
+      }
+
+Get a Specific DTC
+``````````````````
+
+This route returns a specific DTC occurrence.
+
+Request
++++++++
+
+.. code-block::
+
+      GET https://diagnostic.vin.li/api/v1/codes/313cc7d7-1ad6-491k-9e02-a3f48e62984a
+
+
+Response
+++++++++
+
+.. code-block:: json
+
+      HTTP/1.1 200 OK
+      Content-Type: application/json
+
+      {
+        "code": {
+          "id": "313cc7d7-1ad6-491k-9e02-a3f48e62984a",
+          "make": "generic",
+          "system": "powertrain",
+          "subSystem": "Ignition system or misfire",
+          "twoByte": {
+            "number": "P0301",
+            "description": "Cylinder 1 Misfire Detected"
+          },
+          "threeByte": {
+            "number": "P0301",
+            "ftb": "0",
+            "description": "Cylinder 1 Misfire Detected",
+            "fault": "No Fault Information Available",
+            "location": {
+              "sensor": "",
+              "bank": "",
+              "circuit": "",
+              "valve": "",
+              "cylinder": 1,
+              "camshaft": "",
+              "solenoid": "",
+              "regulator": "",
+              "controlModule": "",
+              "audioAmplifier": "",
+              "processingModule": ""
+            }
+          },
+          "links": {
+            "self": "https://diagnostic.vin.li/api/v1/codes/313cc7d7-1ad6-491k-9e02-a3f48e62984a"
           }
         }
       }
