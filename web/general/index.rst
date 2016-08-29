@@ -14,7 +14,7 @@ Vinli paginates data using:
 * streams for rapidly changing data
 
 Pagination can alter the format of dates and times. It's an important topic for apps that rely on telemetry data.
- 
+
 
 .. toctree::
    :maxdepth: 3
@@ -23,4 +23,3 @@ Pagination can alter the format of dates and times. It's an important topic for 
    dev-device
    pagination
    dates
-   pids
