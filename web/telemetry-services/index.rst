@@ -24,3 +24,4 @@ In any case, all parameters that are provided by a vehicle are reported at least
   device-messages
   location-history
   telemetry-snapshots
+  pids

@@ -8,17 +8,16 @@ This provides historical record of DTC codes for a given vehicle.  Each time a n
 
 Request
 +++++++
-
-.. code-block::
+.. code-block:: json
 
       GET https://diagnostic.vin.li/api/v1/vehicles/47fa348e-c3fa-4cad-8272-61940eae7748/codes
       Accept: application/json
+
 
 The state query param may be used to filter the response. Valid values are active and inactive. These will filter the response to only include either DTC codes that are still on presently or not. The absence of the state query param will not filter the response and so the response will contain the full history DTC codes.
 
 Response
 ++++++++
-
 .. code-block:: json
 
       HTTP/1.1 200 OK
@@ -88,15 +87,13 @@ This route returns a specific DTC occurrence.
 
 Request
 +++++++
-
-.. code-block::
+.. code-block:: json
 
       GET https://diagnostic.vin.li/api/v1/codes/313cc7d7-1ad6-491k-9e02-a3f48e62984a
 
 
 Response
 ++++++++
-
 .. code-block:: json
 
       HTTP/1.1 200 OK
