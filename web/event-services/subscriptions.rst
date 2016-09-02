@@ -209,7 +209,7 @@ Distance-Trigger
 Startup
 =======
 
-..code-block:: json
+.. code-block:: json
 
       {
         "notification": {
