@@ -112,17 +112,18 @@ Response
               }
           ],
           "meta": {
-              "pagination": {
-                  "total": 1,
-                  "limit": 20,
-                  "offset": 0,
-                  "links": {
-                      "first": "https://events.vin.li/api/v1/subscriptions/a896ff7d-ca46-4bf4-af71-b9b1573c3ef1/notifications?offset=0&limit=20",
-                      "last": "https://events.vin.li/api/v1/subscriptions/a896ff7d-ca46-4bf4-af71-b9b1573c3ef1/notifications?offset=0&limit=20"
-                  }
+            "pagination": {
+              "remaining": 2,
+              "until": "2016-09-15T18:38:44.036Z",
+              "since": "1970-01-01T00:00:00.000Z",
+              "limit": 20,
+              "sortDir": "desc",
+              "links": {
+                "prior": "https://events.vin.li/api/v1/subscriptions/f4366076-afe0-4b05-83ff-55b6ddde0984/notifications?until=1473961364647"
+                }
               }
+            }
           }
-      }
 
 
 
@@ -184,4 +185,3 @@ Response
               }
           }
       }
-
