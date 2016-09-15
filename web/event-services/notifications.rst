@@ -174,14 +174,13 @@ Response
               }
           ],
           "meta": {
-              "pagination": {
-                  "total": 1,
-                  "limit": 20,
-                  "offset": 0,
-                  "links": {
-                      "first": "https://events.vin.li/api/v1/events/314d7fcd-d4d6-4b78-9804-b171db60790a/notifications?offset=0&limit=20",
-                      "last": "https://events.vin.li/api/v1/events/314d7fcd-d4d6-4b78-9804-b171db60790a/notifications?offset=0&limit=20"
-                  }
+            "pagination": {
+              "remaining": 0,
+              "until": "2016-09-15T20:19:32.978Z",
+              "since": "1970-01-01T00:00:00.000Z",
+              "limit": 20,
+              "sortDir": "desc",
+              "links": {}
               }
+            }
           }
-      }
