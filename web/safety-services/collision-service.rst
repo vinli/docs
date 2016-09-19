@@ -37,15 +37,15 @@ Response
           },
           ...
         ],
-        "meta" : {
-          "pagination" : {
-            "total" : 22,
-            "offset" : 0,
-            "limit" : 20,
-            "links" : {
-              "first" : "https://safety.vin.li/api/v1/devices/8b8a1810-d6d8-11e3-9c1a-0800200c9a66/collisions?offset=0&limit=20",
-              "last" : "https://safety.vin.li/api/v1/devices/8b8a1810-d6d8-11e3-9c1a-0800200c9a66/collisions?offset=20&limit=20",
-              "next" : "https://safety.vin.li/api/v1/devices/8b8a1810-d6d8-11e3-9c1a-0800200c9a66/collisions?offset=20&limit=20"
+        "meta": {
+          "pagination": {
+            "remaining": 6,
+            "until": "2016-09-19T22:48:40.524Z",
+            "since": "1970-01-01T00:00:00.000Z",
+            "limit": 20,
+            "sortDir": "desc",
+            "links": {
+              "prior": "https://safety.vin.li/api/v1/devices/8b8a1810-d6d8-11e3-9c1a-0800200c9a66/collisions?until=1473961364647"
             }
           }
         }
@@ -89,16 +89,14 @@ Response
           },
           ...
         ],
-        "meta" : {
-          "pagination" : {
-            "total" : 22,
-            "offset" : 0,
-            "limit" : 20,
-            "links" : {
-              "first" : "https://safety.vin.li/api/v1/vehicles/e619dc1d-b760-410f-b809-2578df22a755/collisions?offset=0&limit=20",
-              "last" : "https://safety.vin.li/api/v1/vehicles/e619dc1d-b760-410f-b809-2578df22a755/collisions?offset=20&limit=20",
-              "next" : "https://safety.vin.li/api/v1/vehicles/e619dc1d-b760-410f-b809-2578df22a755/collisions?offset=20&limit=20"
-            }
+        "meta": {
+          "pagination": {
+            "remaining": 0,
+            "until": "2016-09-19T22:51:33.208Z",
+            "since": "1970-01-01T00:00:00.000Z",
+            "limit": 20,
+            "sortDir": "desc",
+            "links": {}
           }
         }
       }
