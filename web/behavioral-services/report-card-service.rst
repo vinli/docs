@@ -174,7 +174,7 @@ Response
       }
 
 
-Report Card for a Trip
+Report Card for a Trip [DEPRECATED]
 ```````````````````````
 
 The Trip-specific Report Card contains the same data as the Long-Term and Lifetime Report Card but is specific for a particular Trip.
