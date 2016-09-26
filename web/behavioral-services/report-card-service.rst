@@ -186,13 +186,9 @@ Request
 
 .. code-block:: json
 
-      POST https://behavioral.vin.li/api/v1/trips/report_card
-      Content-Type: application/json
+      GET https://behavioral.vin.li/api/v1/trips/b9e58eb4-0743-45e9-b9c6-86500f5412bb/report_cards/_current
       Accept: application/json
 
-      {
-          "tripId" : "b9e58eb4-0743-45e9-b9c6-86500f5412bb"
-      }
 
 Response
 ++++++++

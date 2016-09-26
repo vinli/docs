@@ -133,3 +133,34 @@ Response
           }
         }
       }
+
+
+Battery Status
+``````````````
+This provides a general health status for a vehicle's battery. Possible statuses include:
+ * `green` indicates that the battery is likely to start
+ * `yellow` indicates that the battery may have issues starting
+ * `red` indicates a battery is likely to not start
+ * `null` indicates that Vinli could not determine the status based on the data provided
+
+
+ Request
+ +++++++
+ .. code-block:: json
+
+       GET https://diagnostic.vin.li/api/v1/vehicles/38ff2972-7fd2-4319-8389-b9a8b84a7c8f/battery_statuses/_current
+
+
+       Response
+       ++++++++
+       .. code-block:: json
+
+             HTTP/1.1 200 OK
+             Content-Type: application/json
+
+             {
+                "batteryStatus": {
+                  "status": "green",
+                  "timestamp": "2016-08-21T20:00:22.680Z"
+                }
+              }
