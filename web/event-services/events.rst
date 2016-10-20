@@ -11,6 +11,7 @@ The following fields are contained within an event response:
 * `id` - ID of the event
 * `timestamp` - Timestamp when the event occurred
 * `deviceId` - ID of the device
+* `vehicleId` - ID of the vehicle
 * `eventType` - Type of event
 * `object` - Information about the object of the event (i.e. the associated Rule or Vehicle)
 * `meta` - Optional data depending on the type of event.  For instance, for a `rule-enter` or `rule-leave` event, the `meta` property contains information about the Rule itself and the state and direction of the event.
@@ -49,6 +50,7 @@ Response
                   "id": "538f1195-a733-4ee7-a4e8-1fbbe7131f6a",
                   "timestamp": "2015-05-22T23:33:57.000Z",
                   "deviceId": "68d489c0-d7a2-11e3-9c1a-0800200c9a66",
+                  "vehicleId": "48ef1264-7fd2-4319-8789-g9a6b85b7a8f",
                   "stored": "2015-05-22T23:33:58.741Z",
                   "storageLatency": 1741,
                   "eventType": "rule-leave",
@@ -99,6 +101,7 @@ Response
                   "id": "53bcdb2f-7a75-4225-ac15-b2d4364d9c7b",
                   "timestamp": "2015-05-22T18:25:43.000Z",
                   "deviceId": "68d489c0-d7a2-11e3-9c1a-0800200c9a66",
+                  "vehicleId": "48ef1264-7fd2-4319-8789-g9a6b85b7a8f",
                   "stored": "2015-05-22T18:25:44.609Z",
                   "storageLatency": 1609,
                   "eventType": "startup",
@@ -122,6 +125,143 @@ Response
                   }
               }
           }
+      }
+
+
+Get All Events for a Vehicle
+`````````````````````````````
+
+
+Request
++++++++
+
+.. code-block:: json
+
+      GET https://events.vin.li/api/v1/vehicles/48ef1264-7fd2-4319-8789-g9a6b85b7a8f/events
+      Accept: application/json
+
+
+Response
+++++++++
+
+.. code-block:: json
+
+      HTTP/1.1 200 OK
+      Content-Type: application/json
+
+      {
+        "events": [
+          {
+            "id": "c0c19d22-0f59-4140-9076-c61f61740f76",
+            "timestamp": "2016-10-20T17:29:48.753Z",
+            "deviceId": "68d489c0-d7a2-11e3-9c1a-0800200c9a66",
+            "vehicleId": "48ef1264-7fd2-4319-8789-g9a6b85b7a8f",
+            "eventType": "trip-completed",
+            "object": {
+              "id": "310d9507-deae-437c-a18c-4b7909173939",
+              "type": "trip"
+            },
+            "meta": {
+              "vehicleId": "48ef1264-7fd2-4319-8789-g9a6b85b7a8f"
+            },
+            "links": {
+              "self": "https://events.vin.li/api/v1/events/c0c19d22-0f59-4140-9076-c61f61740f76",
+              "notifications": "https://events.vin.li/api/v1/events/c0c19d22-0f59-4140-9076-c61f61740f76/notifications"
+            }
+          },
+          {
+            "id": "a5c98193-d845-4898-b69a-2f735aa4bfc3",
+            "timestamp": "2016-10-20T17:29:44.204Z",
+            "deviceId": "68d489c0-d7a2-11e3-9c1a-0800200c9a66",
+            "vehicleId": "48ef1264-7fd2-4319-8789-g9a6b85b7a8f",
+            "eventType": "shutdown",
+            "object": {
+              "id": "48ef1264-7fd2-4319-8789-g9a6b85b7a8f",
+              "type": "vehicle"
+            },
+            "meta": null,
+            "links": {
+              "self": "https://events.vin.li/api/v1/events/a5c98193-d845-4898-b69a-2f735aa4bfc3",
+              "notifications": "https://events.vin.li/api/v1/events/a5c98193-d845-4898-b69a-2f735aa4bfc3/notifications"
+            }
+          },
+          {
+            "id": "7933c50a-e422-3ff9-v51d-cddc443f1a88",
+            "timestamp": "2016-10-20T14:00:19.547Z",
+            "deviceId": "68d489c0-d7a2-11e3-9c1a-0800200c9a66",
+            "vehicleId": "48ef1264-7fd2-4319-8789-g9a6b85b7a8f",
+            "eventType": "rule-leave",
+            "object": {
+              "id": "6cf4ddaa-3c16-439c-bc3f-6bb9a7dcb7fd",
+              "type": "rule"
+            },
+            "meta": {
+              "direction": "leave",
+              "firstEval": false,
+              "rule": {
+                "id": "6cf4ddaa-3c16-439c-bc3f-6bb9a7dcb7fd",
+                "name": "new geofence",
+                "deviceId": "68d489c0-d7a2-11e3-9c1a-0800200c9a66",
+                "boundaries": [
+                  {
+                    "id": "5714379f-c5f3-4052-ad5d-0aa22032475b",
+                    "type": "radius",
+                    "radius": 312.33,
+                    "lon": -96.7899370193481,
+                    "lat": 32.8242218079282
+                  }
+                ],
+                "evaluated": true,
+                "covered": false,
+                "createdAt": "2016-07-23T05:41:28.179+00:00",
+                "links": {
+                  "self": "https://rules.vin.li/api/v1/rules/6cf4ddaa-3c16-439c-bc3f-6bb9a7dcb7fd",
+                  "events": "https://events.vin.li/api/v1/devices/68d489c0-d7a2-11e3-9c1a-0800200c9a66/events?type=rule-*&objectId=6cf4ddaa-3c16-439c-bc3f-6bb9a7dcb7fd",
+                  "subscriptions": "https://events.vin.li/api/v1/devices/68d489c0-d7a2-11e3-9c1a-0800200c9a66/subscriptions?objectType=rule&objectId=6cf4ddaa-3c16-439c-bc3f-6bb9a7dcb7fd"
+                }
+              },
+              "message": {
+                "id": "645ff3f0-c8a9-4538-b903-2a8b29087635",
+                "timestamp": "2016-10-20T14:00:19.547Z",
+                "snapshot": {
+                  "location": {
+                    "lat": 41.502994,
+                    "lon": -71.314856
+                  },
+                  "accel": {
+                    "maxZ": -4.137202,
+                    "maxX": 1.379067,
+                    "maxY": -5.439654,
+                    "minX": 0.229845,
+                    "minY": -8.236096,
+                    "minZ": -6.473954
+                  },
+                  "massAirFlow": 18.69,
+                  "rpm": 1802,
+                  "vehicleSpeed": 13,
+                  "intakeManifoldPressure": 60,
+                  "fuelAirCommandedEquivalenceRatio": 0.973236083984375
+                }
+              }
+            },
+            "links": {
+              "self": "https://events.vin.li/api/v1/events/7933c50a-e422-3ff9-v51d-cddc443f1a88",
+              "notifications": "https://events.vin.li/api/v1/events/7933c50a-e422-3ff9-v51d-cddc443f1a88/notifications"
+            }
+          }
+        ],
+        "meta": {
+          "pagination": {
+            "remaining": 1214,
+            "until": "2016-10-20T18:09:29.977Z",
+            "since": "1970-01-01T00:00:00.000Z",
+            "limit": 20,
+            "sortDir": "desc",
+            "links": {
+              "prior": "https://events.vin.li/api/v1/vehicles/48ef1264-7fd2-4319-8789-g9a6b85b7a8f/events?until=1476971981756"
+            }
+          }
+        }
       }
 
 
@@ -153,6 +293,7 @@ Response
               "id": "538f1195-a733-4ee7-a4e8-1fbbe7131f6a",
               "timestamp": "2015-05-22T23:33:57.000Z",
               "deviceId": "68d489c0-d7a2-11e3-9c1a-0800200c9a66",
+              "vehicleId": "48ef1264-7fd2-4319-8789-g9a6b85b7a8f",
               "stored": "2015-05-22T23:33:58.741Z",
               "storageLatency": 1741,
               "eventType": "rule-leave",
