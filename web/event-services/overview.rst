@@ -1,12 +1,12 @@
 Overview
 --------
 
-The API routes provided by the Event Service work in concert to provide both access to the historical events for a Device as well as web-hooks for your App to receive immediate notification when an event occurs.
+The API routes provided by the Event Service work in concert to provide both access to the historical events for a Device or Vehicle as well as web-hooks for your App to receive immediate notification when an event occurs.
 
 The normal life-cycle of working with Event Service is:
 
- * Create a Subscription for a particular event type for a device
- * That event occurs for that device
+ * Create a Subscription for a particular event type for a device or vehicle
+ * That event occurs for that device/vehicle
  * An event is created
  * Event Service looks for all Subscriptions for which this Event qualifies
  * A Notification is created that contains all the relevant information

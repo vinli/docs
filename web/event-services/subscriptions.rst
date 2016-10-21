@@ -1,9 +1,9 @@
 Subscriptions
 -------------
 
-In order to receive notification for vehicle events, your application must subscribe to events for each device individually.
+In order to receive notification for events, your application should subscribe to events by type for each device or vehicle.
 
-Each Subscription relates to a given event or class of events from a given Device and specifies the external URL that will be called when the event occurs and any additional "App Data" that should be included.
+Each Subscription relates to a given event type or class of events from a given Device/Vehicle and specifies the external URL that will be called when the event occurs and any additional "App Data" that should be included.
 
 
 Notification Payloads
@@ -255,8 +255,8 @@ Note that the `appData` attribute of the `subscription` property contains the Ap
 In the example above, the Subscription triggered is associated with a Rule.  In this case, additional information is made available in the Notification including a representation of the Rule in the `meta` property.  Additionally, a very useful property `firstEval` is provided that lets your Application know whether or not this is the first evaluation of the Rule.  The first evaluation of a Rule in which it can be established that the device is covered or not covered by the boundaries will always result in a notification.  Using the `firstEval` property, your App can determine if the device was previously in a different state or was just in an unknown state.
 
 
-Create a Subscription
-```````````````````````
+Create a Subscription for a Device
+```````````````````````````````````
 
 A Subscription must include, at a minimum an `eventType` and a `url`.  Additionally, if the subscription references a given Rule, it must be included in the `object`.
 
@@ -301,6 +301,57 @@ Response
           }
       }
 
+
+Create a Subscription for a Vehicle
+```````````````````````````````````
+
+Request
++++++++
+
+.. code-block:: json
+
+      POST https://events.vin.li/api/v1/vehicles/48ef1264-7fd2-4319-8789-g9a6b85b7a8f/subscriptions
+      Accept: application/json
+      Content-Type: application/json
+
+      {
+        "subscription" : {
+          "eventType" : "startup",
+          "url": "https://myapp.com/notifications"
+        }
+      }
+
+
+Response
+++++++++
+
+.. code-block:: json
+
+      HTTP/1.1 201 CREATED
+      Content-Type: application/json
+      Location: https://events.vin.li/api/v1/subscriptions/87965f0f-d468-48e1-9585-69d547900058
+
+      {
+          "subscription" : {
+              "id": "87965f0f-d468-48e1-9585-69d547900058",
+              "eventType": "startup",
+              "url": "https://myapp.com/notifications",
+              "vehicleId": "48ef1264-7fd2-4319-8789-g9a6b85b7a8f",
+              "object": null,
+              "appData": null,
+              "createdAt": "2016-01-25T12:54:09.876Z",
+              "updatedAt": "2016-01-25T12:54:09.876Z",
+              "links": {
+                  "self": "https://events.vin.li/api/v1/subscriptions/87965f0f-d468-48e1-9585-69d547900058",
+                  "notifications": "https://events.vin.li/api/v1/subscriptions/87965f0f-d468-48e1-9585-69d547900058/notifications"
+              }
+          }
+      }
+
+
+
+Create a Subscription for a Rule
+````````````````````````````````
 
 When creating a Subscription to a Rule's events, identification of the Rule is required.  An application can only subscribe to Rule events for Rules to which it has access.  A special eventType (`rule-*`) can be used to subscribe to both `rule-enter` and `rule-leave` events.
 
@@ -413,6 +464,79 @@ Response
               }
           }
       }
+
+
+
+Get All Subscriptions for a Vehicle
+```````````````````````````````````
+
+
+Request
++++++++
+
+.. code-block:: json
+
+      GET https://events.vin.li/api/v1/vehicles/48ef1264-7fd2-4319-8789-g9a6b85b7a8f/subscriptions
+      Accept: application/json
+
+
+Response
+++++++++
+
+.. code-block:: json
+
+      HTTP/1.1 200 OK
+      Content-Type: application/json
+
+      {
+          "subscriptions": [
+              {
+                  "id": "917fb546-5666-4fdd-aed6-53fa099b313b",
+                  "vehicleId": "48ef1264-7fd2-4319-8789-g9a6b85b7a8f",
+                  "eventType": "rule-*",
+                  "object": {
+                      "id": "58f815b9-693d-450a-8814-779c9bf8ad6f",
+                      "type": "rule"
+                  },
+                  "url": "https://myapp.com/notifications",
+                  "appData": "{\"message\":\"This is your app-specific data\"}"
+                  "createdAt": "2015-06-16T12:54:09.876Z",
+                  "updatedAt": "2015-06-16T12:54:09.876Z",
+                  "links": {
+                      "self": "https://events.vin.li/api/v1/subscriptions/917fb546-5666-4fdd-aed6-53fa099b313b",
+                      "notifications": "https://events.vin.li/api/v1/subscriptions/917fb546-5666-4fdd-aed6-53fa099b313b/notifications"
+                  }
+              },
+              {
+                  "id": "829fb457-4757-4fdd-aed6-53fa108b402b",
+                  "eventType": "startup",
+                  "url": "https://myapp.com/notifications",
+                  "vehicleId": "48ef1264-7fd2-4319-8789-g9a6b85b7a8f",
+                  "object": null,
+                  "appData": null,
+                  "createdAt": "2016-01-25T19:35:35.148Z",
+                  "updatedAt": "2016-01-25T19:35:35.148Z",
+                  "links": {
+                    "self": "https://events.vin.li/api/v1/subscriptions/829fb457-4757-4fdd-aed6-53fa108b402b",
+                    "notifications": "https://events.vin.li/api/v1/subscriptions/829fb457-4757-4fdd-aed6-53fa108b402b/notifications"
+                  }
+              },
+              ...
+          ],
+          "meta": {
+              "pagination": {
+                  "total": 80,
+                  "limit": 20,
+                  "offset": 0,
+                  "links": {
+                      "first": "https://events.vin.li/api/v1/devices/de01abb1-453d-4293-831a-f0d804b48fdf/subscriptions?offset=0&limit=20",
+                      "last": "https://events.vin.li/api/v1/devices/de01abb1-453d-4293-831a-f0d804b48fdf/subscriptions?offset=60&limit=20",
+                      "next": "https://events.vin.li/api/v1/devices/de01abb1-453d-4293-831a-f0d804b48fdf/subscriptions?offset=20&limit=20"
+                  }
+              }
+          }
+      }
+
 
 
 Get a Specific Subscription
