@@ -59,6 +59,6 @@ To initiate the authentication flow, the client directs the user to:
 
 	https://auth.vin.li/oauth/authorization/new?client_id={clientId}&redirect_uri={redirectUri}&response_type={desiredResponseType}
 
-After user authentication and app approval, the app should redirect to the provided redirect URI, which must match the redirect URI registered for the client. The requested access token, authentication code, or an error will be in the fragment (after the `#`) portion of the URI.
+After user authentication and app approval, the app should redirect to the provided redirect URI, which must match the redirect URI registered for the client. For the access token, the requested data will be in the fragment (after the `#`) portion of the URI. For the authentication code, the requested data will be in the query (after the `?`). Error will be returned in the body.
 
 .. _dev.vin.li: https://dev.vin.li/
