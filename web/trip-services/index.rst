@@ -216,6 +216,14 @@ All of the detailed information listed in the above verbiage is available via th
 
 * `fuelEconomy` invokes an operation to get the fuel type of a trip. fuelEconomy uses gasoline as the default fuel type. However, diesel will be set as the fuel type (and corresponding diesel values for calculations) if it is detected in a trip.
 
+
+The trip document also includes short information about the telemetry associated with it, namely:
+
+* `startPoint` - coordinates of the position where the trip was initiated
+* `stopPoint` - coordinates of the position where the trip was concluded
+* `preview` - encoded string of the polyline representing the trip (usable in map services such as Google Maps, Mapbox, ...)
+
+
 Request
 +++++++
 
