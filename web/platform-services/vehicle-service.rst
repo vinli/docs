@@ -156,9 +156,58 @@ Response
           "model" : "Camry",
           "trim" : "SE V6",
           "vin" : "2B4GP44R6WR942762",
-          "data" : { ... },
-          "links" : {
-            "self" : "https://platform.vin.li/api/v1/vehicles/67e1e940-d6da-11e3-9c1a-0800200c9a66"
-          }
+          "data" : {
+            "engine": {
+              "id": "200373059",
+              "name": "Engine",
+              "equipmentType": "ENGINE",
+              "availability": "STANDARD",
+              "compressionRatio": 10.6,
+              "cylinder": 4,
+              "size": 1.8,
+              "displacement": 1798,
+              "configuration": "inline",
+              "fuelType": "regular unleaded",
+              "horsepower": 140,
+              "torque": 128,
+              "totalValves": 16,
+              "type": "gas",
+              "code": "4INAG1.8",
+              "compressorType": "NA",
+              "rpm": {
+                "horsepower": 6500,
+                "torque": 4300
+              },
+              "valve": {
+                "timing": "variable valve timing",
+                "gear": "single overhead camshaft"
+              }
+            },
+            "engineDisplacement": 1798,
+            "transmission": null,
+            "manufacturer": null,
+            "categories": {
+              "market": "N/A",
+              "EPAClass": "Compact Cars",
+              "vehicleSize": "Compact",
+              "primaryBodyType": "Car",
+              "vehicleStyle": "Sedan",
+              "vehicleType": "Car"
+            },
+            "epaMpg": {
+              "highway": "39",
+              "city": "28"
+            },
+            "drive": "front wheel drive",
+            "numDoors": "4"
+          },
+          "createdAt": "2016-08-08T21:12:18.692Z",
+          "links": {
+            "self": "https://platform-dev.vin.li/api/v1/vehicles/67e1e940-d6da-11e3-9c1a-0800200c9a66",
+            "trips": "https://trips-dev.vin.li/api/v1/vehicles/67e1e940-d6da-11e3-9c1a-0800200c9a66/trips",
+            "codes": "https://diagnostic-dev.vin.li/api/v1/vehicles/67e1e940-d6da-11e3-9c1a-0800200c9a66/codes",
+            "collisions": "https://safety-dev.vin.li/api/v1/vehicles/67e1e940-d6da-11e3-9c1a-0800200c9a66/collisions"
+          },
+          "lastStartup": "2016-08-08T21:12:16.828Z"
         }
       }
