@@ -80,6 +80,25 @@ Response
         }
       }
 
+
+Query by State
+++++++++++++++
+A request like `GET https://diagnostic.vin.li/api/v1/vehicles/47fa348e-c3fa-4cad-8272-61940eae7748/codes` will return all DTCs for a given vehicle, but sometimes you only want DTCs that are currently active (or inactive).
+To do this, simply add the `state` query parameter.
+
+`state` will accept the following options:
+ - `active`
+ - `inactive`
+ - `all` (which is the default)
+
+Here's an example:
+
+.. code-block:: json
+
+      GET https://diagnostic.vin.li/api/v1/vehicles/47fa348e-c3fa-4cad-8272-61940eae7748/codes?state=active
+      Accept: application/json
+
+
 Get a Specific DTC
 ``````````````````
 
