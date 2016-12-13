@@ -185,7 +185,7 @@ Response
 Overall Grade for a Given Time Period
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Returns an overall grade from historical data for a time period, defined by `since` and `until` query parameters. Note - `gradeCount` reflects the lifetime count, not the count for the time period.
+Returns an overall grade from historical data for a time period, defined by `since` and `until` query parameters. `tripSampleSize` reflects the number of trips included in the sample for the time period. `gradeCount` reflects the lifetime count, not the count for the time period.
 
 Reqest
 +++++++
