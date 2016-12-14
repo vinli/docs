@@ -170,7 +170,52 @@ Response
         "reportCard": {
            "overallGrade": "A"
         },
-        "tripSampleSize": 100
+        "tripSampleSize": 117,
+        "gradeCount:" {
+          "B": "21",
+          "F": "2",
+          "I": "4",
+          "C": "19",
+          "A": "68",
+          "D": "3"
+        }
+      }
+
+
+Overall Grade for a Given Time Period
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Returns an overall grade from historical data for a time period, defined by `since` and `until` query parameters. `tripSampleSize` reflects the number of trips included in the sample for the time period. `gradeCount` reflects the lifetime count, not the count for the time period.
+
+Reqest
++++++++
+
+.. code-block:: json
+
+      GET https://behavioral.vin.li/api/v1/devices/602c6490-d7a3-11e3-9c1a-0800200c9a66/report_cards/overall?since=2016-04-46&until=2016-04-27
+      Accept: application/json
+
+Response
+++++++++
+
+.. code-block:: json
+
+      HTTP/1.1 200 OK
+      Content-Type: application/json
+
+      {
+        "reportCard": {
+          "overallGrade": "A"
+        },
+        "tripSampleSize": 11,
+        "gradeCount": {
+          "B": "104",
+          "F": "4",
+          "I": "8",
+          "C": "21",
+          "A": "1002",
+          "D": "2"
+        }
       }
 
 
