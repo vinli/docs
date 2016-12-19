@@ -93,10 +93,10 @@ Response
           },
           "createdAt": "2016-06-08T20:56:33.033Z",
           "links": {
-            "self": "https://platform.vin.li/api/v1/vehicles/38ef2962-7fd2-4319-8389-f9a6b85a7e3f",
-            "trips": "https://trips.vin.li/api/v1/vehicles/38ef2962-7fd2-4319-8389-f9a6b85a7e3f/trips",
-            "codes": "https://diagnostic.vin.li/api/v1/vehicles/38ef2962-7fd2-4319-8389-f9a6b85a7e3f/codes",
-            "collisions": "https://safety.vin.li/api/v1/vehicles/38ef2962-7fd2-4319-8389-f9a6b85a7e3f/collisions"
+            "self": "https://platform.vin.li/api/v1/vehicles/67e1e940-d6da-11e3-9c1a-0800200c9a66",
+            "trips": "https://trips.vin.li/api/v1/vehicles/67e1e940-d6da-11e3-9c1a-0800200c9a66/trips",
+            "codes": "https://diagnostic.vin.li/api/v1/vehicles/67e1e940-d6da-11e3-9c1a-0800200c9a66/codes",
+            "collisions": "https://safety.vin.li/api/v1/vehicles/67e1e940-d6da-11e3-9c1a-0800200c9a66/collisions"
           },
           "lastStartup": "2016-12-19T14:12:19.476Z"
         },
