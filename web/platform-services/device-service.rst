@@ -94,12 +94,20 @@ Response
       Content-Type: application/json
 
       {
-        "device" : {
-          "id" : "821374c0-d6d8-11e3-9c1a-0800200c9a66",
-          "links" : {
-            "self" : "https://platform.vin.li/api/v1/devices/821374c0-d6d8-11e3-9c1a-0800200c9a66",
-            "vehicles" : "https://platform.vin.li/api/v1/devices/821374c0-d6d8-11e3-9c1a-0800200c9a66/vehicles",
-            "latestVehicle" : "https://platform.vin.li/api/v1/devices/821374c0-d6d8-11e3-9c1a-0800200c9a66/vehicles/_latest"
+        "device": {
+          "id": "821374c0-d6d8-11e3-9c1a-0800200c9a66",
+          "name": "Mystery Machine",
+          "chipId": "VV55C6887CBA",
+          "createdAt": "2016-04-07T14:56:18.306Z",
+          "icon": "https://vinli-public.s3.amazonaws.com/auth-service/prod/3de63923-c9bc-4ca4-b1f1-50daed3ab76c/cimqf7cnm01020ecwvyx8ae45",
+          "links": {
+            "self": "https://platform.vin.li/api/v1/devices/821374c0-d6d8-11e3-9c1a-0800200c9a66",
+            "vehicles": "https://platform.vin.li/api/v1/devices/821374c0-d6d8-11e3-9c1a-0800200c9a66/vehicles",
+            "latestVehicle": "https://platform.vin.li/api/v1/devices/821374c0-d6d8-11e3-9c1a-0800200c9a66/vehicles/_latest",
+            "rules": "https://rules.vin.li/api/v1/devices/821374c0-d6d8-11e3-9c1a-0800200c9a66/rules",
+            "events": "https://events.vin.li/api/v1/devices/821374c0-d6d8-11e3-9c1a-0800200c9a66/events",
+            "subscriptions": "https://events.vin.li/api/v1/devices/821374c0-d6d8-11e3-9c1a-0800200c9a66/subscriptions",
+            "trips": "https://trips.vin.li/api/v1/devices/821374c0-d6d8-11e3-9c1a-0800200c9a66/trips"
           }
         }
       }
