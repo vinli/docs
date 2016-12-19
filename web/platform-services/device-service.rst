@@ -26,27 +26,48 @@ Response
       Content-Type: application/json
 
       {
-        "devices" : [
+        "devices": [
           {
-            "id" : "8b8a1810-d6d8-11e3-9c1a-0800200c9a66",
-            "name" : "testdevice001",
-            "links" : {
-              "self" : "https://platform.vin.li/api/v1/devices/8b8a1810-d6d8-11e3-9c1a-0800200c9a66",
-              "vehicles" : "https://platform.vin.li/api/v1/devices/8b8a1810-d6d8-11e3-9c1a-0800200c9a66/vehicles",
-              "latestVehicle" : "https://platform.vin.li/api/v1/devices/8b8a1810-d6d8-11e3-9c1a-0800200c9a66/vehicles/_latest"
+            "id": "ab4c96ec-4052-4002-9576-bef5d8eb8517",
+            "name": "Vrrrooom",
+            "chipId": "VV89CCF24172",
+            "createdAt": "2016-06-07T16:50:38.148Z",
+            "icon": "https://vinli-public.s3.amazonaws.com/auth-service/prod/efd48eaf-4dfb-2a1e-8207-0e1037638532/cirpxptlm00000fbulfuxzxxj",
+            "links": {
+              "self": "https://platform.vin.li/api/v1/devices/ab4c96ec-4052-4002-9576-bef5d8eb8517",
+              "vehicles": "https://platform.vin.li/api/v1/devices/ab4c96ec-4052-4002-9576-bef5d8eb8517/vehicles",
+              "latestVehicle": "https://platform.vin.li/api/v1/devices/ab4c96ec-4052-4002-9576-bef5d8eb8517/vehicles/_latest",
+              "rules": "https://rules.vin.li/api/v1/devices/ab4c96ec-4052-4002-9576-bef5d8eb8517/rules",
+              "events": "https://events.vin.li/api/v1/devices/ab4c96ec-4052-4002-9576-bef5d8eb8517/events",
+              "subscriptions": "https://events.vin.li/api/v1/devices/ab4c96ec-4052-4002-9576-bef5d8eb8517/subscriptions",
+              "trips": "https://trips.vin.li/api/v1/devices/ab4c96ec-4052-4002-9576-bef5d8eb8517/trips"
             }
           },
-          ...
+          {
+            "id": "2a73c50d-1121-4913-94e6-770f22a5e979",
+            "name": "Virtual Vinli Hot Rod",
+            "chipId": "VV2A406C5147",
+            "createdAt": "2016-09-14T09:02:20.998Z",
+            "icon": "https://vinli-public.s3.amazonaws.com/auth-service/prod/eed49eaf-4dfb-2a1e-8207-0e1037638532/cirpxptlm00000fbulguozxzj",
+            "links": {
+              "self": "https://platform.vin.li/api/v1/devices/2a73c50d-1121-4913-94e6-770f22a5e979",
+              "vehicles": "https://platform.vin.li/api/v1/devices/2a73c50d-1121-4913-94e6-770f22a5e979/vehicles",
+              "latestVehicle": "https://platform.vin.li/api/v1/devices/2a73c50d-1121-4913-94e6-770f22a5e979/vehicles/_latest",
+              "rules": "https://rules.vin.li/api/v1/devices/2a73c50d-1121-4913-94e6-770f22a5e979/rules",
+              "events": "https://events.vin.li/api/v1/devices/2a73c50d-1121-4913-94e6-770f22a5e979/events",
+              "subscriptions": "https://events.vin.li/api/v1/devices/2a73c50d-1121-4913-94e6-770f22a5e979/subscriptions",
+              "trips": "https://trips.vin.li/api/v1/devices/1a73c50d-1171-4915-94e8-170a21a5e978/trips"
+            }
+          }
         ],
-        "meta" : {
-          "pagination" : {
-            "total" : 1431,
-            "offset" : 0,
-            "limit" : 20,
-            "links" : {
-              "first" : "https://platform.vin.li/api/v1/devices?offset=0&limit=20",
-              "last" : "https://platform.vin.li/api/v1/devices?offset=1420&limit=20",
-              "next" : "https://platform.vin.li/api/v1/devices?offset=20&limit=20"
+        "meta": {
+          "pagination": {
+            "total": 2,
+            "limit": 20,
+            "offset": 0,
+            "links": {
+              "first": "https://platform.vin.li/api/v1/devices?limit=20&offset=0",
+              "last": "https://platform.vin.li/api/v1/devices?limit=20&offset=0"
             }
           }
         }
