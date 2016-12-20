@@ -57,9 +57,11 @@ Response
         },
         "meta" : {
           "pagination" : {
-            "remaining" : 2341,
-            "limit" : 200,
-            "until" : 1394733260050,
+            "remaining": 469,
+            "until": "2016-12-20T00:02:36.644Z",
+            "since": "1970-01-01T00:00:00.000Z",
+            "limit": 3,
+            "sortDir": "desc",
             "links" : {
               "prior" : "https://telemetry.vin.li/api/v1/devices/27a2ac50-d7bd-11e3-9c1a-0800200c9a66/locations?until=1394733247121"
             }
