@@ -148,22 +148,24 @@ Response
             },
             "preview": "ijagEdgwmQtC}B`@Q^w@\\U?ICCBA@BFGBKFIB@OLBCm@cBa@u@W[Uo@c@i@Oq@]_@MCw@z@W?F\\?Fd@c@t@a@f@Td@h@b@n@`@v@`@`@b@n@@?CCEFJv@^lATjAHpA@hAH|@Tz@RvAJd@E^U\\eBbCi@l@WTKl@De@?L@AKPy@z@i@b@Yl@u@jAAPU?sAJmADM[g@aCAgCGIEDJm@h@Q`@ICDGA]kAK}@Yy@Bs@Ve@V[f@M^PVb@Ah@CNSXSGAKBGFD",
             "stats": {
-              "averageLoad": 42.6683,
-              "averageMovingSpeed": 23.1505,
-              "averageSpeed": 15.4892,
-              "distance": 2125.35,
-              "distanceByGPS": 2051.44,
-              "distanceByVSS": 2125.35,
-              "duration": 612924,
-              "fuelConsumed": 0.358368,
-              "fuelEconomy": 15.277,
-              "hardAccelCount": null,
-              "hardBrakeCount": null,
-              "locationCount": 160,
-              "maxSpeed": 47,
-              "messageCount": 182,
-              "stdDevMovingSpeed": 11.0187,
-              "stopCount": 8
+              "averageLoad": 38.288,
+              "averageMovingSpeed": 19.9488,
+              "averageSpeed": 16.7443,
+              "comprehensiveLocations": true,
+              "distance": 2467.1,
+              "distanceByGPS": 2467.1,
+              "distanceByVSS": 2121.67,
+              "duration": 503340,
+              "fuelConsumed": 0.34644,
+              "fuelEconomy": 14.4982,
+              "hardAccelCount": 0,
+              "hardBrakeCount": 0,
+              "locationCount": 433,
+              "maxSpeed": 45,
+              "messageCount": 557,
+              "stdDevMovingSpeed": 12.2787,
+              "stopCount": 14,
+              "substantial": true
             },
             "links": {
               "self": "https://trips.vin.li/api/v1/trips/a51a3c87-baa7-4e5d-98e6-4f9588d7c2e1",
@@ -200,7 +202,8 @@ For each trip, more detailed information regarding overall trip statistics is av
 * `averageLoad` - average engine load (in percent) of the trip
 * `averageMovingSpeed` - average speed while the vehicle was in motion (eliminates times when the vehicle had a speed of 0)
 * `averageSpeed` - average speed (in kph) of the trip
-* `distance` - total distance traveled (in meters) by the vehicle during this Trip
+* `comprehensiveLocations` - the trip has substantial GPS coverage
+* `distance` - total distance traveled (in meters) by the vehicle during this trip
 * `distanceByGPS` - total distance traveled (in meters) according to GPS.  This is more accurate for longer trips, but for shorter trips, it may be inaccurate due to the time to get a fix at the start of a trip.
 * `distanceByVSS` - total distance traveled (in meters) according to the speed of the vehicle.  This tends to be more accurate over shorter time periods.
 * `duration` - time (in milliseconds) between the start and end of this trip
@@ -208,9 +211,12 @@ For each trip, more detailed information regarding overall trip statistics is av
 * `fuelEconomy` - estimated fuel economy (in miles per gallon) during this trip
 * `hardAccelCount` - the number of times the Vehicle experienced a hard acceleration during this trip
 * `hardBrakeCount` - the number of times the Vehicle experienced a hard stop during this trip
-* `maxSpeed` - the maximum speed (in kph) reported for the Vehicle during the Trip
+* `locationCount` - the number of messages in the trip containing locations
+* `maxSpeed` - the maximum speed (in kph) reported for the Vehicle during the trip
+* `messageCount` - the total number of messages comprising the trip
 * `stdDevMovingSpeed` - the standard deviation of the speed while the vehicle was in motion
 * `stopCount` - the number of times the Vehicle came to a stop
+* `substantial` - boolean, indicating whether or not a trip had enough messages and data to be considered substantial
 
 All of the detailed information listed in the above verbiage is available via the get trips by device or get trips by vehicle.
 
@@ -265,22 +271,24 @@ Response
           },
           "preview": "ijagEdgwmQtC}B`@Q^w@\\U?ICCBA@BFGBKFIB@OLBCm@cBa@u@W[Uo@c@i@Oq@]_@MCw@z@W?F\\?Fd@c@t@a@f@Td@h@b@n@`@v@`@`@b@n@@?CCEFJv@^lATjAHpA@hAH|@Tz@RvAJd@E^U\\eBbCi@l@WTKl@De@?L@AKPy@z@i@b@Yl@u@jAAPU?sAJmADM[g@aCAgCGIEDJm@h@Q`@ICDGA]kAK}@Yy@Bs@Ve@V[f@M^PVb@Ah@CNSXSGAKBGFD",
           "stats": {
-            "averageLoad": 42.6683,
-            "averageMovingSpeed": 23.1505,
-            "averageSpeed": 15.4892,
-            "distance": 2125.35,
-            "distanceByGPS": 2051.44,
-            "distanceByVSS": 2125.35,
-            "duration": 612924,
-            "fuelConsumed": 0.358368,
-            "fuelEconomy": 15.277,
-            "hardAccelCount": null,
-            "hardBrakeCount": null,
-            "locationCount": 160,
-            "maxSpeed": 47,
-            "messageCount": 182,
-            "stdDevMovingSpeed": 11.0187,
-            "stopCount": 8
+            "averageLoad": 38.288,
+            "averageMovingSpeed": 19.9488,
+            "averageSpeed": 16.7443,
+            "comprehensiveLocations": true,
+            "distance": 2467.1,
+            "distanceByGPS": 2467.1,
+            "distanceByVSS": 2121.67,
+            "duration": 503340,
+            "fuelConsumed": 0.34644,
+            "fuelEconomy": 14.4982,
+            "hardAccelCount": 0,
+            "hardBrakeCount": 0,
+            "locationCount": 433,
+            "maxSpeed": 45,
+            "messageCount": 557,
+            "stdDevMovingSpeed": 12.2787,
+            "stopCount": 14,
+            "substantial": true
           },
           "links": {
             "self": "https://trips.vin.li/api/v1/trips/a51a3c87-baa7-4e5d-98e6-4f9588d7c2e1",
