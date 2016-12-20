@@ -4,15 +4,15 @@ A vehicles Odometer reading is not exposed through the OBDII port. However, know
 
 **All distances are in meters.**
 
-Get All of a Vehicles Distances
-```````````````````````````````
-This method returns a list of all distances (or odometer readings) that have been created for a vehicle.
+Get Latest Distance for a Vehicle
+`````````````````````````````````
+This method returns the most current distance estimate for a given vehicle.
 
 Request
 +++++++
 .. code-block:: json
 
-      GET https://distance.vin.li/api/v1/vehicles/{vehicleId}/distances
+      GET https://distance.vin.li/api/v1/vehicles/36cf2965-7ed1-4314-8384-f9b6b75a7d3f/distances/_latest
       Accept: application/json
 
 Optionally - this method accepts ``since`` and ``until`` query parameters.
@@ -24,23 +24,21 @@ Response
 
       HTTP/1.1 200 OK
       Content-Type: application/json
- {
-  "distances": [
-    {
-      "confidenceMin": 38270282.779,
-      "confidenceMax": 128122251.041,
-      "value": 83196266.91,
-      "lastOdometerDate": "2016-02-24T20:59:53.633Z"
-    }
-  ]
- }
 
-Details for Distances
-*********************
- * *confidenceMin* - the minimum range value for the predicted odometer reading
- * *confidenceMax* - the maximum range value for the predicted odometer reading
- * *value* - the best guess odometer value
- * *lastOdometerDate* - the date/time of the most recent odometer record
+      {
+        "distance": {
+          "vehicleId": "36cf2965-7ed1-4314-8384-f9b6b75a7d3f",
+          "value": 94338300.26,
+          "unit": "m",
+          "confidenceMin": 94337300.26,
+          "confidenceMax": 94339300.26,
+          "lastOdometerDate": "2016-12-09T23:00:36.755Z",
+          "links": {
+            "self": "https://distance.vin.li/api/v1/vehicles/36cf2965-7ed1-4314-8384-f9b6b75a7d3f/distances/_latest?since=1970-01-01T00:00:00.000Z&until=2016-12-20T22:29:57.292Z",
+            "vehicle": "https://platform.vin.li/api/v1/vehicles/36cf2965-7ed1-4314-8384-f9b6b75a7d3f"
+          }
+        }
+      }
 
 
 Create an Odometer Report
@@ -56,7 +54,7 @@ Request
    {
     "odometer": {
      "reading": 15000,
-     "date": "2016-02-16T17:01:36.243Z",
+     "date": "2016-04-26T17:01:36.243Z",
      "unit": "km"
     }
    }
@@ -71,25 +69,28 @@ Response
 
  HTTP/1.1 200 OK
  Content-Type: application/json
+
   {
     "odometer": {
       "id": "c6e3fbb7-c1e8-4de3-8c38-75661dd9cd40",
       "vehicleId": "484ceb75-87ba-4813-b414-1c13f2056325",
-      "reading": 640.325,
-      "date": "2016-02-16T16:55:20.707Z",
+      "reading": 15000000,
+      "unit": "m",
+      "date": "2016-12-20T22:35:39.504Z",
       "links": {
+        "self": "https://distance.vin.li/api/v1/odometers/c6e3fbb7-c1e8-4de3-8c38-75661dd9cd40",
         "vehicle": "https://platform.vin.li/api/v1/vehicles/484ceb75-87ba-4813-b414-1c13f2056325"
       }
     }
   }
 
-List All Odometer Reports for a Vehicle
-```````````````````````````````````````
+Get All Odometer Reports for a Vehicle
+``````````````````````````````````````
 Request
 +++++++
 .. code-block:: json
 
-      GET https://distance.vin.li/api/v1/vehicles/{vehicleId}/odometers
+      GET https://distance.vin.li/api/v1/vehicles/ec74e512-ed9a-41ae-99e9-779882846b80/odometers
       Accept: application/json
 
 Response
@@ -107,6 +108,7 @@ Response
      "reading": 1720.17,
      "date": "2016-02-09T16:56:31.033Z",
      "links": {
+       "self": "https://distance.vin.li/api/v1/odometers/be7baede-c865-3e9c-8181-8126c332683d",
        "vehicle": "https://platform.vin.li/api/v1/vehicles/ec74e512-ed9a-41ae-99e9-779882846b80"
      }
    },
@@ -116,6 +118,7 @@ Response
      "reading": 4640.85,
      "date": "2016-02-02T16:56:31.033Z",
      "links": {
+       "self": "https://distance.vin.li/api/v1/odometers/be7baede-c865-3e9c-8181-8126c332683d",
        "vehicle": "https://platform.vin.li/api/v1/vehicles/ec74e512-ed9a-41ae-99e9-779882846b80"
      }
    }
@@ -156,6 +159,7 @@ Response
     "reading": 83321969.16,
     "date": "2016-03-03T20:23:53.726Z",
     "links": {
+      "self": "https://distance.vin.li/api/v1/odometers/bcdc8734-ce79-4d78-a911-f77c09316f5f",
       "vehicle": "https://platform-dev.vin.li/api/v1/vehicles/0e14f2db-ff0b-43bd-b88c-01b9f226778f"
       }
     }
@@ -168,7 +172,7 @@ Request
 +++++++
 .. code-block:: json
 
- DELETE https://distance.vin.li/api/v1/odometers/{odometerId}
+ DELETE https://distance.vin.li/api/v1/odometers/bcdc8734-ce79-4d78-a911-f77c09316f5f
 
 
 Odometer Triggers
@@ -192,7 +196,7 @@ Request
 +++++++
 .. code-block:: json
 
- POST https://distance.vin.li/api/v1/vehicles/{vehicleId}/odometer_triggers
+ POST https://distance.vin.li/api/v1/vehicles/ab4e7199-a3a6-412f-9088-bc05b6d89e31/odometer_triggers
  Accept: application/json
  Content-Type: application/json
 
@@ -212,16 +216,17 @@ Response
     Content-Type: application/json
 
     {
-    "odometerTrigger": {
-      "id": "2b45bf31-b920-4afd-be1f-32b3f867bc4a",
-      "vehicleId": "ab4e7199-a3a6-412f-9088-bc05b6d89e31",
-      "type": "from_now",
-      "threshold": 9496.086,
-      "events": 0,
-      "links": {
-        "vehicle": "https://platform.vin.li/api/v1/vehicles/ab4e7199-a3a6-412f-9088-bc05b6d89e31"
+      "odometerTrigger": {
+        "id": "2b45bf31-b920-4afd-be1f-32b3f867bc4a",
+        "vehicleId": "ab4e7199-a3a6-412f-9088-bc05b6d89e31",
+        "type": "from_now",
+        "threshold": 9496.086,
+        "events": 0,
+        "links": {
+          "self": "https://distance.vin.li/api/v1/odometer_triggers/2b45bf31-b920-4afd-be1f-32b3f867bc4a"
+          "vehicle": "https://platform.vin.li/api/v1/vehicles/ab4e7199-a3a6-412f-9088-bc05b6d89e31"
+        }
       }
-    }
     }
 
 
@@ -232,7 +237,7 @@ Request
 +++++++
 .. code-block:: json
 
- GET https://distance.vin.li/api/v1/odometer_triggers/{odometerTriggerId}
+ GET https://distance.vin.li/api/v1/odometer_triggers/2b45bf31-b920-4afd-be1f-32b3f867bc4a
 
 Response
 ++++++++
@@ -246,6 +251,7 @@ Response
   "threshold": 9496.086,
   "events": 0,
   "links": {
+    "self": "https://distance.vin.li/api/v1/odometer_triggers/2b45bf31-b920-4afd-be1f-32b3f867bc4a",
     "vehicle": "https://platform.vin.li/api/v1/vehicles/ab4e7199-a3a6-412f-9088-bc05b6d89e31"
   }
  }
@@ -257,7 +263,7 @@ Request
 +++++++
 .. code-block:: json
 
- DELETE https://distance.vin.li/api/v1/odometer_triggers/{odometerTriggerId}
+ DELETE https://distance.vin.li/api/v1/odometer_triggers/2b45bf31-b920-4afd-be1f-32b3f867bc4a
 
 
 
@@ -267,7 +273,7 @@ Request
 +++++++
 .. code-block:: json
 
- GET https://distance.vin.li/api/v1/vehicles/{vehicleId}/odometer_triggers
+ GET https://distance.vin.li/api/v1/vehicles/ab4e7199-a3a6-412f-9088-bc05b6d89e31/odometer_triggers
 
 Response
 ++++++++
@@ -277,16 +283,40 @@ Response
  Content-Type: application/json
 
      {
-     "odometerTriggers": [
-       {
-         "id": "a65c249f-083d-4d44-951c-a44467422192",
-         "vehicleId": "a657fbac-1e29-474f-846c-49bd63f92e12",
-         "type": "specific",
-         "threshold": 777.38,
-         "events": 0,
-         "links": {
-           "vehicle": "https://platform.vin.li/api/v1/vehicles/a657fbac-1e29-474f-846c-49bd63f92e12"
-         }
-       }
-     ]
-     }
+        "odometerTriggers": [
+          {
+            "id": "2b45bf31-b920-4afd-be1f-32b3f867bc4a",
+            "vehicleId": "ab4e7199-a3a6-412f-9088-bc05b6d89e31",
+            "type": "specific",
+            "threshold": 5000000000,
+            "unit": "m",
+            "events": 0,
+            "links": {
+              "self": "https://distance.vin.li/api/v1/odometer_triggers/2b45bf31-b920-4afd-be1f-32b3f867bc4a",
+              "vehicle": "https://platform.vin.li/api/v1/vehicles/ab4e7199-a3a6-412f-9088-bc05b6d89e31"
+            }
+          },
+          {
+            "id": "6c35bf31-c120-5afd-ae1c-22b3c867fc4f",
+            "vehicleId": "ab4e7199-a3a6-412f-9088-bc05b6d89e31",
+            "type": "specific",
+            "threshold": 5000000000,
+            "unit": "m",
+            "events": 0,
+            "links": {
+              "self": "https://distance.vin.li/api/v1/odometer_triggers/6c35bf31-c120-5afd-ae1c-22b3c867fc4f",
+              "vehicle": "https://platform.vin.li/api/v1/vehicles/ab4e7199-a3a6-412f-9088-bc05b6d89e31"
+            }
+          }
+        ],
+        "meta": {
+          "pagination": {
+            "remaining": 0,
+            "until": "2016-12-20T22:48:48.058Z",
+            "since": "1970-01-01T00:00:00.000Z",
+            "limit": 20,
+            "sortDir": "desc",
+            "links": {}
+          }
+        }
+      }
