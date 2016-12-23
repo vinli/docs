@@ -223,7 +223,7 @@ Response
         "threshold": 9496.086,
         "events": 0,
         "links": {
-          "self": "https://distance.vin.li/api/v1/odometer_triggers/2b45bf31-b920-4afd-be1f-32b3f867bc4a"
+          "self": "https://distance.vin.li/api/v1/odometer_triggers/2b45bf31-b920-4afd-be1f-32b3f867bc4a",
           "vehicle": "https://platform.vin.li/api/v1/vehicles/ab4e7199-a3a6-412f-9088-bc05b6d89e31"
         }
       }
