@@ -182,7 +182,7 @@ Odometer triggers generate events/notifications for milage thresholds that you d
  * `type` - Required. There are 3 types of triggers, `specific`, `from_now`, `milestone`
 
   * `specific`: when an odometer hits a certain distance i.e. 50k miles
-  * `from_now`: when an odometer hits a certain distance greater than the current distance
+  * `from_now`: when an odometer hits a specific distance traveled from now
   * `milestone`: when an odometer hits a certain recurring interval i.e. every 5k miles
 
  * `threshold` - Required. The amount for your `type`.
