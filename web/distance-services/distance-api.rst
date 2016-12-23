@@ -41,8 +41,8 @@ Response
       }
 
 
-Create an Odometer Report
-``````````````````````````
+Create an Odometer Reading
+```````````````````````````
 Request
 +++++++
 .. code-block:: json
@@ -84,8 +84,8 @@ Response
     }
   }
 
-Get All Odometer Reports for a Vehicle
-``````````````````````````````````````
+Get All Odometer Readings for a Vehicle
+```````````````````````````````````````
 Request
 +++++++
 .. code-block:: json
@@ -166,8 +166,8 @@ Response
   }
 
 
-Delete an Odometer Report
-`````````````````````````
+Delete an Odometer Reading
+``````````````````````````
 Request
 +++++++
 .. code-block:: json
