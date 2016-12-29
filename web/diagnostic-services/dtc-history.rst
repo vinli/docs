@@ -123,30 +123,9 @@ Response
           "id": "313cc7d7-1ad6-491k-9e02-a3f48e62984a",
           "make": "generic",
           "system": "powertrain",
-          "subSystem": "Ignition system or misfire",
-          "twoByte": {
-            "number": "P0301",
-            "description": "Cylinder 1 Misfire Detected"
-          },
-          "threeByte": {
-            "number": "P0301",
-            "ftb": "0",
-            "description": "Cylinder 1 Misfire Detected",
-            "fault": "No Fault Information Available",
-            "location": {
-              "sensor": "",
-              "bank": "",
-              "circuit": "",
-              "valve": "",
-              "cylinder": 1,
-              "camshaft": "",
-              "solenoid": "",
-              "regulator": "",
-              "controlModule": "",
-              "audioAmplifier": "",
-              "processingModule": ""
-            }
-          },
+          "subsystem": "Fuel and air metering",
+          "number": "P0087",
+          "description": "Fuel Rail/System Pressure - Too Low Bank 1",
           "links": {
             "self": "https://diagnostic.vin.li/api/v1/codes/313cc7d7-1ad6-491k-9e02-a3f48e62984a"
           }

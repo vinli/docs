@@ -32,46 +32,148 @@ Response
       Content-Type: application/json
 
       {
-        "vehicles" : [
-          {
-            "id" : "67e1e940-d6da-11e3-9c1a-0800200c9a66",
-            "year" : "2007",
-            "make" : "Toyota",
-            "model" : "Camry",
-            "trim" : "SE V6",
-            "vin" : "2B4GP44R6WR942762",
-            "links" : {
-              "self" : "https://platform.vin.li/api/v1/vehicles/67e1e940-d6da-11e3-9c1a-0800200c9a66",
-              "trips" : "https://trip.vin.li/api/v1/vehicles/67e1e940-d6da-11e3-9c1a-0800200c9a66/trips",
-              "collisions" : "https://safety.vin.li/api/v1/vehicles/67e1e940-d6da-11e3-9c1a-0800200c9a66/collisions",
-              "reportCards" : "https://behavioral.vin.li/api/v1/vehicles/67e1e940-d6da-11e3-9c1a-0800200c9a66/reportCards"
-            }
+      "vehicles": [
+        {
+          "id": "67e1e940-d6da-11e3-9c1a-0800200c9a66",
+          "vin": "2B4GP44R6WR942762",
+          "make": "Honda",
+          "model": "CR-V",
+          "year": "2010",
+          "trim": "EX-L 4dr SUV w/Navigation (2.4L 4cyl 5A)",
+          "data": {
+            "engine": {
+              "name": "Engine",
+              "equipmentType": "ENGINE",
+              "availability": "STANDARD",
+              "compressionRatio": 10.5,
+              "cylinder": 4,
+              "size": 2.4,
+              "displacement": 2354,
+              "configuration": "inline",
+              "fuelType": "regular unleaded",
+              "horsepower": 180,
+              "torque": 161,
+              "totalValves": 16,
+              "type": "gas",
+              "code": "4INAG2.4",
+              "compressorType": "NA",
+              "rpm": {
+                "horsepower": 6800,
+                "torque": 4400
+              },
+              "valve": {
+                "timing": "variable valve timing",
+                "gear": "double overhead camshaft"
+              }
+            },
+            "engineDisplacement": 2354,
+            "transmission": {
+              "name": "5A",
+              "equipmentType": "TRANSMISSION",
+              "availability": "STANDARD",
+              "transmissionType": "AUTOMATIC",
+              "numberOfSpeeds": "5"
+            },
+            "manufacturer": null,
+            "categories": {
+              "market": "Crossover",
+              "EPAClass": "Sport Utility Vehicles",
+              "vehicleSize": "Compact",
+              "crossover": "Car",
+              "primaryBodyType": "SUV",
+              "vehicleStyle": "4dr SUV",
+              "vehicleType": "SUV"
+            },
+            "epaMpg": {
+              "highway": "28",
+              "city": "21"
+            },
+            "drive": "front wheel drive",
+            "numDoors": "4"
           },
-          {
-            "id" : "2a88b0f0-d6db-11e3-9c1a-0800200c9a66",
-            "vin" : "JE3BW50W4NZ676124",
-            "links" : {
-              "self" : "https://platform.vin.li/api/v1/vehicles/2a88b0f0-d6db-11e3-9c1a-0800200c9a66",
-              "trips" : "https://trip.vin.li/api/v1/vehicles/2a88b0f0-d6db-11e3-9c1a-0800200c9a66/trips",
-              "collisions" : "https://safety.vin.li/api/v1/vehicles/2a88b0f0-d6db-11e3-9c1a-0800200c9a66/collisions",
-              "reportCards" : "https://behavioral.vin.li/api/v1/vehicles/2a88b0f0-d6db-11e3-9c1a-0800200c9a66/reportCards"
-            }
+          "createdAt": "2016-06-08T20:56:33.033Z",
+          "links": {
+            "self": "https://platform.vin.li/api/v1/vehicles/67e1e940-d6da-11e3-9c1a-0800200c9a66",
+            "trips": "https://trips.vin.li/api/v1/vehicles/67e1e940-d6da-11e3-9c1a-0800200c9a66/trips",
+            "codes": "https://diagnostic.vin.li/api/v1/vehicles/67e1e940-d6da-11e3-9c1a-0800200c9a66/codes",
+            "collisions": "https://safety.vin.li/api/v1/vehicles/67e1e940-d6da-11e3-9c1a-0800200c9a66/collisions"
           },
-          ...
-        ],
-        "meta": {
-          "pagination" : {
-            "total" : 24,
-            "limit" : 10,
-            "offset" : 0,
-            "links" : {
-              "first" : "https://platform.vin.li/api/v1/devices/821374c0-d6d8-11e3-9c1a-0800200c9a66/vehicles?offset=0&limit=10",
-              "next" : "https://platform.vin.li/api/v1/devices/821374c0-d6d8-11e3-9c1a-0800200c9a66/vehicles?offset=10&limit=10",
-              "last" : "https://platform.vin.li/api/v1/devices/821374c0-d6d8-11e3-9c1a-0800200c9a66/vehicles?offset=20&limit=10"
-            }
+          "lastStartup": "2016-12-19T14:12:19.476Z"
+        },
+        {
+          "id" : "67e1e940-d6da-11e3-9c1a-0800200c9a66",
+          "year" : "2007",
+          "make" : "Toyota",
+          "model" : "Camry",
+          "trim" : "SE V6",
+          "vin" : "2B4GP44R6WR942762",
+          "data" : {
+            "engine": {
+              "id": "200373059",
+              "name": "Engine",
+              "equipmentType": "ENGINE",
+              "availability": "STANDARD",
+              "compressionRatio": 10.6,
+              "cylinder": 4,
+              "size": 1.8,
+              "displacement": 1798,
+              "configuration": "inline",
+              "fuelType": "regular unleaded",
+              "horsepower": 140,
+              "torque": 128,
+              "totalValves": 16,
+              "type": "gas",
+              "code": "4INAG1.8",
+              "compressorType": "NA",
+              "rpm": {
+                "horsepower": 6500,
+                "torque": 4300
+              },
+              "valve": {
+                "timing": "variable valve timing",
+                "gear": "single overhead camshaft"
+              }
+            },
+            "engineDisplacement": 1798,
+            "transmission": null,
+            "manufacturer": null,
+            "categories": {
+              "market": "N/A",
+              "EPAClass": "Compact Cars",
+              "vehicleSize": "Compact",
+              "primaryBodyType": "Car",
+              "vehicleStyle": "Sedan",
+              "vehicleType": "Car"
+            },
+            "epaMpg": {
+              "highway": "39",
+              "city": "28"
+            },
+            "drive": "front wheel drive",
+            "numDoors": "4"
+          },
+          "createdAt": "2016-08-08T21:12:18.692Z",
+          "links": {
+            "self": "https://platform-dev.vin.li/api/v1/vehicles/67e1e940-d6da-11e3-9c1a-0800200c9a66",
+            "trips": "https://trips-dev.vin.li/api/v1/vehicles/67e1e940-d6da-11e3-9c1a-0800200c9a66/trips",
+            "codes": "https://diagnostic-dev.vin.li/api/v1/vehicles/67e1e940-d6da-11e3-9c1a-0800200c9a66/codes",
+            "collisions": "https://safety-dev.vin.li/api/v1/vehicles/67e1e940-d6da-11e3-9c1a-0800200c9a66/collisions"
+          },
+          "lastStartup": "2016-08-08T21:12:16.828Z"
+        }
+      ],
+      "meta": {
+        "pagination": {
+          "total": 2,
+          "limit": 20,
+          "offset": 0,
+          "links": {
+            "first": "https://platform.vin.li/api/v1/devices/60599e46-e221-4df7-8bc6-077c9538141d/vehicles?limit=20&offset=0",
+            "last": "https://platform.vin.li/api/v1/devices/60599e46-e221-4df7-8bc6-077c9538141d/vehicles?limit=20&offset=0"
           }
         }
       }
+    }
 
 
 List a Device's Latest Vehicle

@@ -32,55 +32,136 @@ Response
 
       {
         "messages" : [
-          {
-            "id": "2f5f2a7c-02d8-4502-80c6-8cb52d9a08d5",
-            "timestamp": "2014-07-14T17:46:06.759Z",
-            "location": {
-              "longitude": -90.0811,
-              "latitude": 29.9508
-            },
-            "data" : {
-              "vehicleSpeed": 12,
-              "calculatedLoadValue": 34.5,
-              "fuelType": "Gasoline",
-              "rpm": 1254
-            }
-          },
-          {
-            "id": "b138303e-e40f-4d02-88a5-df41ca50ea3c",
-            "timestamp": "2014-07-14T17:46:01.544Z",
-            "location": {
-              "longitude": -90.0813,
-              "latitude": 29.950802
-            },
-            "data" : {
-              "vehicleSpeed": 15,
-              "rpm": 1766
-            }
-          },
-          {
-            "id": "fff266e2-deb3-4d3d-b181-bd0f048ce20c",
-            "timestamp": "2014-07-14T17:45:54.872Z",
-            "location": {
-              "longitude": -90.08104,
-              "latitude": 29.950813
-            },
-            "data" : {
+           {
+            "id": "c5c55c92-59ae-440d-881e-24f6b287ac32",
+            "timestamp": "2016-12-19T14:21:45.846Z",
+            "data": {
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -96.790123,
+                  32.782034
+                ]
+              },
+              "accel": {
+                "maxZ": -5.707806,
+                "maxX": -0.344767,
+                "maxY": -7.240103,
+                "minX": -0.651226,
+                "minY": -7.27841,
+                "minZ": -7.316718
+              },
+              "designOBDRequirements": "OBD-II as defined by the CARB",
+              "rpm": 940,
               "vehicleSpeed": 16,
-              "calculatedLoadValue": 56.3,
-              "rpm": 1486
+              "intakeManifoldPressure": 32,
+              "calculatedLoadValue": 29.019607843137255,
+              "massAirFlow": 4.49
+            },
+            "links": {
+              "self": "https://telemetry.vin.li/api/v1/messages/c5c55c92-59ae-440d-881e-24f6b287ac32?deviceId=27a2ac50-d7bd-11e3-9c1a-0800200c9a66"
             }
-          }
-          ...
+          },
+          {
+            "id": "8bc21558-0ec5-4a77-b82e-e6a23c95675c",
+            "timestamp": "2016-12-19T14:21:45.000Z",
+            "data": {
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -96.790127,
+                  32.782054
+                ]
+              },
+              "accel": {
+                "maxZ": -5.286424,
+                "maxX": -0.651226,
+                "maxY": -7.393332,
+                "minX": -1.072608,
+                "minY": -7.43164,
+                "minZ": -7.661484
+              },
+              "rpm": 1027,
+              "oxygenSensorVoltage1b": 0.69,
+              "shortTermFuelTrim1b": 0,
+              "vehicleSpeed": 15,
+              "intakeManifoldPressure": 39,
+              "calculatedLoadValue": 34.509803921568626,
+              "massAirFlow": 5.76
+            },
+            "links": {
+              "self": "https://telemetry.vin.li/api/v1/messages/8bc21558-0ec5-4a77-b82e-e6a23c95675c?deviceId=27a2ac50-d7bd-11e3-9c1a-0800200c9a66"
+            }
+          },
+          {
+            "id": "fa23ac3c-9987-46ee-8969-bedaabd7819f",
+            "timestamp": "2016-12-19T14:21:44.069Z",
+            "data": {
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -96.790113,
+                  32.782085
+                ]
+              },
+              "accel": {
+                "maxZ": -6.24411,
+                "maxX": -0.727841,
+                "maxY": -6.971951,
+                "minX": -1.608912,
+                "minY": -7.27841,
+                "minZ": -7.316718
+              },
+              "rpm": 902,
+              "oxygenSensorLocations": [
+                "Bank 1 Sensor 1",
+                "Bank 1 Sensor 2"
+              ],
+              "vehicleSpeed": 15,
+              "intakeManifoldPressure": 40
+            },
+            "links": {
+              "self": "https://telemetry.vin.li/api/v1/messages/fa23ac3c-9987-46ee-8969-bedaabd7819f?deviceId=27a2ac50-d7bd-11e3-9c1a-0800200c9a66"
+            }
+          },
+          {
+            "id": "3297440a-b839-41a8-9559-75e308a6e384",
+            "timestamp": "2016-12-19T14:21:43.210Z",
+            "data": {
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -96.790111,
+                  32.782127
+                ]
+              },
+              "accel": {
+                "maxZ": -6.703799,
+                "maxX": -0.612919,
+                "maxY": -6.397339,
+                "minX": -0.612919,
+                "minY": -7.58487,
+                "minZ": -6.742106
+              },
+              "calculatedLoadValue": 36.86274509803921,
+              "massAirFlow": 6.1,
+              "rpm": 888,
+              "absoluteThrottleSensorPosition": 13.72549019607843
+            },
+            "links": {
+              "self": "https://telemetry.vin.li/api/v1/messages/3297440a-b839-41a8-9559-75e308a6e384?deviceId=27a2ac50-d7bd-11e3-9c1a-0800200c9a66"
+            }
+          },
         ],
-        "meta" : {
-          "pagination" : {
-            "remainingCount" : 1324,
-            "limit" : 50,
-            "until" : 1394733261450,
-            "links" : {
-              "latest" : "https://telemetry.vin.li/api/v1/devices/27a2ac50-d7bd-11e3-9c1a-0800200c9a66/messages"
-              "prior" : "https://telemetry.vin.li/api/v1/devices/27a2ac50-d7bd-11e3-9c1a-0800200c9a66/messages?until=1394733251897"
+        "meta": {
+          "pagination": {
+            "remaining": 709,
+            "until": "2016-12-19T19:53:39.244Z",
+            "since": "1970-01-01T00:00:00.000Z",
+            "limit": 4,
+            "sortDir": "desc",
+            "links": {
+              "prior": "https://telemetry.vin.li/api/v1/devices/27a2ac50-d7bd-11e3-9c1a-0800200c9a66/messages?limit=5&until=1461943861926"
             }
           }
         }

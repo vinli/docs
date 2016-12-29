@@ -44,14 +44,31 @@ Response
           },
           ...
         ],
-        "meta" : {
-          "pagination" : {
-            "remaining" : 1324,
-            "limit" : 50,
-            "until" : 1408945415426,
-            "links" : {
-              "latest" : "https://platform.vin.li/api/v1/transactions",
-              "prior" : "https://platform.vin.li/api/v1/transactions?until=1408944636328"
+        "meta": {
+          "stats": {
+            "periodTotal": 1058,
+            "serviceUsage": {
+              "vinli-dummy-service": 226,
+              "vinli-platform-service": 222,
+              "vinli-event-service": 219,
+              "vinli-telemetry-service": 124,
+              "vinli-distance-service": 69,
+              "vinli-behavioral-service": 53,
+              "vinli-rule-service": 53,
+              "vinli-trip-service": 48,
+              "vinli-diagnostic-service": 31,
+              "vinli-safety-service": 13
+            },
+            "allTimeTotal": 1058
+          },
+          "pagination": {
+            "remaining": 1038,
+            "until": "2016-12-19T19:48:01.135Z",
+            "since": "1970-01-01T00:00:00.000Z",
+            "limit": 20,
+            "sortDir": "desc",
+            "links": {
+              "prior": "https://platform.vin.li/api/v1/transactions?until=1481558446263"
             }
           }
         }

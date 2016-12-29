@@ -8,7 +8,7 @@ Request
 
 .. code-block:: json
 
-      GET https://telemetry.vin.li/api/v1/devices/27a2ac50-d7bd-11e3-9c1a-0800200c9a66/snapshots?fields=rpm,vehicleSpeed,calculatedLoadValue,fuelType
+      GET https://telemetry.vin.li/api/v1/devices/27a2ac50-d7bd-11e3-9c1a-0800200c9a66/snapshots?fields=vehicleSpeed,rpm
       Accept: application/json
 
 * `fields` - Comma-separated list of parameter keys to filter by
@@ -21,43 +21,54 @@ Response
 
 .. code-block:: json
 
-      HTTP/1.1 200 OK
-      Content-Type: application/json
+     HTTP/1.1 200 OK
+     Content-Type: application/json
 
-      {
-          "snapshots": [
-              {
-                  "timestamp": 1394733260050,
-                  "data": {
-                      "vehicleSpeed": 12,
-                      "calculatedLoadValue": 34.5,
-                      "fuelType": "Gasoline"
-                  }
-              },
-              {
-                  "timestamp": 1394733255337,
-                  "data": {
-                      "vehicleSpeed": 15
-                  }
-              },
-              {
-                  "timestamp": 1394733251898,
-                  "data": {
-                      "rpm": 3827,
-                      "calculatedLoadValue": 56.3
-                  }
-              }
-          ],
-          "meta": {
-              "pagination": {
-                  "remainingCount": 1324,
-                  "limit": 20,
-                  "until": 1394733261450,
-                  "links": {
-                      "latest": "https://telemetry.vin.li/api/v1/devices/27a2ac50-d7bd-11e3-9c1a-0800200c9a66/snapshots?fields=rpm,vehicleSpeed,calculatedLoadValue,fuelType",
-                      "prior": "https://telemetry.vin.li/api/v1/devices/27a2ac50-d7bd-11e3-9c1a-0800200c9a66/snapshots?fields=rpm,vehicleSpeed,calculatedLoadValue,fuelType&until=1394733251897"
-                  }
-              }
-          }
-      }
-
+     {
+        "snapshots": [
+            {
+            "id": "090442e2-6c04-3473-bf15-549622329c79",
+            "timestamp": "2016-12-19T23:05:43.074Z",
+            "data": {
+                "vehicleSpeed": 12,
+                "rpm": 850
+            },
+            "links": {
+                "self": "https://telemetry.vin.li/api/v1/messages/090442e2-6c04-3473-bf15-549622329c79"
+                }
+            },
+            {
+            "id": "b8664969-dfba-4536-b610-1cdc2657d8b2",
+            "timestamp": "2016-12-19T23:05:42.198Z",
+            "data": {
+                "rpm": 1805
+            },
+            "links": {
+                "self": "https://telemetry.vin.li/api/v1/messages/b8664969-dfba-4536-b610-1cdc2657d8b2"
+                }   
+            },
+            {
+            "id": "89c4d874-cde5-4e7c-b7b4-59ce18d892d3",
+            "timestamp": "2016-12-19T23:05:41.268Z",
+            "data": {
+                "vehicleSpeed": 19,
+                "rpm": 1768
+            },
+            "links": {
+                "self": "https://telemetry.vin.li/api/v1/messages/89c4d874-cde5-4e7c-b7b4-59ce18d892d3"
+                }
+            }
+        ],
+        "meta": {
+            "pagination": {
+            "remaining": 797812,
+            "until": "2016-12-20T00:11:10.993Z",
+            "since": "1970-01-01T00:00:00.000Z",
+            "limit": 3,
+            "sortDir": "desc",
+            "links": {
+                "prior": "https://telemetry.vin.li/api/v1/devices/27a2ac50-d7bd-11e3-9c1a-0800200c9a66/snapshots?fields=vehicleSpeed,rpm"
+                }  
+            }
+        }
+    }
