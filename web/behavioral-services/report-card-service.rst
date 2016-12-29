@@ -133,6 +133,7 @@ Response
         "reportCard": {
           "overallGrade": "A"
         },
+
         "tripSampleSize": 1131,
         "gradeCount": {
           "B": "108",
@@ -144,6 +145,7 @@ Response
         }
       }
 
+
 Get a Report Card for a Time Segment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -153,36 +155,31 @@ This is helpful if you want to present the user something like, "Last week your 
 
 Note that while `tripSampleSize` reflects the count of trips within the time segment, `gradeCount` still reflects the lifetime sample.
 
-Request
+
+Reqest
 +++++++
 
 .. code-block:: json
 
       GET https://behavioral.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/report_cards/overall?since=2016-12-05&until=2016-12-13
-      Accept: application/json
+
 
 Response
 ++++++++
 
 .. code-block:: json
 
-      HTTP/1.1 200 OK
-      Content-Type: application/json
-
-      {
-        "reportCard": {
-          "overallGrade": "B"
-        },
-        "tripSampleSize": 50,
-        "gradeCount": {
-          "B": "108",
-          "F": "1",
-          "I": "9",
-          "C": "24",
-          "A": "1001",
-          "D": "1"
+        "tripSampleSize": 117,
+        "gradeCount:" {
+          "B": "21",
+          "F": "2",
+          "I": "4",
+          "C": "19",
+          "A": "68",
+          "D": "3"
         }
       }
+
 
 
 Report Card for a Trip
