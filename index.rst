@@ -105,6 +105,11 @@ Contents
 .. toctree::
   :maxdepth: 3
 
+  web/trip-tagging-service/index
+
+.. toctree::
+  :maxdepth: 3
+
   web/behavioral-services/index
 
 .. toctree::
