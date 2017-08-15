@@ -18,11 +18,13 @@ Request
 
 .. code-block:: json
 
-      POST https://trip-tags.vin.li/api/v1/trips/c2d369a3-0e98-4a29-841e-48ed64dd473d/tags
+      POST https://trip-tags.vin.li/api/v1/tags
       Accept: application/json
       
       Body:
       {
+        "tripId": "c2d369a3-0e98-4a29-841e-48ed64dd473d",
+        "deviceId": "c08394e5-78f8-4621-b962-269c1e65ab71",
         "tags": [{
           "percentage": 50.0,
           "name": "business"
