@@ -215,7 +215,7 @@ Request
 
 .. code-block:: json
 
-      PUT https://trip-tags.vin.li/api/v1/trips/c2d369a3-0e98-4a29-841e-48ed64dd473d/tags/4ef45376-6607-47c0-b21b-ed88aef1f99d
+      PUT https://trip-tags.vin.li/api/v1/tags/4ef45376-6607-47c0-b21b-ed88aef1f99d
       Accept: application/json
       Body:
       {
