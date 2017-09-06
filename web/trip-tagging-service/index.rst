@@ -30,8 +30,16 @@ Request
           "name": "business"
         },
         {
-          "percentage": 50.0,
+          "percentage": 10.0,
           "name": "personal"
+        },
+        {
+          "percentage": 40.0,
+          "name": "mixed",
+          "appMeta": {
+  	        "personal-miles": 6,
+   	        "business-miles": 42
+	    }
         }]
       }
 
