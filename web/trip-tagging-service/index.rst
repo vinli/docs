@@ -50,44 +50,44 @@ Response
 .. code-block:: json
 
       HTTP/1.1 201 CREATED
-{
-  "tags": [
-    {
-      "id": "00998c51-2d47-4289-a6a0-15038e81e5f5",
-      "tripId": "c2d369a3-0e98-4a29-841e-48ed64dd473d",
-      "deviceId": "c08394e5-78f8-4621-b962-269c1e65ab71",
-      "name": "Business",
-      "percentage": 50,
-      "appMeta": {},
-      "created_at": "2017-09-06T16:53:12.057208Z",
-      "updated_at": "2017-09-06T16:53:12.057208Z"
-    },
-    {
-      "id": "f934b061-3d33-426e-8dad-14b199be33b9",
-      "tripId": "c2d369a3-0e98-4a29-841e-48ed64dd473d",
-      "deviceId": "c08394e5-78f8-4621-b962-269c1e65ab71",
-      "name": "Personal",
-      "percentage": 10,
-      "appMeta": {},
-      "created_at": "2017-09-06T16:53:12.057208Z",
-      "updated_at": "2017-09-06T16:53:12.057208Z"
-    },
-    {
-      "id": "dcdeb417-80b9-43c9-ac41-3d4e4abf896c",
-      "tripId": "c2d369a3-0e98-4a29-841e-48ed64dd473d",
-      "deviceId": "c08394e5-78f8-4621-b962-269c1e65ab71",
-      "name": "Mixed",
-      "percentage": 40,
-      "appMeta": {
-        "business-miles": 42,
-        "comments": "Hello world",
-        "personal-miles": 6
-      },
-      "created_at": "2017-09-06T16:53:12.057208Z",
-      "updated_at": "2017-09-06T16:53:12.057208Z"
-    }
-  ]
-}
+	{
+	  "tags": [
+	    {
+	      "id": "00998c51-2d47-4289-a6a0-15038e81e5f5",
+	      "tripId": "c2d369a3-0e98-4a29-841e-48ed64dd473d",
+	      "deviceId": "c08394e5-78f8-4621-b962-269c1e65ab71",
+	      "name": "Business",
+	      "percentage": 50,
+	      "appMeta": {},
+	      "created_at": "2017-09-06T16:53:12.057208Z",
+	      "updated_at": "2017-09-06T16:53:12.057208Z"
+	    },
+	    {
+	      "id": "f934b061-3d33-426e-8dad-14b199be33b9",
+	      "tripId": "c2d369a3-0e98-4a29-841e-48ed64dd473d",
+	      "deviceId": "c08394e5-78f8-4621-b962-269c1e65ab71",
+	      "name": "Personal",
+	      "percentage": 10,
+	      "appMeta": {},
+	      "created_at": "2017-09-06T16:53:12.057208Z",
+	      "updated_at": "2017-09-06T16:53:12.057208Z"
+	    },
+	    {
+	      "id": "dcdeb417-80b9-43c9-ac41-3d4e4abf896c",
+	      "tripId": "c2d369a3-0e98-4a29-841e-48ed64dd473d",
+	      "deviceId": "c08394e5-78f8-4621-b962-269c1e65ab71",
+	      "name": "Mixed",
+	      "percentage": 40,
+	      "appMeta": {
+		"business-miles": 42,
+		"comments": "Hello world",
+		"personal-miles": 6
+	      },
+	      "created_at": "2017-09-06T16:53:12.057208Z",
+	      "updated_at": "2017-09-06T16:53:12.057208Z"
+	    }
+	  ]
+	}
 
 Get Tags for a Trip
 ```````````````````
