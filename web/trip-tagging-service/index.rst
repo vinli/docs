@@ -49,7 +49,7 @@ Response
 
 .. code-block:: json
 
-      HTTP/1.1 201 CREATED
+     	HTTP/1.1 201 CREATED
 	{
 	  "tags": [
 	    {
