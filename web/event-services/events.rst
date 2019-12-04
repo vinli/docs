@@ -566,6 +566,10 @@ Get a Specific Event
 
 Returns information about a specific event.
 
+.. warning::
+
+  This route is deprecated and will be removed in the near future.
+
 
 Request
 +++++++
