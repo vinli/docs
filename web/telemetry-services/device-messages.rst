@@ -172,6 +172,10 @@ Response
 Get a Specific Telemetry Message
 ````````````````````````````````
 
+.. warning::
+
+  This route is deprecated and will be removed in the near future.
+
 Returns a particular message by `messageId`. This is primarily used when a specific message is referenced by a different service.
 
 
