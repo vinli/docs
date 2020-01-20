@@ -40,7 +40,7 @@ For the example above, the Authorization header would be sent as:
 User Action Authentication
 ``````````````````````````
 
-Vinli services require user actions to authernticate with OAuth 2. Developers must register their apps for each platform they would like to support. at `dev.vin.li`_.
+Vinli services require user actions to authenticate with OAuth 2. Developers must register their apps for each platform they would like to support at `dev.vin.li`_.
 
 In general, there are two types of OAuth 2 clients, those that expect response tokens and those that expect response codes.
 
