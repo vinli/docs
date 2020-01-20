@@ -1,6 +1,6 @@
 Distance API
 ------------
-A vehicles Odometer reading is not exposed through the OBDII port. However, knowing this reading can be handy in many use cases... thus we created Distance Service. Distance Service is our best effort guess at what the actual odometer of a car is at present time and/or to provide the milage travelled between 2 points in time.
+A vehicles Odometer reading is not exposed through the OBDII port. However, knowing this reading can be handy in many use cases... thus we created Distance Service. Distance Service is our best effort guess at what the actual odometer of a car is at present time and/or to provide the distance travelled between 2 points in time.
 
 **All distances are in meters.**
 
