@@ -197,7 +197,7 @@ Response
 Get Details of a Trip
 `````````````````````
 
-For each trip, more detailed information regarding overall trip statistics is available here. This includes start and stop location as well as a few other statistical information which may be of interest.  These items include:
+For each trip, more detailed information regarding overall trip statistics is available here. This includes start and stop location as well as other statistical information which may be of interest.  These items include:
 
 * `averageLoad` - average engine load (in percent) of the trip
 * `averageMovingSpeed` - average speed while the vehicle was in motion (eliminates times when the vehicle had a speed of 0)
