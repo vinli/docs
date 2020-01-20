@@ -3,7 +3,7 @@ Notifications
 
 Each time a subscription is triggered by an event, a new Notification is created that represents the event, subscription, and subsequent actions taken by the Vinli platform to notify your application.
 
-Notification state is useful in debugging notification handlers on your App.  This `state`, `responseCode`, and `response` properties will inform you as to the result of Event Services' attempt to call the notification URL.  A notification will be linked to one subscription and may contain additional metadata depending on the trigger of the subscription.  In the case of subscriptions to Rules, this metadata
+Notification state is useful in debugging notification handlers in your App.  This `state`, `responseCode`, and `response` properties will inform you as to the result of Event Services' attempt to call the notification URL.  A notification will be linked to one subscription and may contain additional metadata depending on the trigger of the subscription.  In the case of subscriptions to Rules, this metadata
 
 Fields included in a notification response include:
 
@@ -16,7 +16,7 @@ Fields included in a notification response include:
 * `payload` - String of the payload exactly as it was posted to the above URL
 * `state` - Current state of the notification.  State values may include `created`, `queued`, `complete`, or `error`
 
-The `state` of a notification start as  `created` and moves to `queued` as soon as it is placed in the notification queue to be processed.  Once the notification has been posted to the callback URL, the state will be moved to `complete` if the HTTP transaction was completed and a response code in the 200s was received.  If the HTTP call is not able to be completed or a response code other than the 200s, the state will become `error`.
+The `state` of a notification starts as  `created` and moves to `queued` as soon as it is placed in the notification queue to be processed.  Once the notification has been posted to the callback URL, the state will be moved to `complete` if the HTTP transaction was completed and a response code in the 200s was received.  If the HTTP call is not able to be completed or a response code other than the 200s, the state will become `error`.
 
 If the notification is in the `complete` or `error` state, the fields below will be available in the response:
 
