@@ -590,7 +590,7 @@ Request
 
 .. code-block:: json
 
-      POST https://events.vin.li/api/v1/devices/de01abb1-453d-4293-831a-f0d804b48fdf/subscriptions
+      PUT https://events.vin.li/api/v1/subscriptions/917fb546-5666-4fdd-aed6-53fa099b313b
       Accept: application/json
       Content-Type: application/json
 
