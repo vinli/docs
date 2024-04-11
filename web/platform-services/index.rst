@@ -26,4 +26,3 @@ When device and vehicle data are combined with transaction history, apps can:
 
    device-service
    vehicle-service
-   transaction-service

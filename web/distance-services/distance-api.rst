@@ -10,8 +10,8 @@ This method returns the most current distance estimate for a given vehicle.
 
 Request
 +++++++
-.. code-block:: json
-
+::
+	
       GET https://distance.vin.li/api/v1/vehicles/36cf2965-7ed1-4314-8384-f9b6b75a7d3f/distances/_latest
       Accept: application/json
 
@@ -20,8 +20,8 @@ You may also pass ``x-vinli-unit`` in the header with either ``km``, ``mi``, or 
 
 Response
 ++++++++
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 
@@ -45,8 +45,8 @@ Create an Odometer Reading
 ```````````````````````````
 Request
 +++++++
-.. code-block:: json
-
+::
+	
  POST https://distance.vin.li/api/v1/vehicles/{vehicleId}/odometers
  Accept: application/json
  Content-Type: application/json
@@ -65,8 +65,8 @@ Request
 
 Response
 ++++++++
-.. code-block:: json
-
+::
+	
  HTTP/1.1 200 OK
  Content-Type: application/json
 
@@ -88,15 +88,15 @@ Get All Odometer Readings for a Vehicle
 ```````````````````````````````````````
 Request
 +++++++
-.. code-block:: json
-
+::
+	
       GET https://distance.vin.li/api/v1/vehicles/ec74e512-ed9a-41ae-99e9-779882846b80/odometers
       Accept: application/json
 
 Response
 ++++++++
-.. code-block:: json
-
+::
+	
  HTTP/1.1 200 OK
  Content-Type: application/json
 
@@ -140,15 +140,15 @@ Get an Odometer
 ```````````````
 Request
 +++++++
-.. code-block:: json
-
+::
+	
  GET https://distance.vin.li/api/v1/odometers/{odometerId}
  Accept: application/json
 
 Response
 ++++++++
-.. code-block:: json
-
+::
+	
    HTTP/1.1 200 OK
    Content-Type: application/json
 
@@ -170,8 +170,8 @@ Delete an Odometer Reading
 ``````````````````````````
 Request
 +++++++
-.. code-block:: json
-
+::
+	
  DELETE https://distance.vin.li/api/v1/odometers/bcdc8734-ce79-4d78-a911-f77c09316f5f
 
 
@@ -194,8 +194,8 @@ Create an Odometer Trigger
 ``````````````````````````
 Request
 +++++++
-.. code-block:: json
-
+::
+	
  POST https://distance.vin.li/api/v1/vehicles/ab4e7199-a3a6-412f-9088-bc05b6d89e31/odometer_triggers
  Accept: application/json
  Content-Type: application/json
@@ -210,8 +210,8 @@ Request
 
 Response
 ++++++++
-.. code-block:: json
-
+::
+	
     HTTP/1.1 200 OK
     Content-Type: application/json
 
@@ -235,15 +235,15 @@ Get an Odometer Trigger
 ```````````````````````
 Request
 +++++++
-.. code-block:: json
-
+::
+	
  GET https://distance.vin.li/api/v1/odometer_triggers/2b45bf31-b920-4afd-be1f-32b3f867bc4a
 
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
  "odometerTrigger": {
   "id": "2b45bf31-b920-4afd-be1f-32b3f867bc4a",
   "vehicleId": "ab4e7199-a3a6-412f-9088-bc05b6d89e31",
@@ -261,8 +261,8 @@ Delete an Odometer Trigger
 ``````````````````````````
 Request
 +++++++
-.. code-block:: json
-
+::
+	
  DELETE https://distance.vin.li/api/v1/odometer_triggers/2b45bf31-b920-4afd-be1f-32b3f867bc4a
 
 
@@ -271,14 +271,14 @@ Get All Odometer Triggers for a Vehicle
 ```````````````````````````````````````
 Request
 +++++++
-.. code-block:: json
-
+::
+	
  GET https://distance.vin.li/api/v1/vehicles/ab4e7199-a3a6-412f-9088-bc05b6d89e31/odometer_triggers
 
 Response
 ++++++++
-.. code-block:: json
-
+::
+	
  HTTP/1.1 200 OK
  Content-Type: application/json
 

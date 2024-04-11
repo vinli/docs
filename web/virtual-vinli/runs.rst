@@ -9,8 +9,8 @@ Create a Run
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
   POST https://dummies.vin.li/api/v1/dummies/{dummy_Id}/runs
   Content-Type: application/json
   {
@@ -30,7 +30,8 @@ Parameters
 
 Response
 ++++++++
-.. code-block:: json
+::
+	
   {
     "run": {
       "id": "797286ff-fc37-42f8-b633-802a0a192acb",
@@ -52,7 +53,7 @@ Get Current Run
 Request
 +++++++
 
-.. code-block:: json
+.. code-block:: text
 
   GET https://dummies.vin.li/api/v1/dummies/{dummy_Id}/runs/_current
   Content-Type: application/json
@@ -61,7 +62,8 @@ Request
 
 Response
 ++++++++
-.. code-block:: json
+::
+	
   {
     "run": {
       "id": "b92fa4f2-85e0-4e22-96cf-8daabdd0c02d",
@@ -83,7 +85,7 @@ Delete the Current Run
 Request
 +++++++
 
-.. code-block:: json
+.. code-block:: text
 
   DELETE https://dummies.vin.li/api/v1/dummies/{dummy_Id}/runs/_current
   Content-Type: application/json

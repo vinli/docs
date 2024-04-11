@@ -12,16 +12,16 @@ This returns a paginated list of devices that are registered with your applicati
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://platform.vin.li/api/v1/devices
       Accept: application/json
 
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 
@@ -80,16 +80,16 @@ Get a Device
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://platform.vin.li/api/v1/devices/821374c0-d6d8-11e3-9c1a-0800200c9a66
       Accept: application/json
 
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 
@@ -127,8 +127,8 @@ A two-step process allow you to manage device authorization independent of user 
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       POST https://platform.vin.li/api/v1/devices
       Content-Type: application/json
       Accept: application/json
@@ -142,8 +142,8 @@ Request
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 201 CREATED
       Content-Type: application/json
       Location: https://platform.vin.li/api/v1/devices/821374c0-d6d8-11e3-9c1a-0800200c9a66
@@ -173,14 +173,14 @@ It's important to note that deregistering a Device is an Application-level actio
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       DELETE https://platform.vin.li/api/v1/devices/821374c0-d6d8-11e3-9c1a-0800200c9a66
 
 
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 204 NO CONTENT

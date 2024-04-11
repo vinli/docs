@@ -12,8 +12,8 @@ These messages are sent at least every five seconds and include the latest value
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://telemetry.vin.li/api/v1/devices/27a2ac50-d7bd-11e3-9c1a-0800200c9a66/messages
       Accept: application/json
 
@@ -25,8 +25,8 @@ Request
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 
@@ -166,55 +166,4 @@ Response
           }
         }
       }
-
-
-
-Get a Specific Telemetry Message
-````````````````````````````````
-
-.. warning::
-
-  This route is deprecated and will be removed in the near future.
-
-Returns a particular message by `messageId`. This is primarily used when a specific message is referenced by a different service.
-
-
-Request
-+++++++
-
-.. code-block:: json
-
-      GET https://telemetry.vin.li/api/v1/messages/2f11d630-141e-11e4-b717-5977b6c38d23
-      Accept: application/json
-
-
-Response
-++++++++
-
-.. code-block:: json
-
-      HTTP/1.1 200 OK
-      Content-Type: application/json
-
-      {
-        "message" : {
-          "id" : "27a2ac50-d7bd-11e3-9c1a-0800200c9a66",
-          "timestamp": "2014-07-14T17:46:06.759Z",
-          "data": {
-            "location": {
-              "type": "point",
-              "coordinates": [
-                -90.0811,
-                29.9508
-              ]
-            },
-            "vehicleSpeed": 0
-          },
-          "links" : {
-            self": "https://telemetry.vin.li/api/v1/messages/2f11d630-141e-11e4-b717-5977b6c38d23"
-          }
-        }
-      }
-
-
 

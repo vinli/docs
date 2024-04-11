@@ -8,8 +8,8 @@ This provides historical record of DTC codes for a given vehicle.  Each time a n
 
 Request
 +++++++
-.. code-block:: json
-
+::
+	
       GET https://diagnostic.vin.li/api/v1/vehicles/47fa348e-c3fa-4cad-8272-61940eae7748/codes
       Accept: application/json
 
@@ -18,8 +18,8 @@ The state query param may be used to filter the response. Valid values are activ
 
 Response
 ++++++++
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 
@@ -93,8 +93,8 @@ To do this, simply add the `state` query parameter.
 
 Here's an example:
 
-.. code-block:: json
-
+::
+	
       GET https://diagnostic.vin.li/api/v1/vehicles/47fa348e-c3fa-4cad-8272-61940eae7748/codes?state=active
       Accept: application/json
 
@@ -106,15 +106,15 @@ This route returns a specific DTC occurrence.
 
 Request
 +++++++
-.. code-block:: json
-
+::
+	
       GET https://diagnostic.vin.li/api/v1/codes/313cc7d7-1ad6-491k-9e02-a3f48e62984a
 
 
 Response
 ++++++++
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 
@@ -144,15 +144,15 @@ This provides a general health status for a vehicle's battery. Possible statuses
 
 Request
 +++++++
-.. code-block:: json
-
+::
+	
       GET https://diagnostic.vin.li/api/v1/vehicles/38ff2972-7fd2-4319-8389-b9a8b84a7c8f/battery_statuses/_current
 
 
 Response
 ++++++++
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 

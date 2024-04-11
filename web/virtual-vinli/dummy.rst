@@ -7,8 +7,8 @@ Create a Dummy Device
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
   POST https://dummies.vin.li/api/v1/dummies
   Content-Type: application/json
 
@@ -20,8 +20,8 @@ Request
 
 Response
 ++++++++
-.. code-block:: json
-
+::
+	
   {
     "dummy": {
       "id": "f57d3b8f-6e2d-4038-a54a-bfbd9b52bcf3",
@@ -45,15 +45,15 @@ List Dummy Devices
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
   GET https://dummies.vin.li/api/v1/dummies
   Accept: application/json
 
 Response
 ++++++++
-.. code-block:: json
-
+::
+	
   {
     "dummies": [
       {

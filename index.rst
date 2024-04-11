@@ -13,7 +13,7 @@ Tier 1, raw data services:
 
 * `Telemetry Service`_ delivers time-series vehicle data.
 
-* `Event Service`_ delivers vehicle events and offers powerful, rule-based event notifications.
+* `Event Service`_ delivers vehicle events.
 
 * `Diagnostic Service`_ reveals the malfunction state of the vehicle and provides diagnostic trouble codes.
 
@@ -28,8 +28,6 @@ Tier 2, structured data services:
 * `Behavioral Service`_ categorizes driver risk based on behavior, vehicle conditions, and geographical travel patterns. It assigns a risk score.
 
 * `Safety Service`_ provides history and telemetry details of collisions.
-
-* `Rule Service`_ creates event subscriptions based on vehicle state or geofences.
 
 
 Testing and Prototyping
@@ -51,7 +49,6 @@ You can quickly prototype an app using `Virtual Vinli`_.
 .. _Trip Service: web/trip-services/index.html
 .. _Behavioral Service: web/behavioral-services/index.html
 .. _Safety Service: web/safety-services/index.html
-.. _Rule Service: web/rule-services/index.html
 .. _API Reference: web/API-reference/index.html
 .. _Distance Service: web/distance-services/index.html
 .. _Virtual Vinli: web/virtual-vinli/index.html
@@ -81,11 +78,6 @@ Contents
   :maxdepth: 3
 
   web/event-services/index
-
-.. toctree::
-  :maxdepth: 3
-
-  web/rule-services/index
 
 .. toctree::
   :maxdepth: 3
@@ -121,5 +113,3 @@ Contents
    :maxdepth: 3
 
    web/virtual-vinli/index
-
-

@@ -15,7 +15,7 @@ This method returns a list of all trips that a given device has taken.  This wil
 Request
 +++++++
 
-.. code-block:: json
+::
 
       GET https://trips.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/trips
       Accept: application/json
@@ -24,76 +24,81 @@ Request
 Response
 ++++++++
 
-.. code-block:: json
+::
 
-      HTTP/1.1 200 OK
-      Content-Type: application/json
+  HTTP/1.1 200 OK
+  Content-Type: application/json
 
-      "trips: [
-        {
-          "id": "a51a3c87-baa7-4e5d-98e6-4f9588d7c2e1",
-          "start": "2015-08-19T19:25:15.951Z",
-          "stop": "2015-08-19T19:35:28.875Z",
-          "status": "completed",
-          "vehicleId": "0c785aa0-1a48-4cc6-9f5c-028350dd907d",
-          "deviceId": "fe4bbc20-cc90-11e3-8e05-f3abac5b6b58",
-          "startPoint": {
-            "type": "Point",
-            "coordinates": [
-              -96.789791,
-              32.780046
-            ]
-          },
-          "stopPoint": {
-            "type": "Point",
-            "coordinates": [
-              -96.791057,
-              32.780671
-            ]
-          },
-          "preview": "ijagEdgwmQtC}B`@Q^w@\\U?ICCBA@BFGBKFIB@OLBCm@cBa@u@W[Uo@c@i@Oq@]_@MCw@z@W?F\\?Fd@c@t@a@f@Td@h@b@n@`@v@`@`@b@n@@?CCEFJv@^lATjAHpA@hAH|@Tz@RvAJd@E^U\\eBbCi@l@WTKl@De@?L@AKPy@z@i@b@Yl@u@jAAPU?sAJmADM[g@aCAgCGIEDJm@h@Q`@ICDGA]kAK}@Yy@Bs@Ve@V[f@M^PVb@Ah@CNSXSGAKBGFD",
-          "stats": {
-            "averageLoad": 42.6683,
-            "averageMovingSpeed": 23.1505,
-            "averageSpeed": 15.4892,
-            "comprehensiveLocations": true,
-            "distance": 2125.35,
-            "distanceByGPS": 2051.44,
-            "distanceByVSS": 2125.35,
-            "duration": 612924,
-            "fuelConsumed": 0.358368,
-            "fuelEconomy": 15.277,
-            "hardAccelCount": null,
-            "hardBrakeCount": null,
-            "locationCount": 160,
-            "maxSpeed": 47,
-            "messageCount": 182,
-            "stdDevMovingSpeed": 11.0187,
-            "stopCount": 8,
-            "substantial": true
-          },
-          "links": {
-            "self": "https://trips.vin.li/api/v1/trips/a51a3c87-baa7-4e5d-98e6-4f9588d7c2e1",
-            "device": "https://platform.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58",
-            "vehicle": "https://platform.vin.li/api/v1/vehicles/0c785aa0-1a48-4cc6-9f5c-028350dd907d",
-            "locations": "https://telemetry.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/locations?since=1440012315951&until=1440012928875",
-            "messages": "https://telemetry.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/messages?since=1440012315951&until=1440012928875",
-            "events": "https://events.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/events?since=1440012315951&until=1440012928875"
-          }
-        }
-      ],
-      "meta": {
-          "pagination": {
-            "remaining": 1,
-            "until": "2015-06-19T23:59:59.000Z",
-            "since": "1970-01-01T00:00:00.000Z",
-            "limit": 20,
-            "sortDir": "desc",
+::
+  
+      {
+        "trips: [
+          {
+            "id": "a51a3c87-baa7-4e5d-98e6-4f9588d7c2e1",
+            "start": "2015-08-19T19:25:15.951Z",
+            "stop": "2015-08-19T19:35:28.875Z",
+            "status": "completed",
+            "vehicleId": "0c785aa0-1a48-4cc6-9f5c-028350dd907d",
+            "deviceId": "fe4bbc20-cc90-11e3-8e05-f3abac5b6b58",
+            "startPoint": {
+              "type": "Point",
+              "coordinates": [
+                -96.789791,
+                32.780046
+              ]
+            },
+            "stopPoint": {
+              "type": "Point",
+              "coordinates": [
+                -96.791057,
+                32.780671
+              ]
+            },
+            "preview": "ijagEdgwmQtC}B`@Q^w@\\U?ICCBA@BFGBKFIB@OLBCm@cBa@u@W[Uo@c@i@Oq@]_@MCw@z@W?F\\?Fd@c@t@a@f@Td@h@b@n@`@v@`@`@b@n@@?CCEFJv@^lATjAHpA@hAH|@Tz@RvAJd@E^U\\eBbCi@l@WTKl@De@?L@AKPy@z@i@b@Yl@u@jAAPU?sAJmADM[g@aCAgCGIEDJm@h@Q`@ICDGA]kAK}@Yy@Bs@Ve@V[f@M^PVb@Ah@CNSXSGAKBGFD",
+            "stats": {
+              "averageLoad": 42.6683,
+              "averageMovingSpeed": 23.1505,
+              "averageSpeed": 15.4892,
+              "comprehensiveLocations": true,
+              "distance": 2125.35,
+              "distanceByGPS": 2051.44,
+              "distanceByVSS": 2125.35,
+              "duration": 612924,
+              "fuelConsumed": 0.358368,
+              "fuelEconomy": 15.277,
+              "hardAccelCount": null,
+              "hardBrakeCount": null,
+              "locationCount": 160,
+              "maxSpeed": 47,
+              "messageCount": 182,
+              "stdDevMovingSpeed": 11.0187,
+              "stopCount": 8,
+              "substantial": true
+            },
             "links": {
-              "prior": "https://trips-dev.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/trips?until=1434129972999"
+              "self": "https://trips.vin.li/api/v1/trips/a51a3c87-baa7-4e5d-98e6-4f9588d7c2e1",
+              "device": "https://platform.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58",
+              "vehicle": "https://platform.vin.li/api/v1/vehicles/0c785aa0-1a48-4cc6-9f5c-028350dd907d",
+              "locations": "https://telemetry.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/locations?since=1440012315951&until=1440012928875",
+              "messages": "https://telemetry.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/messages?since=1440012315951&until=1440012928875",
+              "events": "https://events.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/events?since=1440012315951&until=1440012928875"
+            }
+          }
+        ],
+        "meta": {
+            "pagination": {
+              "remaining": 1,
+              "until": "2015-06-19T23:59:59.000Z",
+              "since": "1970-01-01T00:00:00.000Z",
+              "limit": 20,
+              "sortDir": "desc",
+              "links": {
+                "prior": "https://trips-dev.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/trips?until=1434129972999"
+              }
             }
           }
         }
+      }
 
 
 
@@ -109,8 +114,8 @@ Note 2: Only trips for the 20 most recent devices that have been in the vehicle 
 Request
 +++++++
 
-.. code-block:: json
-
+::
+  
       GET https://trips.vin.li/api/v1/vehicles/0c785aa0-1a48-4cc6-9f5c-028350dd907d/trips
       Accept: application/json
 
@@ -118,10 +123,12 @@ Request
 Response
 ++++++++
 
-.. code-block:: json
+::
 
-      HTTP/1.1 200 OK
-      Content-Type: application/json
+  HTTP/1.1 200 OK
+  Content-Type: application/json
+
+::
 
       {
         "trips": [
@@ -233,19 +240,21 @@ The trip document also includes short information about the telemetry associated
 Request
 +++++++
 
-.. code-block:: json
+::
 
-      GET https://trips.vin.li/api/v1/trips/a51a3c87-baa7-4e5d-98e6-4f9588d7c2e1
-      Accept: application/json
+  GET https://trips.vin.li/api/v1/trips/a51a3c87-baa7-4e5d-98e6-4f9588d7c2e1
+  Accept: application/json
 
 
 Response
 ++++++++
 
-.. code-block:: json
+::
 
-      HTTP/1.1 200 OK
-      Content-Type: application/json
+  HTTP/1.1 200 OK
+  Content-Type: application/json
+
+::
 
       {
         "trip": {

@@ -18,16 +18,16 @@ Returns the vehicles associated with the given device in time series order.
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://platform.vin.li/api/v1/devices/821374c0-d6d8-11e3-9c1a-0800200c9a66/vehicles
       Accept: application/json
 
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 
@@ -187,8 +187,8 @@ Basic vehicle information is returned as part of this response.  Follow the vehi
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://platform.vin.li/api/v1/devices/821374c0-d6d8-11e3-9c1a-0800200c9a66/vehicles/_latest
       Accept: application/json
 
@@ -196,8 +196,8 @@ Request
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 
@@ -236,8 +236,8 @@ Returns detailed information about a vehicle.  This may include, but is not limi
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://platform.vin.li/api/v1/vehicles/67e1e940-d6da-11e3-9c1a-0800200c9a66
       Accept: application/json
 
@@ -245,8 +245,8 @@ Request
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 

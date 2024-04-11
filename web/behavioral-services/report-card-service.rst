@@ -12,16 +12,16 @@ Returns a Report Card based on historical data for a specified period. In some c
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://behavioral.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/report_cards
       Accept: application/json
 
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 
@@ -64,16 +64,16 @@ Returns a Report Card based on historical data for a specified period for a give
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://behavioral.vin.li/api/v1/vehicles/ca10cd7a-d2a5-4bb3-b47b-2aa0b8848f55/report_cards
       Accept: application/json
 
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 
@@ -116,16 +116,16 @@ Returns a Report Card based on all historical data available for a given Device,
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://behavioral.vin.li/api/v1/devices/602c6490-d7a3-11e3-9c1a-0800200c9a66/report_cards/overall
       Accept: application/json
 
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 
@@ -159,16 +159,16 @@ Note that while `tripSampleSize` reflects the count of trips within the time seg
 Reqest
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://behavioral.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/report_cards/overall?since=2016-12-05&until=2016-12-13
 
 
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
         "tripSampleSize": 117,
         "gradeCount:" {
           "B": "21",
@@ -192,8 +192,8 @@ In some cases, the Trip is too short to generate the data necessary for the Repo
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://behavioral.vin.li/api/v1/trips/b9e58eb4-0743-45e9-b9c6-86500f5412bb/report_cards/_current
       Accept: application/json
 
@@ -201,8 +201,8 @@ Request
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 
@@ -229,16 +229,16 @@ Returns a Report Card based on a specified report card id. In some cases, not en
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://behavioral.vin.li/api/v1/report_cards/549d628c-48dc-412d-8087-44a9f82f187e
       Accept: application/json
 
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 

@@ -9,16 +9,16 @@ There's a lot of information encoded in the DTC codes reported by a Vehicle.  Th
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://diagnostic.vin.li/api/v1/codes?number=P0001
       Accept: application/json
 
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 

@@ -12,15 +12,15 @@ This returns a paginated list of devices that are registered with your applicati
 Request
 +++++++
 
-.. code-block:: json
+::
 
-      GET https://platform.vin.li/api/v1/devices
-      Accept: application/json
+  GET https://platform.vin.li/api/v1/devices
+  Accept: application/json
 
 Response
 ++++++++
 
-.. code-block:: json
+::
 
       HTTP/1.1 200 OK
       Content-Type: application/json
@@ -59,16 +59,16 @@ Get a Device
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://platform.vin.li/api/v1/devices/821374c0-d6d8-11e3-9c1a-0800200c9a66
       Accept: application/json
 
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 
@@ -99,8 +99,8 @@ A two-step process allow you to manage device authorization independent of user 
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       POST https://platform.vin.li/api/v1/devices
       Content-Type: application/json
       Accept: application/json
@@ -114,8 +114,8 @@ Request
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 201 CREATED
       Content-Type: application/json
       Location: https://platform.vin.li/api/v1/devices/821374c0-d6d8-11e3-9c1a-0800200c9a66
@@ -146,16 +146,16 @@ It's important to note that deregistering a Device is an Application-level actio
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       DELETE https://platform.vin.li/api/v1/devices/821374c0-d6d8-11e3-9c1a-0800200c9a66
 
 
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 204 NO CONTENT
 
 Vehicle API
@@ -170,16 +170,16 @@ Returns the vehicles associated with the given device in chronological order.
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://platform.vin.li/api/v1/devices/821374c0-d6d8-11e3-9c1a-0800200c9a66/vehicles
       Accept: application/json
 
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 
@@ -237,8 +237,8 @@ Basic vehicle information is returned as part of this response.  Follow the vehi
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://platform.vin.li/api/v1/devices/821374c0-d6d8-11e3-9c1a-0800200c9a66/vehicles/_latest
       Accept: application/json
 
@@ -246,8 +246,8 @@ Request
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 
@@ -286,8 +286,8 @@ Returns detailed information about a vehicle.  This may include, but is not limi
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://platform.vin.li/api/v1/vehicles/67e1e940-d6da-11e3-9c1a-0800200c9a66
       Accept: application/json
 
@@ -295,8 +295,8 @@ Request
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 
@@ -329,16 +329,16 @@ Results are returned in reverse-chronological order, i.e. time series order, usi
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://platform.vin.li/api/v1/transactions
       Accept: application/json
 
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 
@@ -389,8 +389,8 @@ These messages are sent at least every five seconds and include the latest value
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://telemetry.vin.li/api/v1/devices/27a2ac50-d7bd-11e3-9c1a-0800200c9a66/messages
       Accept: application/json
 
@@ -402,8 +402,8 @@ Request
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 
@@ -474,8 +474,8 @@ Returns a particular message by `messageId`. This is primarily used when a speci
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://telemetry.vin.li/api/v1/messages/2f11d630-141e-11e4-b717-5977b6c38d23
       Accept: application/json
 
@@ -483,8 +483,8 @@ Request
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 
@@ -520,8 +520,8 @@ Additionally, selected or all parameters that were recorded at each location can
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://telemetry.vin.li/api/v1/devices/27a2ac50-d7bd-11e3-9c1a-0800200c9a66/locations?fields=rpm,vehicleSpeed
       Accept: application/json
 
@@ -534,8 +534,8 @@ Request
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       {
         "locations" : {
           "type" : "FeatureCollection",
@@ -586,8 +586,8 @@ Returns the latest `limit` number of telemetry snapshots that contain at least o
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://telemetry.vin.li/api/v1/devices/27a2ac50-d7bd-11e3-9c1a-0800200c9a66/snapshots?fields=rpm,vehicleSpeed,calculatedLoadValue,fuelType
       Accept: application/json
 
@@ -599,8 +599,8 @@ Request
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 
@@ -662,8 +662,8 @@ The following fields are contained within an event response:
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://events.vin.li/api/v1/devices/68d489c0-d7a2-11e3-9c1a-0800200c9a66/events
       Accept: application/json
 
@@ -680,8 +680,8 @@ Parameters
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 
@@ -776,8 +776,8 @@ Returns information about a specific event.
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://events.vin.li/api/v1/events/538f1195-a733-4ee7-a4e8-1fbbe7131f6a
       Accept: application/json
 
@@ -785,8 +785,8 @@ Request
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 
@@ -858,8 +858,8 @@ Notification Payload
 
 When a subscription is triggered, an HTTP call using the "POST" method is made to the Subscription's URL.  This call uses content-type of "application/json" and sends a JSON representation containing a `notification` root object along with representations of the Event that triggered the notification and the associated Subscription:
 
-.. code-block:: json
-
+::
+	
       {
           "notification": {
               "event": {
@@ -928,8 +928,8 @@ A Subscription must include, at a minimum an `eventType` and a `url`.  Additiona
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       POST https://events.vin.li/api/v1/devices/de01abb1-453d-4293-831a-f0d804b48fdf/subscriptions
       Accept: application/json
       Content-Type: application/json
@@ -945,8 +945,8 @@ Request
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 201 CREATED
       Content-Type: application/json
       Location: https://events.vin.li/api/v1/subscriptions/77965f0f-d468-48e1-9585-69d547900058
@@ -975,8 +975,8 @@ Also note that in the example below, `appData` is given so that this is passed o
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       POST https://events.vin.li/api/v1/devices/de01abb1-453d-4293-831a-f0d804b48fdf/subscriptions
       Accept: application/json
       Content-Type: application/json
@@ -997,8 +997,8 @@ Request
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 201 CREATED
       Content-Type: application/json
       Location: https://events.vin.li/api/v1/subscriptions/917fb546-5666-4fdd-aed6-53fa099b313b
@@ -1031,16 +1031,16 @@ Get all Subscriptions for a Device
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://events.vin.li/api/v1/devices/de01abb1-453d-4293-831a-f0d804b48fdf/subscriptions
       Accept: application/json
 
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 
@@ -1086,16 +1086,16 @@ Get a Specific Subscription
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://events.vin.li/api/v1/subscriptions/917fb546-5666-4fdd-aed6-53fa099b313b
       Accept: application/json
 
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 
@@ -1129,8 +1129,8 @@ Subscriptions are primarily immutable.  The `url` and `appData` properties can b
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       POST https://events.vin.li/api/v1/devices/de01abb1-453d-4293-831a-f0d804b48fdf/subscriptions
       Accept: application/json
       Content-Type: application/json
@@ -1146,8 +1146,8 @@ Request
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 
@@ -1178,16 +1178,16 @@ Delete a Subscription
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       DELETE https://events.vin.li/api/v1/subscriptions/917fb546-5666-4fdd-aed6-53fa099b313b
       Accept: application/json
 
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 204 NO CONTENT
 
 
@@ -1225,8 +1225,8 @@ Get a Specific Notification
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://events.vin.li/api/v1/notifications/09704b59-83d9-44a5-a0f8-33d973bdac5e
       Accept: application/json
 
@@ -1234,8 +1234,8 @@ Request
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 
@@ -1268,8 +1268,8 @@ Get Notifications for a Subscription
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://events.vin.li/api/v1/subscriptions/a896ff7d-ca46-4bf4-af71-b9b1573c3ef1/notifications
       Accept: application/json
 
@@ -1277,8 +1277,8 @@ Request
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 
@@ -1329,8 +1329,8 @@ Returns the notifications that were triggered for any subscription associated wi
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://events.vin.li/api/v1/events/314d7fcd-d4d6-4b78-9804-b171db60790a/notifications
       Accept: application/json
 
@@ -1338,8 +1338,8 @@ Request
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 
@@ -1391,8 +1391,8 @@ The DTC History Service provides historical information for DTC codes for a give
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://diagnostic.vin.li/api/v1/vehicles/47fa348e-c3fa-4cad-8272-61940eae7748/codes
       Accept: application/json
 
@@ -1401,8 +1401,8 @@ The state query param may be used to filter the response. Valid values are activ
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 
@@ -1474,16 +1474,16 @@ There's a lot of information encoded in the DTC codes reported by a Vehicle.  Th
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://diagnostic.vin.li/api/v1/codes?number=P0001
       Accept: application/json
 
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 
@@ -1526,8 +1526,8 @@ This method returns a list of all trips that a given device has taken.  This wil
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://trips.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/trips
       Accept: application/json
 
@@ -1535,8 +1535,8 @@ Request
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 
@@ -1619,8 +1619,8 @@ Please note, that trips are sometimes created asynchronously--either because the
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://trips.vin.li/api/v1/vehicles/0c785aa0-1a48-4cc6-9f5c-028350dd907d/trips
       Accept: application/json
 
@@ -1628,8 +1628,8 @@ Request
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 
@@ -1727,8 +1727,8 @@ All of the detailed information listed in the above verbiage is available via th
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://trips.vin.li/api/v1/trips/a51a3c87-baa7-4e5d-98e6-4f9588d7c2e1
       Accept: application/json
 
@@ -1736,8 +1736,8 @@ Request
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 
@@ -1803,16 +1803,16 @@ Returns a Report Card based on historical data for a specified period. In some c
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://behavior.vin.li/api/v1/devices/fe4bbc20-cc90-11e3-8e05-f3abac5b6b58/report_cards
       Accept: application/json
 
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 
@@ -1856,16 +1856,16 @@ Returns a Report Card based on all historical data available for a given Device.
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://behavior.vin.li/api/v1/devices/602c6490-d7a3-11e3-9c1a-0800200c9a66/report_cards/overall
       Accept: application/json
 
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 
@@ -1886,16 +1886,16 @@ In some cases, the Trip is too short to generate the data necessary for the Repo
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://behavior.vin.li/api/v1/trips/b9e58eb4-0743-45e9-b9c6-86500f5412bb/report_card
       Accept: application/json
 
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 
@@ -1927,16 +1927,16 @@ Returns a list of registered Collisions for a given device.
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://safety.vin.li/api/v1/devices/8b8a1810-d6d8-11e3-9c1a-0800200c9a66/collisions
       Accept: application/json
 
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 
@@ -1979,16 +1979,16 @@ Returns a list of registered Collisions for a given Vehicle.
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://safety.vin.li/api/v1/vehicles/e619dc1d-b760-410f-b809-2578df22a755/collisions
       Accept: application/json
 
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 
@@ -2029,16 +2029,16 @@ Returns a list of registered Collisions for a given Vehicle.
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://safety.vin.li/api/v1/collisions/e43ff87d-bb58-42da-998e-d7f10a3f7a64
       Accept: application/json
 
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       HTTP/1.1 200 OK
       Content-Type: application/json
 

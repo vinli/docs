@@ -6,8 +6,8 @@ Returns the latest `limit` number of telemetry snapshots that contain at least o
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://telemetry.vin.li/api/v1/devices/27a2ac50-d7bd-11e3-9c1a-0800200c9a66/snapshots?fields=vehicleSpeed,rpm
       Accept: application/json
 
@@ -19,8 +19,8 @@ Request
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
      HTTP/1.1 200 OK
      Content-Type: application/json
 

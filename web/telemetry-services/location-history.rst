@@ -9,8 +9,8 @@ Additionally, selected or all parameters that were recorded at each location can
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
       GET https://telemetry.vin.li/api/v1/devices/27a2ac50-d7bd-11e3-9c1a-0800200c9a66/locations?fields=rpm,vehicleSpeed
       Accept: application/json
 
@@ -23,8 +23,8 @@ Request
 Response
 ++++++++
 
-.. code-block:: json
-
+::
+	
       {
         "locations" : {
           "type" : "FeatureCollection",

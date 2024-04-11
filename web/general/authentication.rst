@@ -15,8 +15,8 @@ Each request must include the App ID and App Secret in the Authorization header 
 
 could request a list of all of its Devices using CURL with
 
-.. code-block:: json
-
+::
+	
     curl -u c87d5be0-2e69-11e4-8c21-0800200c9a66:HKLFFoSILb8VHFJD https://platform.vin.li/api/v1/devices
 
 and CURL will take care of setting the Authorization header.  Almost all HTTP libraries can handle BasicAuth for you, as long as you have a username and password.
@@ -29,8 +29,8 @@ If you must implement BasicAuth yourself, follow the steps below to generate the
 
 For the example above, the Authorization header would be sent as:
 
-.. code-block:: json
-
+::
+	
     Authorization: Basic Yzg3ZDViZTAtMmU2OS0xMWU0LThjMjEtMDgwMDIwMGM5YTY2OkhLTEZGb1NJTGI4VkhGSkQ=
 
 
@@ -55,8 +55,8 @@ Authorization Code clients use a user-facing component to obtain a code from the
 
 To initiate the authentication flow, the client directs the user to:
 
-.. code-block:: json
-
+::
+	
 	https://auth.vin.li/oauth/authorization/new?client_id={clientId}&redirect_uri={redirectUri}&response_type={desiredResponseType}
 
 After user authentication and app approval, the app should redirect to the provided redirect URI, which must match the redirect URI registered for the client. For the access token, the requested data will be in the fragment (after the `#`) portion of the URI. For the authentication code, the requested data will be in the query (after the `?`). Error will be returned in the body.

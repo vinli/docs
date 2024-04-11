@@ -9,15 +9,15 @@ List Dummy Routes
 Request
 +++++++
 
-.. code-block:: json
-
+::
+	
   GET https://dummies.vin.li/api/v1/routes
   Accept: application/json
 
 Response
 ++++++++
-.. code-block:: json
-
+::
+	
   {
     "routes": [
       {
